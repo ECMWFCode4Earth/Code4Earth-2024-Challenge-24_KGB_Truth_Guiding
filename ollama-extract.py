@@ -1,47 +1,18 @@
-from langchain_community.llms import Ollama
-import ollama
 import fitz
-import numpy as np
+import ollama
+
 doc = fitz.open("example.pdf")
 for pageNumber, page in enumerate(doc.pages(), start=1):
     if pageNumber > 2 and pageNumber < 10:
         text = page.get_text().encode("utf8")
         with open(f"texts/output_{pageNumber}.txt", "wb") as out:
-            out.write(text) # write text of page
-            out.write(bytes((12,))) # write page delimiter (form feed 0x0C)
-
-# for page_index in range(len(doc)): # iterate over pdf pages
-#     if page_index > 20:
-#       break
-#     page = doc[page_index] # get the page
-#     image_list = page.get_images()
-
-#     # print the number of images found on the page
-#     if image_list:
-#         print(f"Found {len(image_list)} images on page {page_index}")
-#     else:
-#         print("No images found on page", page_index)
-
-#     for image_index, img in enumerate(image_list, start=1): # enumerate the image list
-#         xref = img[0] # get the XREF of the image
-#         pix = fitz.Pixmap(doc, xref) # create a Pixmap
-
-#         if pix.n - pix.alpha > 3: # CMYK: convert to RGB first
-#             pix = fitz.Pixmap(fitz.csRGB, pix)
-
-#         pix.save("images/page_%s-image_%s.png" % (page_index, image_index)) # save the image as png
-#         pix = None
-
-# ollama = Ollama(
-#     base_url='http://localhost:11434',
-#     model="llama3"
-# )
-# print(ollama.invoke("why is the sky blue"))
+            out.write(text)  # write text of page
+            out.write(bytes((12,)))  # write page delimiter (form feed 0x0C)
 
 
 system_promt = "You are a helpful Natural Language Processing expert who extracts relevant information and store them on a Knowledge Graph"
 
-user_promt = """From the technical report on Methods for assessing the impact of current and future components of the global observing system, extract the following Entities & relationships described in the mentioned format 
+user_promt = """From the technical report on Methods for assessing the impact of current and future components of the global observing system, extract the following Entities & relationships described in the mentioned format
 0. ALWAYS FINISH THE OUTPUT. Never send partial responses
 1. First, look for these Entity types in the text and generate as comma-separated format similar to entity type.
    `id` property of each entity must be alphanumeric such as A1.01 and must be unique among the entities. You will be referring this property to define the relationship between entities. Do not create new entity types that aren't mentioned below. Document must be summarized and stored inside Case entity under `summary` property. You will have to generate as many entities as needed as per the types below:
@@ -75,16 +46,18 @@ The output should look like :
 """
 
 # for page in np.arange(3,10):
-with open(f"texts/output_4.txt", "r") as f:
-        text = f.readlines()
-        text = " ".join(text)
-        text = text.replace("/n", "")
-        stream = ollama.chat(
-            model='llama3',
-            messages=[{'role': 'system', 'content': system_promt},
-                {'role': 'user', 'content': user_promt}],
-            stream=True,
-        )
+with open("texts/output_4.txt", "r", encoding="ascii") as f:
+    text = f.readlines()
+    text = " ".join(text)
+    text = text.replace("/n", "")
+    stream = ollama.chat(
+        model="llama3",
+        messages=[
+            {"role": "system", "content": system_promt},
+            {"role": "user", "content": user_promt},
+        ],
+        stream=True,
+    )
 
-        for chunk in stream:
-            print(chunk['message']['content'], end='', flush=True)
+    for chunk in stream:
+        print(chunk["message"]["content"], end="", flush=True)
