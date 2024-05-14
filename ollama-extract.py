@@ -1,5 +1,6 @@
 import fitz
 import ollama
+import numpy
 
 doc = fitz.open("example.pdf")
 for pageNumber, page in enumerate(doc.pages(), start=1):
@@ -46,7 +47,7 @@ The output should look like :
 """
 
 # for page in np.arange(3,10):
-with open("texts/output_4.txt", "r", encoding="ascii") as f:
+with open("texts/output_4.txt", "r", encoding="utf-8") as f:
     text = f.readlines()
     text = " ".join(text)
     text = text.replace("/n", "")
