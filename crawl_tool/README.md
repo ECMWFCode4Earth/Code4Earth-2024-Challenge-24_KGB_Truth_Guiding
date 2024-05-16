@@ -11,7 +11,8 @@ Run the script crawl.py:
 **`--download`**: activate download mode (default: False). If not activated, the script will not download target files.  
 **`--verbose`**: activate verbose mode (default: False). If activated, crawled links will be printed on the console.  
 **`--wait_time`**: wait time between two consecutive file downloads (default: 2 secs). This functionality is included to prevent flooding the server.
+**`--output_folder`**: Location to store crawled files. Default value has beed set to `home/user/large-disk/crawled_resources/`
 
 ## Storage
 
-All downloaded files will be stored in `large-disk/crawled_resources/` folder.
+All downloaded files will be stored in `home/user/large-disk/crawled_resources/` folder.
