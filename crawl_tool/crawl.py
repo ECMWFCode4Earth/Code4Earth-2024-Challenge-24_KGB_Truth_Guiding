@@ -87,7 +87,7 @@ def get_page_url_from_page_number(page_number, source):
     return url_list
 
 
-def crawl(url_list, download, wait_time, verbose, source):
+def crawl(source, url_list, download, wait_time, verbose, output_folder):
     """
     Crawl all pdf links from page of ECMWF and download.
 
@@ -97,8 +97,10 @@ def crawl(url_list, download, wait_time, verbose, source):
         download (bool)         : Download or not pdf files.
         verbose (bool)          : Print pdf links.
         source (str)            : Source to crawl from.
+        output_folder (str)     : Location of output folder.
     """
-    output_address = os.path.join(OUTPUT_ROOT, output_subdirectory[source])
+    output_address = os.path.join(output_folder, output_subdirectory[source])
+
     for url in url_list:
         print(f"----------------{url}-----------------")
         with urllib.request.urlopen(url) as page_object:
@@ -116,6 +118,8 @@ def crawl(url_list, download, wait_time, verbose, source):
                 if verbose:
                     print(full_link)
                 if download:
+                    if not os.path.isdir(output_address):
+                        os.makedirs(output_address)
                     urllib.request.urlretrieve(
                         full_link, os.path.join(output_address, file_name)
                     )
@@ -142,6 +146,9 @@ def crawl(url_list, download, wait_time, verbose, source):
 @click.option("--download", is_flag=True, help="Download or not pdf files")
 @click.option("--verbose", is_flag=True, help="Print pdf links")
 @click.option("--wait_time", type=float, default=2, help="Wait time between downloads")
+@click.option(
+    "--output_folder", type=str, default=OUTPUT_ROOT, help="Location of output folder"
+)
 def run(**kwargs):
     """Main function"""
     page_number = kwargs["pages"]
@@ -149,9 +156,10 @@ def run(**kwargs):
     verbose = kwargs["verbose"]
     wait_time = kwargs["wait_time"]
     source = kwargs["source"]
+    output_folder = kwargs["output_folder"]
     print(f"Setting: {kwargs}")
     url_list = get_page_url_from_page_number(page_number, source)
-    crawl(url_list, download, wait_time, verbose, source)
+    crawl(source, url_list, download, wait_time, verbose, output_folder)
 
 
 if __name__ == "__main__":
