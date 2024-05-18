@@ -110,8 +110,7 @@ def crawl(source, url_list, download, wait_time, verbose, output_folder):
         links = soup.find_all("a", href=True)
         if download:
             print(f"-------Crawling on url {url}-------\n")
-            if not os.path.isdir(output_address):
-                os.makedirs(output_address)
+            os.makedirs(output_address, exist_ok=True)
         for link in links:
             current_link = link.get("href")
             if current_link.endswith("pdf"):
