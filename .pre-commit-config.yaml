@@ -38,3 +38,12 @@ repos:
         # Ignore unsorted imports. This is because jupyter notebooks can import
         # packages in a different order than the rest of the codebase.
         args: ["--ignore=D100,D407,I001"]
+
+  - repo: local
+    hooks:
+      - id: jupyter-nb-clear-output
+        name: jupyter-nb-clear-output
+        files: \.ipynb$
+        stages: [commit]
+        language: system
+        entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
