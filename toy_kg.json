@@ -1,0 +1,699 @@
+{
+    "nodes": [
+        {
+            "name": "ecmwf",
+            "label": "Organization",
+            "properties": {
+                "name": "European Centre for Medium-Range Weather Forecasts"
+            }
+        },
+        {
+            "name": "sac",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "paper",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "memorandum",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "sac",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "wmo",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "irec",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "tan",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "harnisch",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "memorandum",
+            "label": "Document",
+            "properties": {
+                "number": 916
+            }
+        },
+        {
+            "name": "strategy2021-2030",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "Technical Memorandum No. 916",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "Tan et al.",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "Harnisch et al.",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "ESA",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "European Centre for Medium-Range Weather Forecasts",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "Global Navigation Satellite System-Radio Occultation",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "Meteorological Department",
+            "label": "Organization",
+            "properties": {
+                "name": "Meteorological Department"
+            }
+        },
+        {
+            "name": "Tan",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "geer",
+            "label": "Person",
+            "properties": {
+                "name": "Geer"
+            }
+        },
+        {
+            "name": "kelly",
+            "label": "Person",
+            "properties": {
+                "name": "Kelly"
+            }
+        },
+        {
+            "name": "duncan",
+            "label": "Person",
+            "properties": {
+                "name": "Duncan"
+            }
+        },
+        {
+            "name": "916",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "memorandum",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "inverse",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "square_root",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "observations",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "analysis",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "forecast",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "met_office",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "duncan_et_al_2021",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "geer_2016",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "nwp_index",
+            "label": "Index",
+            "properties": {}
+        },
+        {
+            "name": "scorecard",
+            "label": "Visual Table",
+            "properties": {}
+        },
+        {
+            "name": "z500",
+            "label": "Field",
+            "properties": {}
+        },
+        {
+            "name": "synoptic_situation",
+            "label": "Condition",
+            "properties": {}
+        },
+        {
+            "name": "truth",
+            "label": "Entity",
+            "properties": {}
+        },
+        {
+            "name": "operational_analysis",
+            "label": "Analysis",
+            "properties": {}
+        },
+        {
+            "name": "analysis_quality",
+            "label": "Quality",
+            "properties": {}
+        },
+        {
+            "name": "forecast_skill",
+            "label": "Skill",
+            "properties": {}
+        },
+        {
+            "name": "appendix",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "oes",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "Geer et al.",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "Bouttier and Kelly",
+            "label": "Paper",
+            "properties": {}
+        },
+        {
+            "name": "Technical Memorandum No. 916",
+            "label": "Document",
+            "properties": {
+                "type": "memorandum",
+                "number": "916"
+            }
+        },
+        {
+            "name": "Figure 2",
+            "label": "Visual Table",
+            "properties": {
+                "description": "Forecast error in 850 hPa relative humidity in the tropics (20\u00b0N to 20\u00b0S) as a function of forecast day, computed against the operational HRES analysis (solid) or the experiment\u2019s own analysis (dashed)."
+            }
+        },
+        {
+            "name": "Appendix",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "The research department",
+            "label": "Organization",
+            "properties": {
+                "name": "Research Department"
+            }
+        },
+        {
+            "name": "Satellite radiances",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "Bending angles",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "Radiosonde temperature",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "Surface pressure",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "HRES analysis",
+            "label": "Analysis",
+            "properties": {}
+        },
+        {
+            "name": "Experiment\u2019s own analysis",
+            "label": "Analysis",
+            "properties": {}
+        },
+        {
+            "name": "Technical Memorandum No. 916",
+            "label": "Document",
+            "properties": {
+                "number": "916"
+            }
+        },
+        {
+            "name": "Bormann et al.",
+            "label": "Author",
+            "properties": {}
+        },
+        {
+            "name": "Lawrence et al.",
+            "label": "Author",
+            "properties": {}
+        },
+        {
+            "name": "Geer (2016)",
+            "label": "Paper",
+            "properties": {
+                "year": 2016
+            }
+        },
+        {
+            "name": "Figure 2",
+            "label": "Visual Table",
+            "properties": {}
+        },
+        {
+            "name": "Figure 3",
+            "label": "Visual Table",
+            "properties": {}
+        },
+        {
+            "name": "Operational Analysis",
+            "label": "Analysis",
+            "properties": {}
+        },
+        {
+            "name": "HRES Analysis",
+            "label": "Analysis",
+            "properties": {}
+        },
+        {
+            "name": "EDA Ensemble",
+            "label": "Entity",
+            "properties": {}
+        },
+        {
+            "name": "Upper-Tropospheric Temperatures",
+            "label": "Field",
+            "properties": {
+                "unit": "K"
+            }
+        },
+        {
+            "name": "Aircraft Observations",
+            "label": "Observing System",
+            "properties": {}
+        },
+        {
+            "name": "Radiosonde Observations",
+            "label": "Observation",
+            "properties": {}
+        },
+        {
+            "name": "Own Analysis",
+            "label": "Analysis",
+            "properties": {}
+        }
+    ],
+    "relationships": [
+        {
+            "start": "ecmwf",
+            "end": "sac",
+            "type": "hosts",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf",
+            "end": "paper",
+            "type": "publishes",
+            "properties": {
+                "date": 2022,
+                "type": "technical memorandum"
+            }
+        },
+        {
+            "start": "ecmwf",
+            "end": "memorandum",
+            "type": "produces",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf",
+            "end": "memorandum",
+            "type": "produces",
+            "properties": {}
+        },
+        {
+            "start": "irec",
+            "end": "tan",
+            "type": "authored",
+            "properties": {}
+        },
+        {
+            "start": "harnisch",
+            "end": "irec",
+            "type": "authored",
+            "properties": {}
+        },
+        {
+            "start": "wmo",
+            "end": "strategy2021-2030",
+            "type": "mentioned",
+            "properties": {}
+        },
+        {
+            "start": "irec",
+            "end": "eda",
+            "type": "evaluated",
+            "properties": {}
+        },
+        {
+            "start": "eda",
+            "end": "irec",
+            "type": "used",
+            "properties": {}
+        },
+        {
+            "start": "Meteorological Department",
+            "end": "Technical Memorandum No. 916",
+            "type": "publishes",
+            "properties": {}
+        },
+        {
+            "start": "Tan et al.",
+            "end": "Paper",
+            "type": "author",
+            "properties": {}
+        },
+        {
+            "start": "Harnisch et al.",
+            "end": "Paper",
+            "type": "author",
+            "properties": {}
+        },
+        {
+            "start": "ESA",
+            "end": "study1",
+            "type": "funds",
+            "properties": {}
+        },
+        {
+            "start": "Tan",
+            "end": "Tan et al.",
+            "type": "author",
+            "properties": {}
+        },
+        {
+            "start": "Harnisch",
+            "end": "Harnisch et al.",
+            "type": "author",
+            "properties": {}
+        },
+        {
+            "start": "geer",
+            "end": "916",
+            "type": "wrote",
+            "properties": {
+                "year": 2016
+            }
+        },
+        {
+            "start": "kelly",
+            "end": "geer",
+            "type": "worked_with",
+            "properties": {}
+        },
+        {
+            "start": "duncan",
+            "end": "geer",
+            "type": "worked_with",
+            "properties": {}
+        },
+        {
+            "start": "916",
+            "end": "memorandum",
+            "type": "related_to",
+            "properties": {}
+        },
+        {
+            "start": "memorandum",
+            "end": "document",
+            "type": "part_of",
+            "properties": {}
+        },
+        {
+            "start": "inverse",
+            "end": "square_root",
+            "type": "used_in",
+            "properties": {}
+        },
+        {
+            "start": "square_root",
+            "end": "observations",
+            "type": "used_in",
+            "properties": {}
+        },
+        {
+            "start": "analysis",
+            "end": "inverse",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "forecast",
+            "end": "inverse",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "geer",
+            "end": "observation",
+            "type": "studied",
+            "properties": {
+                "type": "weather"
+            }
+        },
+        {
+            "start": "met_office",
+            "end": "nwp_index",
+            "type": "has",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf",
+            "end": "scorecard",
+            "type": "has",
+            "properties": {}
+        },
+        {
+            "start": "duncan_et_al_2021",
+            "end": "oes",
+            "type": "published_by",
+            "properties": {}
+        },
+        {
+            "start": "geer_2016",
+            "end": "oes",
+            "type": "published_by",
+            "properties": {}
+        },
+        {
+            "start": "z500",
+            "end": "oes",
+            "type": "measured_by",
+            "properties": {}
+        },
+        {
+            "start": "synoptic_situation",
+            "end": "oes",
+            "type": "described_by",
+            "properties": {}
+        },
+        {
+            "start": "truth",
+            "end": "operational_analysis",
+            "type": "referenced_by",
+            "properties": {}
+        },
+        {
+            "start": "analysis_quality",
+            "end": "oes",
+            "type": "evaluated_by",
+            "properties": {}
+        },
+        {
+            "start": "forecast_skill",
+            "end": "oes",
+            "type": "evaluated_by",
+            "properties": {}
+        },
+        {
+            "start": "appendix",
+            "end": "oes",
+            "type": "part_of",
+            "properties": {}
+        },
+        {
+            "start": "Geer et al.",
+            "end": "",
+            "type": "published",
+            "properties": {}
+        },
+        {
+            "start": "Bouttier and Kelly",
+            "end": "",
+            "type": "published",
+            "properties": {}
+        },
+        {
+            "start": "Technical Memorandum No. 916",
+            "end": "Figure 2",
+            "type": "contains",
+            "properties": {}
+        },
+        {
+            "start": "The research department",
+            "end": "HRES analysis",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "The research department",
+            "end": "Experiment\u2019s own analysis",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "Satellite radiances",
+            "end": "",
+            "type": "observed",
+            "properties": {}
+        },
+        {
+            "start": "Bending angles",
+            "end": "",
+            "type": "observed",
+            "properties": {}
+        },
+        {
+            "start": "Radiosonde temperature",
+            "end": "",
+            "type": "observed",
+            "properties": {}
+        },
+        {
+            "start": "Surface pressure",
+            "end": "",
+            "type": "observed",
+            "properties": {}
+        },
+        {
+            "start": "Bormann et al.",
+            "end": "Technical Memorandum No. 916",
+            "type": "wrote",
+            "properties": {
+                "year": 2019
+            }
+        },
+        {
+            "start": "Lawrence et al.",
+            "end": "Paper",
+            "type": "wrote",
+            "properties": {
+                "year": 2019
+            }
+        },
+        {
+            "start": "Geer (2016)",
+            "end": "Document",
+            "type": "published",
+            "properties": {}
+        },
+        {
+            "start": "Figure 2",
+            "end": "Operational Analysis",
+            "type": "shows",
+            "properties": {}
+        },
+        {
+            "start": "Figure 3",
+            "end": "Upper-Tropospheric Temperatures",
+            "type": "shows",
+            "properties": {}
+        },
+        {
+            "start": "Technical Memorandum No. 916",
+            "end": "Figure 2",
+            "type": "contains",
+            "properties": {}
+        },
+        {
+            "start": "Bormann et al.",
+            "end": "Own Analysis",
+            "type": "used",
+            "properties": {}
+        },
+        {
+            "start": "Lawrence et al.",
+            "end": "Radiosonde Observations",
+            "type": "used",
+            "properties": {}
+        }
+    ]
+}
