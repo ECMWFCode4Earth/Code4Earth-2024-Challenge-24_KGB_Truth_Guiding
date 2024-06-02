@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import json
 import re
 
@@ -10,24 +12,25 @@ class PromptProcessor:
     def __init__(self) -> None:
         self.system_prompt = """You are a data scientist working for a company that is building a graph database. Your task is to extract information from data and convert it into a graph database.
         Provide a set of Nodes in the form [ENTITY_ID, TYPE, PROPERTIES] and a set of relationships in the form [ENTITY_ID_1, RELATIONSHIP, ENTITY_ID_2, PROPERTIES].
-        It is IMPORTANT that the ENTITY_ID_1 and ENTITY_ID_2 exists as nodes with a matching ENTITY_ID. Do not pair any relationship with non-existing nodes. If you can't pair a relationship with a pair of nodes don't add it.
+        It is OBLIGATORY that the ENTITY_ID_1 and ENTITY_ID_2 exists as nodes with a matching ENTITY_ID. Do not pair any relationship with non-existing nodes. If you can't pair a relationship with a pair of nodes don't add it.
         When you find a node or relationship you want to add try to create a generic TYPE for it that  describes the entity you can also think of it as a label.
         You will be given a list of types that you should try to use when creating the TYPE for a node. If you can't find a type that fits the node you can create a new one.
         NO YAPPING before or after your answers. DO NOT add comments in your answers. Format your answer to strictly follow the rules in the example below.
 
         Example:
         Data: Alice lawyer and is 25 years old and Bob is her roommate since 2001. Bob works as a journalist. Alice owns a the webpage www.alice.com and Bob owns the webpage www.bob.com.
+        Types: [Person]
         Nodes: ["alice", "Person", {"age": 25, "occupation": "lawyer", "name":"Alice"}], ["bob", "Person", {"occupation": "journalist", "name": "Bob"}], ["alice.com", "Webpage", {"url": "www.alice.com"}], ["bob.com", "Webpage", {"url": "www.bob.com"}]
         Relationships: ["alice", "roommate", "bob", {"start": 2021}], ["alice", "owns", "alice.com", {}], ["bob", "owns", "bob.com", {}]
         """
         self.user_prompt_template = PromptTemplate.from_template(
-            "Data: {data}\nTypes: {labels}"
+            "Data: {data}\nTypes: [{labels}]"
         )
 
-    def create_prompt(self, text, labels=None):
+    def create_prompt(self, text: str, labels: str | None = None):
         data = text.rstrip()
         if labels is None:
-            labels = []
+            labels = ""
         user_message = self.user_prompt_template.invoke(
             {"data": data, "labels": labels}
         ).to_string()
@@ -37,10 +40,9 @@ class PromptProcessor:
         ]
         return messages
 
-    def process_answer(self, answer_content):
+    def process_answer(self, answer_content: str):
         kg = getNodesAndRelationshipsFromResult([answer_content.replace("\n", " ")])
-        labels = getTypesFromDict(kg)
-        return kg, labels
+        return kg
 
 
 def getNodesAndRelationshipsFromResult(result):
@@ -65,14 +67,6 @@ def getNodesAndRelationshipsFromResult(result):
     result["nodes"].extend(nodesTextToListOfDict(nodes))
     result["relationships"].extend(relationshipTextToListOfDict(relationships))
     return result
-
-
-def getTypesFromDict(result):
-    labels = []
-    for node in result["nodes"]:
-        if node["label"] not in labels:
-            labels.append(node["label"])
-    return labels
 
 
 def nodesTextToListOfDict(nodes):
