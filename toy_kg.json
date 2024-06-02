@@ -1,0 +1,523 @@
+{
+    "nodes": [
+        {
+            "name": "technical memorandum no. 916",
+            "label": "Document",
+            "properties": {}
+        },
+        {
+            "name": "abstract",
+            "label": "Text",
+            "properties": {}
+        },
+        {
+            "name": "plain language summary",
+            "label": "Text",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf science advisory committee",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf technical memorandum",
+            "label": "Publication",
+            "properties": {}
+        },
+        {
+            "name": "916",
+            "label": "Technical Memorandum",
+            "properties": {
+                "title": "Assessing the impact of observations"
+            }
+        },
+        {
+            "name": "ECMWF",
+            "label": "Organization",
+            "properties": {
+                "name": "European Centre for Medium-Range Weather Forecasts"
+            }
+        },
+        {
+            "name": "SAC",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "2021-2030",
+            "label": "Period",
+            "properties": {
+                "start": 2021,
+                "end": 2030
+            }
+        },
+        {
+            "name": "WMO",
+            "label": "Organization",
+            "properties": {
+                "name": "World Meteorological Organization"
+            }
+        },
+        {
+            "name": "916",
+            "label": "TechnicalMemorandum",
+            "properties": {
+                "number": 916
+            }
+        },
+        {
+            "name": "NWP",
+            "label": "System",
+            "properties": {}
+        },
+        {
+            "name": "GOS",
+            "label": "ObservingSystem",
+            "properties": {}
+        },
+        {
+            "name": "IFS",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "HRES",
+            "label": "System",
+            "properties": {}
+        },
+        {
+            "name": "ESA",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "6",
+            "label": "Number",
+            "properties": {}
+        },
+        {
+            "name": "916",
+            "label": "Number",
+            "properties": {
+                "id": "Technical Memorandum No."
+            }
+        },
+        {
+            "name": "Figure 1",
+            "label": "Document",
+            "properties": {
+                "figure": true,
+                "description": "Standard deviation of Analysis error as a function of the number of observations"
+            }
+        },
+        {
+            "name": "Analysis error",
+            "label": "Text",
+            "properties": {
+                "description": "as a function of the number of observations"
+            }
+        },
+        {
+            "name": "observations",
+            "label": "Period",
+            "properties": {}
+        },
+        {
+            "name": "background error",
+            "label": "Text",
+            "properties": {}
+        },
+        {
+            "name": "Kelly et al.",
+            "label": "2008",
+            "properties": {
+                "year": 2008,
+                "authors": "Kelly et al."
+            }
+        },
+        {
+            "name": "Duncan et al.",
+            "label": "2021",
+            "properties": {
+                "year": 2021,
+                "authors": "Duncan et al."
+            }
+        },
+        {
+            "name": "Geer et al.",
+            "label": "2014",
+            "properties": {
+                "year": 2014,
+                "authors": "Geer et al."
+            }
+        },
+        {
+            "name": "System",
+            "label": "ObservingSystem",
+            "properties": {}
+        },
+        {
+            "name": "916",
+            "label": "Technical Memorandum",
+            "properties": {
+                "number": "916"
+            }
+        },
+        {
+            "name": "Duncan et al.",
+            "label": "Publication",
+            "properties": {}
+        },
+        {
+            "name": "Met Office NWP index",
+            "label": "Index",
+            "properties": {}
+        },
+        {
+            "name": "ECMWF scorecard",
+            "label": "Scorecard",
+            "properties": {}
+        },
+        {
+            "name": "Geer",
+            "label": "Author",
+            "properties": {
+                "name": "Geer"
+            }
+        },
+        {
+            "name": "2021",
+            "label": "Year",
+            "properties": {
+                "value": 2021
+            }
+        },
+        {
+            "name": "2014",
+            "label": "Year",
+            "properties": {
+                "value": 2014
+            }
+        },
+        {
+            "name": "2008",
+            "label": "Year",
+            "properties": {
+                "value": 2008
+            }
+        },
+        {
+            "name": "8",
+            "label": "Number",
+            "properties": {}
+        },
+        {
+            "name": "916",
+            "label": "Number",
+            "properties": {}
+        },
+        {
+            "name": "2.1.1.",
+            "label": "Period",
+            "properties": {}
+        },
+        {
+            "name": "reference",
+            "label": "ObservingSystem",
+            "properties": {}
+        },
+        {
+            "name": "observations",
+            "label": "ObservingSystem",
+            "properties": {}
+        },
+        {
+            "name": "analyses",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "research department",
+            "label": "Organization",
+            "properties": {
+                "name": "Research Department"
+            }
+        },
+        {
+            "name": "global observing system",
+            "label": "ObservingSystem",
+            "properties": {}
+        },
+        {
+            "name": "12-hour forecast",
+            "label": "Period",
+            "properties": {}
+        },
+        {
+            "name": "[technicalmemorandum916",
+            "label": "TechnicalMemorandum",
+            "properties": {
+                "title": "Assessing the impact of observations"
+            }
+        },
+        {
+            "name": "bormannetal2019",
+            "label": "Publication",
+            "properties": {
+                "year": 2019,
+                "author": "Bormann et al."
+            }
+        },
+        {
+            "name": "lawrenceetal2019",
+            "label": "Publication",
+            "properties": {
+                "year": 2019,
+                "author": "Lawrence et al."
+            }
+        },
+        {
+            "name": "geer2016",
+            "label": "Publication",
+            "properties": {
+                "year": 2016,
+                "author": "Geer"
+            }
+        },
+        {
+            "name": "bormannetal",
+            "label": "Committee",
+            "properties": {}
+        },
+        {
+            "name": "lawrenceetal",
+            "label": "Committee",
+            "properties": {}
+        }
+    ],
+    "relationships": [
+        {
+            "start": "technical memorandum no. 916",
+            "end": "ecmwf technical memorandum",
+            "type": "published as",
+            "properties": {}
+        },
+        {
+            "start": "ECMWF",
+            "end": "916",
+            "type": "publishes",
+            "properties": {
+                "date": 2022
+            }
+        },
+        {
+            "start": "SAC",
+            "end": "916",
+            "type": "receives",
+            "properties": {
+                "date": 2022
+            }
+        },
+        {
+            "start": "ECMWF",
+            "end": "WMO",
+            "type": "supports",
+            "properties": {}
+        },
+        {
+            "start": "ECMWF",
+            "end": "space agencies",
+            "type": "works_with",
+            "properties": {}
+        },
+        {
+            "start": "916",
+            "end": "Committee",
+            "type": "related_to",
+            "properties": {
+                "title": "Assessing the impact of observations"
+            }
+        },
+        {
+            "start": "NWP",
+            "end": "GOS",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "GOS",
+            "end": "IFS",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "HRES",
+            "end": "EDA",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "ESA",
+            "end": "[Tan et al. (2007)",
+            "type": "funds",
+            "properties": {}
+        },
+        {
+            "start": "6",
+            "end": "916",
+            "type": "related to",
+            "properties": {}
+        },
+        {
+            "start": "Figure 1",
+            "end": "Analysis error",
+            "type": "contains",
+            "properties": {}
+        },
+        {
+            "start": "6",
+            "end": "Figure 1",
+            "type": "part of",
+            "properties": {}
+        },
+        {
+            "start": "observations",
+            "end": "analysis error",
+            "type": "related to",
+            "properties": {}
+        },
+        {
+            "start": "background error",
+            "end": "analysis error",
+            "type": "related to",
+            "properties": {}
+        },
+        {
+            "start": "Kelly et al.",
+            "end": "cited in",
+            "type": "2008",
+            "properties": {}
+        },
+        {
+            "start": "Duncan et al.",
+            "end": "cited in",
+            "type": "2021",
+            "properties": {}
+        },
+        {
+            "start": "Geer et al.",
+            "end": "cited in",
+            "type": "2014",
+            "properties": {}
+        },
+        {
+            "start": "916",
+            "end": "{}",
+            "type": "Technical Memorandum",
+            "properties": {}
+        },
+        {
+            "start": "Duncan et al.",
+            "end": "[916",
+            "type": "cited in",
+            "properties": {}
+        },
+        {
+            "start": "Met Office NWP index",
+            "end": "[916",
+            "type": "measured by",
+            "properties": {}
+        },
+        {
+            "start": "ECMWF scorecard",
+            "end": "[916",
+            "type": "used for verification of",
+            "properties": {}
+        },
+        {
+            "start": "Geer",
+            "end": "[916",
+            "type": "authored",
+            "properties": {}
+        },
+        {
+            "start": "2021",
+            "end": "[Duncan et al.",
+            "type": "year published",
+            "properties": {}
+        },
+        {
+            "start": "2014",
+            "end": "[Duncan et al.",
+            "type": "year studied in",
+            "properties": {}
+        },
+        {
+            "start": "2008",
+            "end": "[916",
+            "type": "year mentioned in",
+            "properties": {}
+        },
+        {
+            "start": "8",
+            "end": "916",
+            "type": "related to",
+            "properties": {}
+        },
+        {
+            "start": "2.1.1.",
+            "end": "Technical Memorandum No. 916",
+            "type": "part of",
+            "properties": {}
+        },
+        {
+            "start": "reference",
+            "end": "observations",
+            "type": "verified against",
+            "properties": {}
+        },
+        {
+            "start": "reference",
+            "end": "analyses",
+            "type": "verified against",
+            "properties": {}
+        },
+        {
+            "start": "research department",
+            "end": "background departures",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "global observing system",
+            "end": "background departures",
+            "type": "provides",
+            "properties": {}
+        },
+        {
+            "start": "12-hour forecast",
+            "end": "background in the data assimilation",
+            "type": "used as",
+            "properties": {}
+        },
+        {
+            "start": "[technicalmemorandum916",
+            "end": "bormannetal2019",
+            "type": "published",
+            "properties": {}
+        },
+        {
+            "start": "technicalmemorandum916",
+            "end": "lawrenceetal2019",
+            "type": "published",
+            "properties": {}
+        },
+        {
+            "start": "geer2016",
+            "end": "technicalmemorandum916",
+            "type": "cited_in",
+            "properties": {}
+        }
+    ]
+}
