@@ -10,18 +10,21 @@ jsonRegex = r"\{.*\}"
 
 class PromptProcessor:
     def __init__(self) -> None:
-        self.system_prompt = """You are a data scientist working for a company that is building a graph database. Your task is to extract information from data and convert it into a graph database.
-        Provide a set of Nodes in the form [ENTITY_ID, TYPE, PROPERTIES] and a set of relationships in the form [ENTITY_ID_1, RELATIONSHIP, ENTITY_ID_2, PROPERTIES].
-        It is OBLIGATORY that the ENTITY_ID_1 and ENTITY_ID_2 exists as nodes with a matching ENTITY_ID. Do not pair any relationship with non-existing nodes. If you can't pair a relationship with a pair of nodes don't add it.
-        When you find a node or relationship you want to add try to create a generic TYPE for it that  describes the entity you can also think of it as a label.
-        You will be given a list of types that you should try to use when creating the TYPE for a node. If you can't find a type that fits the node you can create a new one.
-        NO YAPPING before or after your answers. DO NOT add comments in your answers. Format your answer to strictly follow the rules in the example below.
-
+        self.system_prompt = """You are a data scientist working for a company that is building a knowledge graph of Earth and Environment Science.
+        Your task is to extract information from scientific documents and convert it into a knowledge graph. Follow these guidelines:
+            - Provide nodes as: ["entity_id": str, "Type": str, "properties": dict()]
+            - Provide relationships as: ["entity_id_1": str, "hasRelationship": str, "entity_id_2": str, "properties": dict()]
+            - Ensure "entity_id_1" and "entity_id_2" exist as nodes with a matching entity ID.
+            - Do not add relationships with non-existing nodes.
+            - Create a generic "type" for nodes, referring to the http://sweetontology.net/sweetAll ontology for available types and relationships.
+            - Use provided types when possible; create new ones if necessary.
+            - Entity IDs must be lowercase, no special characters or spaces, with words separated by "_".
+            - NO YAPPING before and after reponses. No comments or extra text in your answers.
         Example:
-        Data: Alice lawyer and is 25 years old and Bob is her roommate since 2001. Bob works as a journalist. Alice owns a the webpage www.alice.com and Bob owns the webpage www.bob.com.
-        Types: [Person]
-        Nodes: ["alice", "Person", {"age": 25, "occupation": "lawyer", "name":"Alice"}], ["bob", "Person", {"occupation": "journalist", "name": "Bob"}], ["alice.com", "Webpage", {"url": "www.alice.com"}], ["bob.com", "Webpage", {"url": "www.bob.com"}]
-        Relationships: ["alice", "roommate", "bob", {"start": 2021}], ["alice", "owns", "alice.com", {}], ["bob", "owns", "bob.com", {}]
+        Data: Temperature measurements taken from the Pacific Ocean show an increase due to global warming.
+        Types: [Process, Property]
+        Nodes: ["temperature_measurements", "Property", {}], ["pacific_ocean", "Realm", {"name": "Pacific Ocean"}], ["increase", "Trend", {"direction": "increase"}], ["global_warming", "Phenomenon", {"name": "Global Warming"}]
+        Relationships: ["temperature_measurements", "hasLocation", "pacific_ocean", {}], ["temperature_measurements", "hasTrend", "increase", {}], ["increase", "isCausedBy", "global_warming", {}]
         """
         self.user_prompt_template = PromptTemplate.from_template(
             "Data: {data}\nTypes: [{labels}]"

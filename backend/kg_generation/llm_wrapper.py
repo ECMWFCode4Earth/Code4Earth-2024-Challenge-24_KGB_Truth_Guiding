@@ -7,5 +7,7 @@ class Ollama:
         self.chat_client = Client(host=host)
 
     def run(self, messages):
-        stream = self.chat_client.chat(model=self.llm, messages=messages, stream=False)
+        stream = self.chat_client.chat(
+            model=self.llm, messages=messages, stream=False, options={"num_ctx": 8000}
+        )
         return stream["message"]["content"]
