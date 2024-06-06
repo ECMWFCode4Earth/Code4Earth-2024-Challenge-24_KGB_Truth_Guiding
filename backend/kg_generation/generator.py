@@ -21,9 +21,12 @@ class KnowledgeGraph(TypedDict):
 class KGGenerator:
     def __init__(self, llm) -> None:
         self.llm = Ollama(llm)
-        self.prompt_processor = PromptProcessor()
+        self.prompt_processor = PromptProcessor(self.llm.tokenizer)
         self.kg: KnowledgeGraph = {"nodes": [], "relationships": []}
         self.entitydb = EntityDB()
+
+    def get_text_splitter(self):
+        return self.prompt_processor.text_splitter
 
     def from_text(self, text, labels=None):
         prompt_messages = self.prompt_processor.create_prompt(text, labels)
