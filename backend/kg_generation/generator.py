@@ -35,10 +35,7 @@ class KGGenerator:
         return kg
 
     def add_kg(self, kg: KnowledgeGraph):
-        if "relationships" not in self.kg:
-            self.kg["relationships"] = kg["relationships"]
-        else:
-            self.kg["relationships"] += kg["relationships"]
+        self.kg["relationships"] += kg["relationships"]
 
         for node in kg["nodes"]:
             self.entitydb.add(node)
