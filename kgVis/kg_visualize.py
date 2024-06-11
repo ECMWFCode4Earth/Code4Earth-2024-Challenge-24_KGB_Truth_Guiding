@@ -2,9 +2,8 @@ from pathlib import Path
 import json
 import argparse
 from pyvis.network import Network
-from IPython.display import HTML
 
-file = "../../assets/toy_kg_70b.json"
+file = "../assets/toy_kg_70b.json"
 
 def get_data_from_file(kg_file) :
     with open(kg_file, 'r') as f :
@@ -17,14 +16,17 @@ def kg_visualise(data,
     g = Network(height='1500px', width='100%', 
                 bgcolor='#222222', font_color='white')
     for node in data :
+        titre=""
+        for key, value in node['properties'].items() :
+            titre+=f"{key} : {value}\n"
         name = node['name']
         label = node["label"]
-        g.add_node(name, color=name_color, shape=name_shape)
+        g.add_node(name, color=name_color, shape=name_shape, title=titre)
         g.add_node(label, color=label_color, shape=lable_shape)
         g.add_edge(name, label, color=edge_color)
-    g.force_atlas_2based()
-    # g.barnes_hut()
-    HTML(g.write_html("test.html"))
+    g.barnes_hut(gravity=-5000, damping=1, spring_strength=1)
+    g.show_buttons(filter_="physics")
+    g.show("test.html", notebook=False)
 
 kg_data     = get_data_from_file(file)
 name_color  = "#03DAC6"
