@@ -13,7 +13,7 @@ def get_data_from_file(kg_file) :
         return (nodes, edges)
 
 def kg_build_kg(nodes, edges, node_color, node_shape, edge_color, cluster_color, cluster_shape) :
-    g = Network(height='1500px', width='100%', bgcolor='#222222', font_color='white')
+    g = Network(height='1500px', width='100%', bgcolor='#222222', font_color='white', directed=True)
     kg_build_nodes(g, nodes, node_color, node_shape)
     kg_build_edges(g, edges, edge_color, cluster_color, cluster_shape)
     g.barnes_hut(gravity=-5000, damping=1, spring_strength=1)
