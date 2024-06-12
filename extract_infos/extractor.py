@@ -228,17 +228,21 @@ def extract_file(file_name, save_dir):
 
 ### The following block move all pdf into a folder with the same name
 
-for key, value in output_subdirectory.items():
-    directory_folder = DOCS_DIRECTORY + value
-    files_and_dirs = os.listdir(DOCS_DIRECTORY + value)
-    files = [
-        f for f in files_and_dirs if os.path.isfile(os.path.join(directory_folder, f))
-    ]
-    for file in files:
-        file = os.path.join(directory_folder, file)
-        directory_file = os.path.join(directory_folder, file[:-4])
-        os.makedirs(directory_file, exist_ok=True)
-        shutil.move(file, directory_file)
+
+def organize_file():
+    for key, value in output_subdirectory.items():
+        directory_folder = DOCS_DIRECTORY + value
+        files_and_dirs = os.listdir(DOCS_DIRECTORY + value)
+        files = [
+            f
+            for f in files_and_dirs
+            if os.path.isfile(os.path.join(directory_folder, f))
+        ]
+        for file in files:
+            file = os.path.join(directory_folder, file)
+            directory_file = os.path.join(directory_folder, file[:-4])
+            os.makedirs(directory_file, exist_ok=True)
+            shutil.move(file, directory_file)
 
 
 ### The following block extract the pdf inside the folder into three dir: texts, images, tables
