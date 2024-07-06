@@ -164,3 +164,4 @@ cython_debug/
 
 export_neo4j/Neo4j-a71aea6b-Created-2024-06-09.txt
 extract_infos/extractor.py
+.env

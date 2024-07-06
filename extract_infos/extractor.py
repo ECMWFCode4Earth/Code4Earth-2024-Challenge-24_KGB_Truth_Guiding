@@ -22,18 +22,16 @@ imgdir = "output"  # found images are stored in this subfolder
 
 DOCS_DIRECTORY = "/home/user/large-disk/crawled_resources/"
 
-output_subdirectory = {
-    #    "memoranda": "technical_memoranda",
-    "ERA": "ERA_Reports",
-    #    "esa-eumetsat": "esa_eumetsat_contract_reports",
-    "eumetsat-ecmwf": "eumetsat_ecmwf_fellowship_programme_research_reports",
-    "report": "reports",
-    # 'newsletter':"newsletter"
-}
-
 # output_subdirectory = {
-#    "test": "test"
+#     #    "memoranda": "technical_memoranda",
+#     "ERA": "ERA_Reports",
+#     #    "esa-eumetsat": "esa_eumetsat_contract_reports",
+#     "eumetsat-ecmwf": "eumetsat_ecmwf_fellowship_programme_research_reports",
+#     "report": "reports",
+#     # 'newsletter':"newsletter"
 # }
+
+output_subdirectory = {"test": "test"}
 
 
 def extract_file(file_name, save_dir):
