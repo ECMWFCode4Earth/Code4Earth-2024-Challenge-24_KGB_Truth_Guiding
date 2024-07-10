@@ -3,6 +3,7 @@ from neo4j import GraphDatabase
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import re
 
 
 # Function to load JSON data
@@ -34,8 +35,9 @@ def write_to_neo4j(uri, user, password, data):
         for label, entities in data["nodes"].items():
             for entity in entities:
                 properties = flatten_properties(entity.get("properties", {}))
+                lbl = re.sub('[^a-zA-Z0-9\n\.]', '_', entity["label"])
                 query = f"""
-                MERGE (n:{entity["label"]} {{name: $name}})
+                MERGE (n:{lbl} {{name: $name}})
                 """
                 if properties:
                     prop_assignments = ", ".join(
@@ -52,10 +54,11 @@ def write_to_neo4j(uri, user, password, data):
         # Merge relationships
         for relationship in data["relationships"]:
             properties = flatten_properties(relationship.get("properties", {}))
+            type = re.sub('[^a-zA-Z0-9\n\.]', '_', relationship['type'])
             query = f"""
             MATCH (start {{name: $start}})
             MATCH (end {{name: $end}})
-            MERGE (start)-[r:{relationship['type']}]->(end)
+            MERGE (start)-[r:{type}]->(end)
             """
             if properties:
                 prop_assignments = ", ".join(
@@ -80,13 +83,17 @@ if __name__ == "__main__":
     #     raise RuntimeError("Environment variables not loaded.")
 
     # Neo4j connection details
-    URI = os.getenv("NEO4J_URI")
-    user = os.getenv("NEO4J_USERNAME")
-    password = os.getenv("NEO4J_PASSWORD")
+    # URI = os.getenv("NEO4J_URI")
+    # user = os.getenv("NEO4J_USERNAME")
+    # password = os.getenv("NEO4J_PASSWORD")
+    URI = "bolt://localhost:7687"
+    user = "neo4j"
+    password = "Hoank0906"
     # Write to Neo4j
     # Load JSON data
 
-    directory = Path("/Users/quocviet.nguyen/Neo4jTuto/json_db")
+    # directory = Path("/Users/quocviet.nguyen/Neo4jTuto/json_db")
+    directory = Path("/Users/hoang/Neo4j_proj/json_db")
     json_files = [
         os.path.join(directory, f) for f in os.listdir(directory) if f.endswith(".json")
     ]
