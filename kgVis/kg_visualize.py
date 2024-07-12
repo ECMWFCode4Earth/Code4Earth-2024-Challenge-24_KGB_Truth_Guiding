@@ -5,8 +5,9 @@ from pyvis.network import Network
 
 file = "../assets/toy_kg_cleaned.json"
 
-def get_data_from_file(kg_file) :
-    with open(kg_file, 'r') as f :
+
+def get_data_from_file(kg_file):
+    with open(kg_file, "r") as f:
         data = json.load(f)
         nodes = data['nodes']
         edges = data['relationships']

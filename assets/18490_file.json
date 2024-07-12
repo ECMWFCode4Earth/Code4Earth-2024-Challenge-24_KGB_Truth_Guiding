@@ -1,0 +1,1072 @@
+{
+    "nodes": {
+        "Entity": [
+            {
+                "name": "radiation_quantities",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "ecmwf_model",
+                "label": "Model",
+                "properties": {
+                    "name": "ECMWF Model",
+                    "assumption": "no incoming TOA radiation from any other source than the sun"
+                }
+            },
+            {
+                "name": "mars",
+                "label": "System",
+                "properties": {
+                    "name": "MARS",
+                    "text": "MARS"
+                }
+            },
+            {
+                "name": "robin_hogan",
+                "label": "Person",
+                "properties": {
+                    "email": "r.j.hogan@ecmwf.int"
+                }
+            },
+            {
+                "name": "TISR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Top Incident Solar Radiation*"
+                }
+            },
+            {
+                "name": "TOA",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "179.128"
+                }
+            },
+            {
+                "name": "TSR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Top net Solar Radiation"
+                }
+            },
+            {
+                "name": "TSRC",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Top net Solar Radiation for a Clear-sky atmosphere"
+                }
+            },
+            {
+                "name": "TTR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Top net Thermal Radiation"
+                }
+            },
+            {
+                "name": "TTRC",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Top net Thermal Radiation for a Clear-sky atmosphere"
+                }
+            },
+            {
+                "name": "SSRD",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface Solar Radiation Downwards"
+                }
+            },
+            {
+                "name": "SSR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface net Solar Radiation"
+                }
+            },
+            {
+                "name": "SSRC",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface net Solar Radiation for Clear-skies"
+                }
+            },
+            {
+                "name": "FDIR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "DIRect solar radiation at the surface"
+                }
+            },
+            {
+                "name": "CDIR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Clear-sky DIRect solar radiation at the surface"
+                }
+            },
+            {
+                "name": "STRD",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface Thermal Radiation Downwards"
+                }
+            },
+            {
+                "name": "STR",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface net Thermal Radiation"
+                }
+            },
+            {
+                "name": "STRC",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Surface net Thermal Radiation for Clear-skies"
+                }
+            },
+            {
+                "name": "ALUVP",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "UV-visible surface ALbedo for direct (Parallel) radiation"
+                }
+            },
+            {
+                "name": "ALUVD",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "UV-visible surface ALbedo for Diffuse radiation"
+                }
+            },
+            {
+                "name": "ALNIP",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Near-Infrared surface ALbedo for direct (Parallel) radiation"
+                }
+            },
+            {
+                "name": "ALNID",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Near-Infrared surface ALbedo for Diffuse radiation"
+                }
+            },
+            {
+                "name": "FAL",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "Forecast surface ALbedo"
+                }
+            },
+            {
+                "name": "SUND",
+                "label": "__unknown__",
+                "properties": {
+                    "text": "SUNshine Duration"
+                }
+            },
+            {
+                "name": "4_100_um",
+                "label": "Spectrum_Part",
+                "properties": {
+                    "range": "4\u2013100 \u00b5m"
+                }
+            },
+            {
+                "name": "2600_10_cm-1",
+                "label": "Spectrum_Part",
+                "properties": {
+                    "range": "2600\u201310 cm\u22121"
+                }
+            },
+            {
+                "name": "solar_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "origin": "sun"
+                }
+            },
+            {
+                "name": "thermal_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "origin": "Earth or atmosphere"
+                }
+            },
+            {
+                "name": "top_of_atmosphere_fluxes",
+                "label": "Concept",
+                "properties": {}
+            },
+            {
+                "name": "outgoing_long_wave_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "quantity": "Outgoing Long-wave Radiation"
+                }
+            },
+            {
+                "name": "lup_toa",
+                "label": "Parameter",
+                "properties": {
+                    "representation": "Lup TOA"
+                }
+            },
+            {
+                "name": "albedo_quantities",
+                "label": "Concept",
+                "properties": {}
+            },
+            {
+                "name": "table_3",
+                "label": "Concept",
+                "properties": {
+                    "text": "Table 3"
+                }
+            },
+            {
+                "name": "albedo",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "model",
+                "label": "Model",
+                "properties": {}
+            },
+            {
+                "name": "land_albedo",
+                "label": "Property",
+                "properties": {
+                    "text": "Land Albedo"
+                }
+            },
+            {
+                "name": "monthly_climatology",
+                "label": "Concept",
+                "properties": {
+                    "text": "Monthly Climatology"
+                }
+            },
+            {
+                "name": "modis_satellite_instrument",
+                "label": "Concept",
+                "properties": {
+                    "text": "MODIS Satellite Instrument"
+                }
+            },
+            {
+                "name": "aluvp",
+                "label": "Parameter",
+                "properties": {
+                    "text": "UV-visible surface ALbedo for direct (Parallel) radiation"
+                }
+            },
+            {
+                "name": "aluvd",
+                "label": "Parameter",
+                "properties": {
+                    "text": "UV-visible surface ALbedo for Diffuse radiation"
+                }
+            },
+            {
+                "name": "alnip",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Near-Infrared surface ALbedo for direct (Parallel) radiation"
+                }
+            },
+            {
+                "name": "alnid",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Near-Infrared surface ALbedo for Diffuse radiation"
+                }
+            },
+            {
+                "name": "snow",
+                "label": "Concept",
+                "properties": {
+                    "text": "Snow"
+                }
+            },
+            {
+                "name": "jean-jacques_morcrette",
+                "label": "Person",
+                "properties": {}
+            },
+            {
+                "name": "ecmwf",
+                "label": "Model",
+                "properties": {
+                    "text": "ECMWF"
+                }
+            },
+            {
+                "name": "tsr",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Top net Solar Radiation"
+                }
+            },
+            {
+                "name": "tsrc",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Top net Solar Radiation for a Clear-sky atmosphere"
+                }
+            },
+            {
+                "name": "ttr",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Top net Thermal Radiation"
+                }
+            },
+            {
+                "name": "ttrc",
+                "label": "Parameter",
+                "properties": {
+                    "text": "Top net Thermal Radiation for a Clear-sky atmosphere"
+                }
+            },
+            {
+                "name": "radiation_fluxes",
+                "label": "Property",
+                "properties": {
+                    "text": "Radiation Fluxes"
+                }
+            },
+            {
+                "name": "albedo_components",
+                "label": "Property",
+                "properties": {
+                    "text": "Albedo Components"
+                }
+            },
+            {
+                "name": "surface_albedo",
+                "label": "Property",
+                "properties": {
+                    "text": "Surface Albedo"
+                }
+            },
+            {
+                "name": "physical_fluxes",
+                "label": "Quantity",
+                "properties": {
+                    "nature": "accumulated"
+                }
+            },
+            {
+                "name": "daily_mean_flux",
+                "label": "Quantity",
+                "properties": {
+                    "units": "Measure in Wm^2"
+                }
+            },
+            {
+                "name": "clear-sky_quantities",
+                "label": "Quantity",
+                "properties": {}
+            },
+            {
+                "name": "atmospheric_conditions",
+                "label": "Condition",
+                "properties": {
+                    "parameters": [
+                        "temperature",
+                        "humidity",
+                        "ozone",
+                        "trace gases",
+                        "aerosol"
+                    ]
+                }
+            },
+            {
+                "name": "atmosphere",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "clouds",
+                "label": "Physical Quantity",
+                "properties": {}
+            },
+            {
+                "name": "solar_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "wavelength_range": "0.2-4 \u00b5m",
+                    "wavenumber_range": "50,000-2600 cm^-1"
+                }
+            },
+            {
+                "name": "short-wave_radiation",
+                "label": "Radiation",
+                "properties": {}
+            },
+            {
+                "name": "thermal_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as terrestrial or long-wave radiation"
+                }
+            },
+            {
+                "name": "terrestrial_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as thermal or long-wave radiation"
+                }
+            },
+            {
+                "name": "long-wave_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as thermal or terrestrial radiation"
+                }
+            },
+            {
+                "name": "Sun",
+                "label": "Cosmos Object",
+                "properties": {}
+            },
+            {
+                "name": "planet_surface",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "gases",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "particles",
+                "label": "Planetary Object",
+                "properties": {}
+            }
+        ],
+        "Chunk": [
+            {
+                "name": "18490___00",
+                "label": "Chunk",
+                "properties": {
+                    "content": "Radiation Quantities in the ECMWF model and MARS\nContact: Robin Hogan (r.j.hogan@ecmwf.int)\nThis document is correct up to and including cycle 41R1\nAbstract\nRadiation quantities are frequently required by users of ECMWF data, but there is often confusion about\nthe interpretation of the variables available in the ECMWF Meteorological Archiving System (MARS). This\ndocument describes what is presently archived by the operational model, illustrates the various \ufb01elds obtainable\nvia a MARS retrieval and explains how they should be interpreted.\n1\nConventions\nThe following conventions are employed in the storage of \ufb02uxes by the ECMWF model:\n1. Archived \ufb02uxes are either downward or net. Energy entering the Earth\u2019s atmosphere-surface system is taken\nas a positive quantity, and therefore downward \ufb02uxes are positive and net \ufb02ux refers to the downward \ufb02ux\nminus the upward \ufb02ux. To obtain the upward \ufb02ux (Fup) from the downward \ufb02ux (Fdn) and net \ufb02ux (Fnet),\nuse Fup = Fdn \u2212Fnet."
+                }
+            },
+            {
+                "name": "18490___01",
+                "label": "Chunk",
+                "properties": {
+                    "content": "2. Physical \ufb02uxes archived by the ECMWF model are accumulated since the start of the relevant forecast, and\ntherefore in units of J m\u22122 (or W m\u22122 s). Thus, a daily mean (in W m\u22122) is obtained by retrieving the\naccumulated \ufb02uxes at t1 = t and t2 = t + 24 hours (where t is the time of the start of the average), taking the\ndifference and dividing by 86400, the number of seconds in a day.\n3. Clear-sky quantities are computed for exactly the same atmospheric conditions of temperature, humidity,\nozone, trace gases and aerosol, but assuming that the clouds are not there.\n4. Solar or short-wave refers to radiation emitted by the Sun, then scattered, absorbed or transmitted by the\natmosphere and re\ufb02ected or absorbed by the surface. It corresponds roughly to the 0.2\u20134 \u00b5m or 50,000\u20132600\ncm\u22121 part of the spectrum. Thermal, terrestrial or long-wave refers to radiation emitted and absorbed by\nthe surface or by gases, clouds and particles within the atmosphere."
+                }
+            },
+            {
+                "name": "18490___02",
+                "label": "Chunk",
+                "properties": {
+                    "content": "It corresponds roughly to the 4\u2013100 \u00b5m\nor 2600\u201310 cm\u22121 part of the spectrum. Note that there is some spectral overlap between the two, which is\nfully represented in the model, so the division between solar and thermal radiation should not be thought of\nas simply radiation with a wavelength shorter or longer than 4 \u00b5m, but rather as radiation originating from\nthe sun versus originating from emission by the Earth or its atmosphere.\n2\nTop-of-atmosphere \ufb02uxes\nTo help explain the surface and top-of-atmosphere (TOA) accumulated \ufb02uxes that are archived, Fig. 1 depicts the\nradiative energy \ufb02ows in the atmosphere. The \ufb01elds available at TOA, corresponding to the 0 hPa pressure level,\nare listed in Table 1, with the symbols corresponding to those shown in Fig. 1.\nA frequently required quantity from global models is Outgoing Long-wave Radiation (OLR), represented in\nFig. 1 by Lup\nTOA. The ECMWF model assumes that there is no incoming TOA radiation from any other source than\nthe sun, i.e."
+                }
+            },
+            {
+                "name": "18490___03",
+                "label": "Chunk",
+                "properties": {
+                    "content": "The ECMWF model assumes that there is no incoming TOA radiation from any other source than\nthe sun, i.e. Ldn\nTOA = 0 (this neglects the 2.73 K cosmic microwave background, which amounts to only 3 \u00b5W m\u22122).\nTherefore, the net long-wave radiation at TOA (named \u201cTTR\u201d in MARS) is equal to the negative of outgoing\nlong-wave radiation, so OLR = \u2212TTR.\nFigure 1: Schematic of the short-wave and long-wave radiative energy \ufb02ows in the atmosphere. The symbols for upwelling\nand downwelling \ufb02uxes at the top-of-atmosphere (TOA) and surface are used in Tables 1 and 2 to explain what is available\nfrom MARS.\n\n*Denotes a \ufb01eld available from the reanalysis but not from the operational system.\n3\nSurface \ufb02uxes\nThe accumulated \ufb02uxes available at the surface are shown in Table 2. There are several points to note:\n\u2022 All quantities are at ground level in the model, according to the model\u2019s representation of orography."
+                }
+            },
+            {
+                "name": "18490___04",
+                "label": "Chunk",
+                "properties": {
+                    "content": "Some\nusers ask if this is somehow corrected to be the value that would be observed at mean sea level if the Earth\nhad no orography. The answer is no.\n\u2022 To a reasonably good approximation, SSRD can be considered to be what would be measured by a global\npyranometer at the surface, and SSRD\u2212FDIR can be considered to be what would be measured by a diffuse\npyranometer. But be aware that the direct (i.e. unscattered) solar radiation in the model actually includes\nradiation that has been scattered by cloud particles by a fraction of a degree, since the scattering pattern of\ncloud particles has a narrow peak in the forward direction and it is most ef\ufb01cient and accurate to treat this\nradiation as if it had not been scattered at all. A further point is that the diffuse downwelling radiation from\nthe model includes diffuse radiation in the direction of the sun, which would be excluded from the radiation\nmeasured by a diffuse pyranometer that uses a shadow band to exclude direct radiation."
+                }
+            },
+            {
+                "name": "18490___05",
+                "label": "Chunk",
+                "properties": {
+                    "content": "We assume that users\nwho wish to compare direct and diffuse radiation measurements to model output are aware of the correction\nprocedures that should be made to diffuse radiation measurements to account for this effect.\n\u2022 All \ufb02uxes, including direct \ufb02uxes, at the surface and top-of-atmosphere represent the energy (in J) that has\npassed through a square-metre of a \ufb02at horizontal plane since the start of the forecast. This differs from\n2\n\n\nthe \ufb02ux reported by a pyrheliometer pointing directly at the sun, which measures energy into a plane ori-\nented perpendicular to the incoming unscattered solar radiation. To convert an instantaneous pyrheliometer\n\ufb02ux to the \ufb02ux into a \ufb02at horizontal plane, multiply it by cos(\u03b80), where \u03b80 is the solar zenith angle. Con-\nverting direct \ufb02uxes in the model to the pyranometer convention is not straightforward since the \ufb02uxes are\naccumulated over a period during which the solar zenith angle changes.\n4\nAlbedo quantities\nThe albedos available from MARS are listed in Table 3."
+                }
+            },
+            {
+                "name": "18490___06",
+                "label": "Chunk",
+                "properties": {
+                    "content": "4\nAlbedo quantities\nThe albedos available from MARS are listed in Table 3. To interpret them we \ufb01rst discuss brie\ufb02y how albedo is\ncalculated in the model (valid since model cycle CY32R2). The basic land albedo is calculated from a monthly\nclimatology derived from the MODIS satellite instrument, which has four components: albedos are speci\ufb01ed\nseparately for wavelengths shorter than and longer than 0.7 \u00b5m, and separately for direct and diffuse radiation.\nThe quantities ALUVP, ALUVD, ALNIP and ALNID in Table 3 are the four components of the land-surface\nalbedo interpolated to the start time of the forecast from the monthly means bracketing this time in the MODIS\nclimatology. They do not include the effects of snow, and are only available at the start of the forecast.\nAt each timestep within the model, these four albedos are modi\ufb01ed to add the contribution from lying snow,\nwhich is a dynamic variable in the model."
+                }
+            },
+            {
+                "name": "18490___07",
+                "label": "Chunk",
+                "properties": {
+                    "content": "They are then used by the radiation scheme, and the fact that four\nvariables are used means that the total amount of radiation re\ufb02ected from the surface will depend on cloud cover\n(which affects the ratio between direct and diffuse surface radiation), trace gas concentrations (which affects the\nratio between surface downwelling radiation with wavelengths greater than and less than 0.7 \u00b5m) and solar zenith\nangle (which affects both).\nAt each timestep an additional instantaneous broadband albedo is computed for diagnostic purposes only,\nand stored in MARS as \u201cFAL\u201d, as indicated in Table 3. This variable includes the contribution from snow and sea-\nice, but is computed as a weighted average of the diffuse albedos in the UV-visible and the near-infrared, weighted\naccording to the \ufb01xed top-of-atmosphere spectral distribution of incoming solar radiation rather than the variable\n\nsurface spectral distribution. The neglect of the difference between diffuse and direct radiation, and the use of a\n\ufb01xed spectral weighting, means that FAL differs somewhat from the true broadband all-sky albedo in the model,\nde\ufb01ned as\n\u03b1 = Sup\nsurf/Sdn\nsurf."
+                }
+            },
+            {
+                "name": "18490___08",
+                "label": "Chunk",
+                "properties": {
+                    "content": "(1)\nNoticeable differences between FAL and \u03b1 occur particularly over snow and ice where there is a large difference\nin albedo between the two spectral regions (see Fig. 7).\nUsers who wish to know \u03b1 as de\ufb01ned by Eq. 1 are advised to calculate it directly from the archived surface\n\ufb02uxes. From Eq. 1 and the de\ufb01nitions in Table 2, albedo is given by \u03b1 = 1 \u2212SSR/SSRD. Since SSR and SSRD\nare accumulated, this will give the effective albedo averaged over the duration of the forecast up to that point in\ntime. Of course, it will only produce reliable results over points that have been sunlit at some point during the\nforecast up to that point, i.e. SSRD > 0.\nUsers who wish to separate the clear-sky surface net shortwave \ufb02ux, SSRC, into upwelling and downwelling\ncomponents can do this to a reasonable degree of accuracy using either FAL or \u03b1, but should note that neither would\nreproduce perfectly what was in the clear-sky part of the original radiation calculation."
+                }
+            },
+            {
+                "name": "18490___09",
+                "label": "Chunk",
+                "properties": {
+                    "content": "This is because the absence\nof clouds would lead to a greater fraction of the downwelling surface radiation being direct rather than diffuse,\nthereby changing the weighting between the direct and diffuse components of albedo.\n5\nOther variables\nName\nMARS code\nSUND\nSUNshine Duration\n189.128\nSunshine duration archived from the ECMWF model is de\ufb01ned as the number of seconds since the start of the\nforecast that the direct downwelling solar \ufb02ux into a horizontal plane at the surface exceeded 120 W m\u22122. It is\ntherefore an accumulated \ufb01eld. Unfortunately this differs from the of\ufb01cial de\ufb01nition of sunshine duration, which\nis the same but for direct solar \ufb02ux into a plane perpendicular to the sun. This \ufb02ux is larger than the \ufb02ux into\na horizontal plane by a factor of 1/ cos(\u03b80) (where \u03b80 is the solar zenith angle), so the sunshine duration from\nECMWF may be underestimated. Therefore it is recommended that this variable is not used."
+                }
+            },
+            {
+                "name": "18490___10",
+                "label": "Chunk",
+                "properties": {
+                    "content": "Therefore it is recommended that this variable is not used.\n6\nExamples\nIn the following pages, all radiation \ufb02uxes quantities are presented averaged over the \ufb01rst 24-hours of the opera-\ntional forecast started at 20120215 12 UTC, therefore as averages over the period 20120215 12 UTC to 20120216\n12 UTC. The albedo components (Fig. 7) are given at the start of the forecast, 20120215 12 UTC, whereas the\nsurface albedo of Fig. 6 is the value 24 hours into the forecast, thus corresponding to 20120216 12 UTC. Please\nalso note that all albedo components are archived as non-dimensional within the interval 0\u20131, but are presented in\npercent in Figures 6 and 7.\nAcknowledgements\nThis document was written by Jean-Jacques Morcrette and Robin Hogan with contributions from other members\nof the Physical Aspects and User Support Sections at ECMWF.\nFigure 2: TSR, TSRC, TTR and TTRC averaged over the \ufb01rst 24 hours of the forecast started on 20120215 12 UTC (W m\u22122)."
+                }
+            },
+            {
+                "name": "18490___11",
+                "label": "Chunk",
+                "properties": {
+                    "content": "Figure 3: SSR, SSRC and SSRD averaged over the \ufb01rst 24 hours of the forecast started on 20120215 12 UTC (W m\u22122).\nFigure 4: FDIR and CDIR averaged over the \ufb01rst 24 hours of the forecast started on 20120215 12 UTC (W m\u22122).\nFigure 5: STR, STRC and STRD averaged over the \ufb01rst 24 hours of the forecast started on 20120215 12 UTC (W m\u22122).\nFigure 6: FAL, the forecast albedo, after 24 hours for the forecast started on 20120215 12 UTC (%).\nFigure 7: ALUVP, ALUVD, ALNIP and ALNID as used in the forecast started on 20120215 12 UTC (%).\n9"
+                }
+            }
+        ]
+    },
+    "relationships": [
+        {
+            "start": "radiation_quantities",
+            "end": "ecmwf_model",
+            "type": "isUtilizedBy",
+            "properties": {}
+        },
+        {
+            "start": "radiation_quantities",
+            "end": "mars",
+            "type": "isUtilizedBy",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_model",
+            "end": "robin_hogan",
+            "type": "hasContactPerson",
+            "properties": {}
+        },
+        {
+            "start": "radiation_quantities",
+            "end": "18490___00",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "ecmwf_model",
+            "end": "18490___00",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "mars",
+            "end": "18490___00",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "robin_hogan",
+            "end": "18490___00",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "4_100_um",
+            "end": "2600_10_cm-1",
+            "type": "hasRelationship",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "top_of_atmosphere_fluxes",
+            "type": "hasRelationship",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "top_of_atmosphere_fluxes",
+            "type": "hasRelationship",
+            "properties": {}
+        },
+        {
+            "start": "outgoing_long_wave_radiation",
+            "end": "lup_toa",
+            "type": "hasRelationship",
+            "properties": {}
+        },
+        {
+            "start": "lup_toa",
+            "end": "ecmwf_model",
+            "type": "isAssumedBy",
+            "properties": {}
+        },
+        {
+            "start": "4_100_um",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "2600_10_cm-1",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "solar_radiation",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "top_of_atmosphere_fluxes",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "outgoing_long_wave_radiation",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "lup_toa",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "ecmwf_model",
+            "end": "18490___02",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "albedo_quantities",
+            "end": "mars",
+            "type": "hasLocation",
+            "properties": {}
+        },
+        {
+            "start": "albedo_quantities",
+            "end": "table_3",
+            "type": "hasReference",
+            "properties": {}
+        },
+        {
+            "start": "albedo_quantities",
+            "end": "albedo",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "model",
+            "end": "albedo_quantities",
+            "type": "hasConcept",
+            "properties": {}
+        },
+        {
+            "start": "land_albedo",
+            "end": "monthly_climatology",
+            "type": "isDerivedFrom",
+            "properties": {}
+        },
+        {
+            "start": "monthly_climatology",
+            "end": "modis_satellite_instrument",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "aluvp",
+            "end": "land_albedo",
+            "type": "isComponentOf",
+            "properties": {}
+        },
+        {
+            "start": "aluvd",
+            "end": "land_albedo",
+            "type": "isComponentOf",
+            "properties": {}
+        },
+        {
+            "start": "alnip",
+            "end": "land_albedo",
+            "type": "isComponentOf",
+            "properties": {}
+        },
+        {
+            "start": "alnid",
+            "end": "land_albedo",
+            "type": "isComponentOf",
+            "properties": {}
+        },
+        {
+            "start": "snow",
+            "end": "model",
+            "type": "isDynamicVariableIn",
+            "properties": {}
+        },
+        {
+            "start": "albedo_quantities",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "mars",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "table_3",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "albedo",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "model",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "land_albedo",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "monthly_climatology",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "modis_satellite_instrument",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "aluvp",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "aluvd",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "alnip",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "alnid",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "snow",
+            "end": "18490___06",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "radiation_fluxes",
+            "end": "tsr",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "radiation_fluxes",
+            "end": "tsrc",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "radiation_fluxes",
+            "end": "ttr",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "radiation_fluxes",
+            "end": "ttrc",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "albedo_components",
+            "end": "surface_albedo",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "jean-jacques_morcrette",
+            "end": "radiation_fluxes",
+            "type": "contributesTo",
+            "properties": {}
+        },
+        {
+            "start": "robin_hogan",
+            "end": "radiation_fluxes",
+            "type": "contributesTo",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf",
+            "end": "radiation_fluxes",
+            "type": "hasSection",
+            "properties": {}
+        },
+        {
+            "start": "jean-jacques_morcrette",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "robin_hogan",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "ecmwf",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "tsr",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "tsrc",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "ttr",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "ttrc",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "radiation_fluxes",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "albedo_components",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "surface_albedo",
+            "end": "18490___10",
+            "type": "APPEAR_IN",
+            "properties": null
+        },
+        {
+            "start": "physical_fluxes",
+            "end": "ecmwf_model",
+            "type": "ARCHIVED_BY",
+            "properties": {}
+        },
+        {
+            "start": "Physical fluxes",
+            "end": "Accumulated fluxes",
+            "type": "SYNONYM",
+            "properties": {}
+        },
+        {
+            "start": "Accumulated fluxes",
+            "end": "Daily mean flux",
+            "type": "COMPUTED_FROM",
+            "properties": {}
+        },
+        {
+            "start": "clear-sky_quantities",
+            "end": "atmospheric_conditions",
+            "type": "COMPUTED_FROM",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "short-wave_radiation",
+            "type": "SYNONYM",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "Sun",
+            "type": "EMITTED_BY",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "atmosphere",
+            "type": "SCATTER_BY",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "atmosphere",
+            "type": "ABSORBED_BY",
+            "properties": {}
+        },
+        {
+            "start": "solar_radiation",
+            "end": "atmosphere",
+            "type": "SCATTER_BY",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "terrestrial_radiation",
+            "type": "SYNONYM",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "Long-wave radiation",
+            "type": "SYNONYM",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "Long-wave radiation",
+            "type": "SYNONYM",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "planet_surface",
+            "type": "ABSORBED_BY",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "gases",
+            "type": "ABSORBED_BY",
+            "properties": {}
+        },
+        {
+            "start": "thermal_radiation",
+            "end": "gases",
+            "type": "ABSORBED_BY",
+            "properties": {}
+        },
+        {
+            "start": "18490___00",
+            "end": "18490___01",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___01",
+            "end": "18490___02",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___02",
+            "end": "18490___03",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___03",
+            "end": "18490___04",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___04",
+            "end": "18490___05",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___05",
+            "end": "18490___06",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___06",
+            "end": "18490___07",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___07",
+            "end": "18490___08",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___08",
+            "end": "18490___09",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___09",
+            "end": "18490___10",
+            "type": "NEXT_TO",
+            "properties": {}
+        },
+        {
+            "start": "18490___10",
+            "end": "18490___11",
+            "type": "NEXT_TO",
+            "properties": {}
+        }
+    ]
+}
