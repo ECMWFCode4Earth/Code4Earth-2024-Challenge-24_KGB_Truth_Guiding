@@ -1,9 +1,15 @@
 import json
-from typing import TypedDict, Union, Dict, List
+from typing import TypedDict, Dict, List
 import re
+import numpy as np
+import sys
+import os
+
 
 # This is for using OpenAI, might change it later to open-source software
-from langchain_openai import ChatOpenAI
+
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
 from langchain_core.messages import HumanMessage
 # from dotenv import load_dotenv
 # _ = load_dotenv()
@@ -14,7 +20,8 @@ from .agent import Agent
 
 
 from .entitydb import Entity, EntityDB
-from .text_chunk_entitydb import Chunk
+
+# from .text_chunk_entitydb import Chunk
 from .llm_wrapper import Ollama
 from .prompt_processor import PromptProcessor
 from llama_index.core.node_parser import SentenceSplitter
@@ -28,6 +35,11 @@ logging.basicConfig(
 )
 
 
+current_path = os.path.dirname(os.path.abspath(__file__))
+parent_path = os.path.dirname(current_path)
+sys.path.append(parent_path)
+
+
 class Relationship(TypedDict):
     start: str
     end: str
@@ -36,7 +48,7 @@ class Relationship(TypedDict):
 
 
 class KnowledgeGraph(TypedDict):
-    nodes: Dict[str, List[Union[Entity, Chunk]]]
+    nodes: Dict[str, List[Entity]]
     relationships: List[Relationship]
 
 
@@ -112,7 +124,7 @@ class KGGenerator:
             # )
             # texts = text_splitter.create_documents([content])
 
-            node_parser = SentenceSplitter(chunk_size=256, chunk_overlap=28)
+            node_parser = SentenceSplitter(chunk_size=256, chunk_overlap=32)
 
             texts = node_parser.get_nodes_from_documents(
                 [Document(text=content)], show_progress=False
@@ -166,10 +178,26 @@ class KGGenerator:
             json.dump(self.kg, outfile, indent=4)
 
 
+def select_examples(query, top_k=3):
+    lookup_file = "/home/user/large-disk/viet/Code4Earth-2024-Challenge-24/unresolved_by_llm/unresolved.json"
+    embeddings = OpenAIEmbeddings()
+    with open(lookup_file) as file:
+        lookup_table = json.load(file)
+    scores = []
+    for text, extracted_info in lookup_table.items():
+        embedded_text = embeddings.embed_query(text)
+        embedded_query = embeddings.embed_query(query)
+        cosine_similarity = np.array(embedded_text) @ np.array(embedded_query).T
+        scores.append((cosine_similarity, text, extracted_info))
+    logging.info(len(scores))
+    return sorted(scores, key=lambda x: x[1], reverse=True)[:top_k]
+
+
 class KGGeneratorWithAgent(KGGenerator):
-    def __init__(self):
+    def __init__(self, for_agent=True):
         self.llm = ChatOpenAI()
-        self.prompt_processor = PromptProcessor(for_agent=True)
+        self.for_agent = for_agent
+        self.prompt_processor = PromptProcessor(for_agent)
         self.kg: KnowledgeGraph = {
             "nodes": {"Entity": [], "Chunk": []},
             "relationships": [],
@@ -177,24 +205,55 @@ class KGGeneratorWithAgent(KGGenerator):
         self.entitydb = EntityDB()
 
     def from_text(self, text, id, labels=None):
+        examples = select_examples(text.get_content())
+        list_of_extracted_info_examples = []
+        for example in examples:
+            list_of_extracted_info_examples.append(example[1:])
+
+        template_for_example = """
+            Input Data:
+                Text: {text}
+                Type: [Process, Property]
+            Extracted information:
+                Nodes: {nodes}
+                Relationships: {relationships}
+            \n
+        """
+
+        examples = ""
+        for text, info in list_of_extracted_info_examples:
+            formatted_example = template_for_example.format(
+                text=text,
+                nodes=str(info["Nodes"]),
+                relationships=str(info["Relationships"]),
+            )
+
+            examples += formatted_example
+
         if not isinstance(text, str):
             text = text.get_content()
         assert isinstance(text, str)
         kg = {"nodes": {}, "relationships": []}
 
-        prompt_messages = self.prompt_processor.create_prompt(text, labels)
+        prompt_messages = self.prompt_processor.create_prompt(text, labels, examples)
 
+        ai_message = ""
         # llm_ans = self.llm.run(prompt_messages)
         system_message = prompt_messages[0]["content"]
+        if self.for_agent:
+            tools = [Save()]
+            abot = Agent(self.llm, tools, system=system_message)
+            messages = [HumanMessage(content=prompt_messages[1]["content"])]
+            llm_ans = abot.graph.invoke({"messages": messages})
+            ai_message = llm_ans["messages"][1].content
 
-        tools = [Save()]
-        abot = Agent(self.llm, tools, system=system_message)
-        messages = [HumanMessage(content=prompt_messages[1]["content"])]
-        llm_ans = abot.graph.invoke({"messages": messages})
+        else:
+            llm = ChatOpenAI()
+            llm_ans = llm.invoke(prompt_messages)
+            ai_message = llm_ans.content
         # logging.info("*********** Inside generator.py ************")
         # logging.info(llm_ans["messages"][1].content)
 
-        ai_message = llm_ans["messages"][1].content
         kg_temp = self.prompt_processor.process_answer(ai_message)
 
         kg["nodes"]["Entity"] = kg_temp["nodes"]
@@ -210,3 +269,14 @@ class KGGeneratorWithAgent(KGGenerator):
         ]
 
         return kg
+
+
+# if __name__ == "__main__":
+#     examples = select_examples(text)
+#     list_of_extracted_info_examples = []
+#     print(examples[0][1])
+#     print(examples[0][2])
+#     for example in examples:
+#         list_of_extracted_info_examples.append(example[1:])
+
+#     print(list_of_extracted_info_examples)

@@ -51,7 +51,6 @@ class PromptProcessor:
             Input Data:
                 Text: Temperature measurements taken from the Pacific Ocean show an increase due to global warming.
                 Types: [Process, Property]
-
             Thought: I'm not sure how to extract information from this data.
             Action: Call a function to save unresolved chunk into a file and a human will resolve it later.
             Action input:
@@ -68,7 +67,9 @@ class PromptProcessor:
                 - Use provided types when possible; create new ones if necessary.
                 - Entity IDs must be uppercase in the first character of each word, no special characters or spaces, with words separated by "_".
                 - NO YAPPING before or after your answers. DO NOT add any comment or notes in your answers.
+                - You give receive some example form the user. Please answer based on these examples
                 - Format your answers to strictly follow the rules in the example below.
+
             Example:
                 Input Data:
                     Text: Temperature measurements taken from the Pacific Ocean show an increase due to global warming.
@@ -78,15 +79,18 @@ class PromptProcessor:
                     Relationships: ["temperature_measurements", "hasLocation", "pacific_ocean", {}], ["temperature_measurements", "hasTrend", "increase", {}], ["increase", "isCausedBy", "global_warming", {}]            """
 
         self.user_prompt_template = PromptTemplate.from_template(
-            "Data: {data}\nTypes: [{labels}]"
+            "Data: {data}\nTypes: [{labels}]\nExamples: {examples}"
         )
 
-    def create_prompt(self, text: str, labels: str | None = None):
+    def create_prompt(
+        self, text: str, labels: str | None = None, examples: list | None = None
+    ):
         if labels is None:
             labels = ""
         user_message = self.user_prompt_template.invoke(
-            {"data": text, "labels": labels}
+            {"data": text, "labels": labels, "examples": examples}
         ).to_string()
+
         messages = [
             {"role": "system", "content": self.system_prompt},
             {"role": "user", "content": user_message},

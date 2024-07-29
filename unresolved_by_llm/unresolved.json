@@ -382,7 +382,7 @@
             }
         ]
     },
-    "Surface fluxes The accumulated fluxes available at the surface are shown in Table 2. There are several points to note: \u2022 All quantities are at ground level in the model, according to the model\u2019s representation of orography.": {
+    "Possible explanation of the compensating effect in the ERA-20C ensemble and ERA-20CM model integration regarding monthly variability and ensemble spreads.": {
         "Nodes": [
             {
                 "name": "",
@@ -399,41 +399,7 @@
             }
         ]
     },
-    "At each timestep an additional instantaneous broadband albedo is computed for diagnostic purposes only, and stored in MARS as \u201cFAL\u201d, as indicated in Table 3. This variable includes the contribution from snow and sea-ice but is computed as a weighted average of the diffuse albedos in the UV-visible and the near-infrared, weighted according to the fixed top-of-atmosphere spectral distribution of incoming solar radiation rather than the variable surface spectral distribution. The neglect of the difference between diffuse and direct radiation, and the use of a fixed spectral weighting means that FAL differs somewhat from the true broadband all-sky albedo in the model, defined as \u03b1 = Supsurf/Sdnsurf.": {
-        "Nodes": [
-            {
-                "name": "",
-                "label": "",
-                "properties": {}
-            }
-        ],
-        "Relationships": [
-            {
-                "start": "",
-                "end": "",
-                "type": "",
-                "properties": {}
-            }
-        ]
-    },
-    "We assume that users who wish to compare direct and diffuse radiation measurements to model output are aware of the correction procedures that should be made to diffuse radiation measurements to account for this effect.\n\u2022 All fluxes, including direct fluxes, at the surface and top-of-atmosphere represent the energy (in J) that has passed through a square meter of a flat horizontal plane since the start of the forecast. This differs from the flux reported by a pyrheliometer pointing directly at the sun, which measures energy into a plane oriented perpendicular to the incoming unscattered solar radiation. To convert an instantaneous pyrheliometer flux to the flux into a flat horizontal plane, multiply it by cos(\u03b80), where \u03b80 is the solar zenith angle. Converting direct fluxes in the model to the pyranometer convention is not straightforward since the fluxes are accumulated over a period during which the solar zenith angle changes.\nAlbedo quantities\nThe albedos available from MARS are listed in Table 3.": {
-        "Nodes": [
-            {
-                "name": "",
-                "label": "",
-                "properties": {}
-            }
-        ],
-        "Relationships": [
-            {
-                "start": "",
-                "end": "",
-                "type": "",
-                "properties": {}
-            }
-        ]
-    },
-    "Some users ask if this is somehow corrected to be the value that would be observed at mean sea level if the Earth had no orography. The answer is no.\nTo a reasonably good approximation, SSRD can be considered to be what would be measured by a global pyranometer at the surface, and SSRD\u2212FDIR can be considered to be what would be measured by a diffuse pyranometer. But be aware that the direct (i.e. unscattered) solar radiation in the model actually includes radiation that has been scattered by cloud particles by a fraction of a degree, since the scattering pattern of cloud particles has a narrow peak in the forward direction and it is most ef\ufb01cient and accurate to treat this radiation as if it had not been scattered at all. A further point is that the diffuse downwelling radiation from the model includes diffuse radiation in the direction of the sun, which would be excluded from the radiation measured by a diffuse pyranometer that uses a shadow band to exclude direct radiation.": {
+    "Why the increase in intra-monthly variability compensates quantitatively the decrease in ensemble spread of two-metre temperatures remains unexplained, even if one would qualitatively expect such result from the assimilation of synoptic weather observations.": {
         "Nodes": [
             {
                 "name": "",
