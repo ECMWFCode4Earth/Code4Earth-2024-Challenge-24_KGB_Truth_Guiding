@@ -1,0 +1,24 @@
+{
+    "They are then used by the radiation scheme, and the fact that four variables are used means that the total amount of radiation re\ufb02ected from the surface will depend on cloud cover (which affects the ratio between direct and diffuse surface radiation), trace gas concentrations (which affects the ratio between surface downwelling radiation with wavelengths greater than and less than 0.7 \u00b5m) and solar zenith angle (which affects both). At each timestep an additional instantaneous broadband albedo is computed for diagnostic purposes only, and stored in MARS as \nFAL\n, as indicated in Table 3. This variable includes the contribution from snow and sea- ice, but is computed as a weighted average of the diffuse albedos in the UV-visible and the near-infrared, weighted according to the \ufb01xed top-of-atmosphere spectral distribution of incoming solar radiation rather than the variable\n\nsurface spectral distribution. The neglect of the difference between diffuse and direct radiation, and the use of a\n\ufb01xed spectral weighting, means that FAL differs somewhat from the true broadband all-sky albedo in the model, de\ufb01ned as\n\u03b1 = Sup\nsurf/Sdn\nsurf.": {
+        "Nodes": [
+            {
+                "name": "radiation_scheme",
+                "label": "system",
+                "properties": {}
+            },
+            {
+                "name": "total_amount_of_radiation",
+                "label": "quantity",
+                "property": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "radiation_scheme",
+                "end": "total_amount_of_radiation",
+                "type": "computes",
+                "properties": {}
+            }
+        ]
+    }
+}

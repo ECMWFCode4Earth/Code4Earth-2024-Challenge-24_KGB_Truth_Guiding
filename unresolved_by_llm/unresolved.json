@@ -1,0 +1,453 @@
+{
+    "Physical fluxes archived by the ECMWF model are accumulated since the start of the relevant forecast, and therefore in units of J m^2 (or W m^2 s). Thus, a daily mean (in W m^2) is obtained by retrieving the accumulated fluxes at t1 = t and t2 = t + 24 hours (where t is the time of the start of the average), taking the difference and dividing by 86400, the number of seconds in a day.\nClear-sky quantities are computed for exactly the same atmospheric conditions of temperature, humidity, ozone, trace gases and aerosol, but assuming that the clouds are not there.\nSolar or short-wave refers to radiation emitted by the Sun, then scattered, absorbed or transmitted by the atmosphere and re\ufb02ected or absorbed by the surface. It corresponds roughly to the 0.2-4 \u00b5m or 50,000-2600 cm\u22121 part of the spectrum. Thermal, terrestrial or long-wave refers to radiation emitted and absorbed by the surface or by gases, clouds and particles within the atmosphere.": {
+        "Nodes": [
+            {
+                "name": "physical_fluxes",
+                "label": "Quantity",
+                "properties": {
+                    "nature": "accumulated"
+                }
+            },
+            {
+                "name": "ecmwf_model",
+                "label": "Model",
+                "properties": {}
+            },
+            {
+                "name": "daily_mean_flux",
+                "label": "Quantity",
+                "properties": {
+                    "units": "Measure in Wm^2"
+                }
+            },
+            {
+                "name": "clear-sky_quantities",
+                "label": "Quantity",
+                "properties": {}
+            },
+            {
+                "name": "atmospheric_conditions",
+                "label": "Condition",
+                "properties": {
+                    "parameters": [
+                        "temperature",
+                        "humidity",
+                        "ozone",
+                        "trace gases",
+                        "aerosol"
+                    ]
+                }
+            },
+            {
+                "name": "atmosphere",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "clouds",
+                "label": "Physical Quantity",
+                "properties": {}
+            },
+            {
+                "name": "solar_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "wavelength_range": "0.2-4 \u00b5m",
+                    "wavenumber_range": "50,000-2600 cm^-1"
+                }
+            },
+            {
+                "name": "short-wave_radiation",
+                "label": "Radiation",
+                "properties": {}
+            },
+            {
+                "name": "thermal_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as terrestrial or long-wave radiation"
+                }
+            },
+            {
+                "name": "terrestrial_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as thermal or long-wave radiation"
+                }
+            },
+            {
+                "name": "long-wave_radiation",
+                "label": "Radiation",
+                "properties": {
+                    "description": "Also known as thermal or terrestrial radiation"
+                }
+            },
+            {
+                "name": "Sun",
+                "label": "Cosmos Object",
+                "properties": {}
+            },
+            {
+                "name": "planet_surface",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "gases",
+                "label": "Planetary Object",
+                "properties": {}
+            },
+            {
+                "name": "particles",
+                "label": "Planetary Object",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "physical_fluxes",
+                "end": "ecmwf_model",
+                "type": "ARCHIVED_BY",
+                "properties": {}
+            },
+            {
+                "start": "Physical fluxes",
+                "end": "Accumulated fluxes",
+                "type": "SYNONYM",
+                "properties": {}
+            },
+            {
+                "start": "Accumulated fluxes",
+                "end": "Daily mean flux",
+                "type": "COMPUTED_FROM",
+                "properties": {}
+            },
+            {
+                "start": "clear-sky_quantities",
+                "end": "atmospheric_conditions",
+                "type": "COMPUTED_FROM",
+                "properties": {}
+            },
+            {
+                "start": "solar_radiation",
+                "end": "short-wave_radiation",
+                "type": "SYNONYM",
+                "properties": {}
+            },
+            {
+                "start": "solar_radiation",
+                "end": "Sun",
+                "type": "EMITTED_BY",
+                "properties": {}
+            },
+            {
+                "start": "solar_radiation",
+                "end": "atmosphere",
+                "type": "SCATTER_BY",
+                "properties": {}
+            },
+            {
+                "start": "solar_radiation",
+                "end": "atmosphere",
+                "type": "ABSORBED_BY",
+                "properties": {}
+            },
+            {
+                "start": "solar_radiation",
+                "end": "atmosphere",
+                "type": "SCATTER_BY",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "terrestrial_radiation",
+                "type": "SYNONYM",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "Long-wave radiation",
+                "type": "SYNONYM",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "Long-wave radiation",
+                "type": "SYNONYM",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "planet_surface",
+                "type": "ABSORBED_BY",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "gases",
+                "type": "ABSORBED_BY",
+                "properties": {}
+            },
+            {
+                "start": "thermal_radiation",
+                "end": "gases",
+                "type": "ABSORBED_BY",
+                "properties": {}
+            }
+        ]
+    },
+    "The ECMWF model assumes that there is no incoming TOA radiation from any other source than the sun, i.e. Ldn TOA = 0 (this neglects the 2.73 K cosmic microwave background, which amounts to only 3 \u00b5W m\u22122). Therefore, the net long-wave radiation at TOA (named \u201cTTR\u201d in MARS) is equal to the negative of outgoing long-wave radiation, so OLR = \u2212TTR. Figure 1: Schematic of the short-wave and long-wave radiative energy \ufb02ows in the atmosphere. The symbols for upwelling and downwelling \ufb02uxes at the top-of-atmosphere (TOA) and surface are used in Tables 1 and 2 to explain what is available from MARS. *Denotes a \ufb01eld available from the reanalysis but not from the operational system. Surface \ufb02uxes The accumulated \ufb02uxes available at the surface are shown in Table 2. There are several points to note: \u2022 All quantities are at ground level in the model, according to the model\u2019s representation of orography. Types: [RadiationType, Spectrum, Phenomenon]": {
+        "Nodes": [
+            {
+                "name": "ecmwf_model",
+                "label": "model",
+                "properties": {}
+            },
+            {
+                "name": "toa_radiation",
+                "label": "radiation",
+                "properties": {
+                    "description": "top-of-atmosphere radiation"
+                }
+            },
+            {
+                "name": "sun",
+                "label": "source",
+                "properties": {}
+            },
+            {
+                "name": "ldn_toa",
+                "label": "radiation",
+                "properties": {
+                    "description": "incoming long-wave radiation at TOA"
+                }
+            },
+            {
+                "name": "cosmic_microwave_background",
+                "label": "radiation",
+                "properties": {
+                    "temperature": "2.73 K",
+                    "intensity": "3 \u00b5W m^-2"
+                }
+            },
+            {
+                "name": "net_long_wave_radiation_at_toa",
+                "label": "radiation",
+                "properties": {
+                    "abbreviation": "TTR"
+                }
+            },
+            {
+                "name": "outgoing_long_wave_radiation",
+                "label": "radiation",
+                "properties": {
+                    "abbreviation": "OLR"
+                }
+            },
+            {
+                "name": "mars",
+                "label": "system",
+                "properties": {}
+            },
+            {
+                "name": "short_wave_radiative_energy_flows",
+                "label": "energy_flow",
+                "properties": {}
+            },
+            {
+                "name": "long_wave_radiative_energy_flows",
+                "label": "energy_flow",
+                "properties": {}
+            },
+            {
+                "name": "upwelling_fluxes",
+                "label": "flux",
+                "properties": {}
+            },
+            {
+                "name": "downwelling_fluxes",
+                "label": "flux",
+                "properties": {}
+            },
+            {
+                "name": "surface_fluxes",
+                "label": "flux",
+                "properties": {}
+            },
+            {
+                "name": "ground_level",
+                "label": "level",
+                "properties": {}
+            },
+            {
+                "name": "orography_map",
+                "label": "representation",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "ecmwf_model",
+                "end": "toa_radiation",
+                "type": "assumes_no_incoming",
+                "properties": {}
+            },
+            {
+                "start": "toa_radiation",
+                "end": "sun",
+                "type": "source",
+                "properties": {}
+            },
+            {
+                "start": "ldn_toa",
+                "end": "sun",
+                "type": "incoming_from",
+                "properties": {}
+            },
+            {
+                "start": "ecmwf_model",
+                "end": "ldn_toa",
+                "type": "assumes_value_of",
+                "properties": {
+                    "value": "0"
+                }
+            },
+            {
+                "start": "cosmic_microwave_background",
+                "end": "toa_radiation",
+                "type": "neglected",
+                "properties": {
+                    "value": "3 \u00b5W m^-2"
+                }
+            },
+            {
+                "start": "net_long_wave_radiation_at_toa",
+                "end": "outgoing_long_wave_radiation",
+                "type": "equal_to_negative_of",
+                "properties": {}
+            },
+            {
+                "start": "outgoing_long_wave_radiation",
+                "end": "net_long_wave_radiation_at_toa",
+                "type": "negative_of",
+                "properties": {}
+            },
+            {
+                "start": "ttr",
+                "end": "net_long_wave_radiation_at_toa",
+                "type": "abbreviation_for",
+                "properties": {}
+            },
+            {
+                "start": "olr",
+                "end": "outgoing_long_wave_radiation",
+                "type": "abbreviation_for",
+                "properties": {}
+            },
+            {
+                "start": "short_wave_radiative_energy_flows",
+                "end": "long_wave_radiative_energy_flows",
+                "type": "schematic_of",
+                "properties": {}
+            },
+            {
+                "start": "upwelling_fluxes",
+                "end": "toa_radiation",
+                "type": "at",
+                "properties": {}
+            },
+            {
+                "start": "downwelling_fluxes",
+                "end": "toa_radiation",
+                "type": "at",
+                "properties": {}
+            },
+            {
+                "start": "surface_fluxes",
+                "end": "accumulated_fluxes",
+                "type": "shown_in",
+                "properties": {}
+            },
+            {
+                "start": "surface_fluxes",
+                "end": "ground_level",
+                "type": "available_at",
+                "properties": {}
+            },
+            {
+                "start": "ground_level",
+                "end": "orography",
+                "type": "represented_by",
+                "properties": {}
+            }
+        ]
+    },
+    "Surface fluxes The accumulated fluxes available at the surface are shown in Table 2. There are several points to note: \u2022 All quantities are at ground level in the model, according to the model\u2019s representation of orography.": {
+        "Nodes": [
+            {
+                "name": "",
+                "label": "",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "",
+                "end": "",
+                "type": "",
+                "properties": {}
+            }
+        ]
+    },
+    "At each timestep an additional instantaneous broadband albedo is computed for diagnostic purposes only, and stored in MARS as \u201cFAL\u201d, as indicated in Table 3. This variable includes the contribution from snow and sea-ice but is computed as a weighted average of the diffuse albedos in the UV-visible and the near-infrared, weighted according to the fixed top-of-atmosphere spectral distribution of incoming solar radiation rather than the variable surface spectral distribution. The neglect of the difference between diffuse and direct radiation, and the use of a fixed spectral weighting means that FAL differs somewhat from the true broadband all-sky albedo in the model, defined as \u03b1 = Supsurf/Sdnsurf.": {
+        "Nodes": [
+            {
+                "name": "",
+                "label": "",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "",
+                "end": "",
+                "type": "",
+                "properties": {}
+            }
+        ]
+    },
+    "We assume that users who wish to compare direct and diffuse radiation measurements to model output are aware of the correction procedures that should be made to diffuse radiation measurements to account for this effect.\n\u2022 All fluxes, including direct fluxes, at the surface and top-of-atmosphere represent the energy (in J) that has passed through a square meter of a flat horizontal plane since the start of the forecast. This differs from the flux reported by a pyrheliometer pointing directly at the sun, which measures energy into a plane oriented perpendicular to the incoming unscattered solar radiation. To convert an instantaneous pyrheliometer flux to the flux into a flat horizontal plane, multiply it by cos(\u03b80), where \u03b80 is the solar zenith angle. Converting direct fluxes in the model to the pyranometer convention is not straightforward since the fluxes are accumulated over a period during which the solar zenith angle changes.\nAlbedo quantities\nThe albedos available from MARS are listed in Table 3.": {
+        "Nodes": [
+            {
+                "name": "",
+                "label": "",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "",
+                "end": "",
+                "type": "",
+                "properties": {}
+            }
+        ]
+    },
+    "Some users ask if this is somehow corrected to be the value that would be observed at mean sea level if the Earth had no orography. The answer is no.\nTo a reasonably good approximation, SSRD can be considered to be what would be measured by a global pyranometer at the surface, and SSRD\u2212FDIR can be considered to be what would be measured by a diffuse pyranometer. But be aware that the direct (i.e. unscattered) solar radiation in the model actually includes radiation that has been scattered by cloud particles by a fraction of a degree, since the scattering pattern of cloud particles has a narrow peak in the forward direction and it is most ef\ufb01cient and accurate to treat this radiation as if it had not been scattered at all. A further point is that the diffuse downwelling radiation from the model includes diffuse radiation in the direction of the sun, which would be excluded from the radiation measured by a diffuse pyranometer that uses a shadow band to exclude direct radiation.": {
+        "Nodes": [
+            {
+                "name": "",
+                "label": "",
+                "properties": {}
+            }
+        ],
+        "Relationships": [
+            {
+                "start": "",
+                "end": "",
+                "type": "",
+                "properties": {}
+            }
+        ]
+    }
+}

@@ -1,0 +1,2223 @@
+{
+    "nodes": [
+        {
+            "name": "fuxi",
+            "label": "System",
+            "properties": {
+                "name": "Fuxi Framework"
+            }
+        },
+        {
+            "name": "machine_learning",
+            "label": "Technique",
+            "properties": {
+                "name": "Machine Learning"
+            }
+        },
+        {
+            "name": "weather_forecasting",
+            "label": "Application",
+            "properties": {
+                "domain": "Weather"
+            }
+        },
+        {
+            "name": "european_centre_for_medium_range_weather_forecasts",
+            "label": "Organization",
+            "properties": {
+                "name": "European Centre for Medium-Range Weather Forecasts",
+                "abbreviation": "ECMWF"
+            }
+        },
+        {
+            "name": "high_resolution_forecast",
+            "label": "Model",
+            "properties": {
+                "name": "High-Resolution Forecast",
+                "abbreviation": "HRES"
+            }
+        },
+        {
+            "name": "integrated_forecast_systems",
+            "label": "System",
+            "properties": {
+                "name": "Integrated Forecast Systems"
+            }
+        },
+        {
+            "name": "lei_chen",
+            "label": "Person",
+            "properties": {
+                "name": "Lei Chen"
+            }
+        },
+        {
+            "name": "xiaohui_zhong",
+            "label": "Person",
+            "properties": {
+                "name": "Xiaohui Zhong"
+            }
+        },
+        {
+            "name": "feng_zhang",
+            "label": "Person",
+            "properties": {
+                "name": "Feng Zhang"
+            }
+        },
+        {
+            "name": "yuan_cheng",
+            "label": "Person",
+            "properties": {
+                "name": "Yuan Cheng"
+            }
+        },
+        {
+            "name": "yinghui_xu",
+            "label": "Person",
+            "properties": {
+                "name": "Yinghui Xu"
+            }
+        },
+        {
+            "name": "yuan_qi",
+            "label": "Person",
+            "properties": {
+                "name": "Yuan Qi"
+            }
+        },
+        {
+            "name": "hao_li",
+            "label": "Person",
+            "properties": {
+                "name": "Hao Li"
+            }
+        },
+        {
+            "name": "ecmwf_era5_reanalysis_dataset",
+            "label": "Dataset",
+            "properties": {
+                "name": "ECMWF ERA5 Reanalysis Dataset"
+            }
+        },
+        {
+            "name": "npj_climate_and_atmospheric_science",
+            "label": "Journal",
+            "properties": {
+                "name": "npj Climate and Atmospheric Science"
+            }
+        },
+        {
+            "name": "members",
+            "label": "Group",
+            "properties": {}
+        },
+        {
+            "name": "computing_resources",
+            "label": "Resource",
+            "properties": {
+                "type": "computing"
+            }
+        },
+        {
+            "name": "nwp_models",
+            "label": "Model",
+            "properties": {
+                "type": "NWP"
+            }
+        },
+        {
+            "name": "machine_learning_models",
+            "label": "Model",
+            "properties": {
+                "type": "ML"
+            }
+        },
+        {
+            "name": "weatherbench_benchmark",
+            "label": "Dataset",
+            "properties": {}
+        },
+        {
+            "name": "ifs_baseline_models",
+            "label": "Model",
+            "properties": {
+                "type": "IFS"
+            }
+        },
+        {
+            "name": "swinvrrn_model",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "arti\ufb01cial_intelligence_innovation_and_incubation_institute",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "ml_models",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "fourcastnet",
+            "label": "Model",
+            "properties": {
+                "name": "FourCastNet",
+                "resolution": 0.25
+            }
+        },
+        {
+            "name": "afno",
+            "label": "Technique",
+            "properties": {
+                "name": "Adaptive Fourier neural operator"
+            }
+        },
+        {
+            "name": "vit",
+            "label": "Technique",
+            "properties": {
+                "name": "ViT"
+            }
+        },
+        {
+            "name": "swinrdm",
+            "label": "Model",
+            "properties": {
+                "name": "SwinRDM",
+                "resolution": 0.25
+            }
+        },
+        {
+            "name": "swinrnn+",
+            "label": "Model",
+            "properties": {
+                "name": "SwinRNN+"
+            }
+        },
+        {
+            "name": "pangu_weather",
+            "label": "Model",
+            "properties": {
+                "name": "Pangu-Weather",
+                "resolution": 0.25
+            }
+        },
+        {
+            "name": "graphcast",
+            "label": "Model",
+            "properties": {
+                "name": "GraphCast"
+            }
+        },
+        {
+            "name": "hres",
+            "label": "Model",
+            "properties": {
+                "name": "HRES"
+            }
+        },
+        {
+            "name": "weynet_al",
+            "label": "Person",
+            "properties": {
+                "name": "Weyn et al."
+            }
+        },
+        {
+            "name": "rasp_et_al",
+            "label": "Person",
+            "properties": {
+                "name": "Rasp et al."
+            }
+        },
+        {
+            "name": "bi_et_al",
+            "label": "Person",
+            "properties": {
+                "name": "Bi et al."
+            }
+        },
+        {
+            "name": "lam_et_al",
+            "label": "Person",
+            "properties": {
+                "name": "Lam et al."
+            }
+        },
+        {
+            "name": "chen_et_al",
+            "label": "Person",
+            "properties": {
+                "name": "L. Chen et al."
+            }
+        },
+        {
+            "name": "ml",
+            "label": "Technique",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf_hres",
+            "label": "Model",
+            "properties": {
+                "name": "ECMWF HRES"
+            }
+        },
+        {
+            "name": "fuxi_base_model",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "china",
+            "label": "Organization",
+            "properties": {}
+        },
+        {
+            "name": "l_chen",
+            "label": "Person",
+            "properties": {
+                "name": "L. Chen"
+            }
+        },
+        {
+            "name": "rmse",
+            "label": "Property",
+            "properties": {
+                "name": "RMSE",
+                "unit": "unknown"
+            }
+        },
+        {
+            "name": "fu_xi_em",
+            "label": "Model",
+            "properties": {
+                "name": "FuXi EM"
+            }
+        },
+        {
+            "name": "pacific_ocean",
+            "label": "Realm",
+            "properties": {
+                "name": "Pacific Ocean"
+            }
+        },
+        {
+            "name": "z500",
+            "label": "Property",
+            "properties": {
+                "name": "Z500"
+            }
+        },
+        {
+            "name": "t2m",
+            "label": "Property",
+            "properties": {
+                "name": "T2M"
+            }
+        },
+        {
+            "name": "msl",
+            "label": "Property",
+            "properties": {
+                "name": "MSL"
+            }
+        },
+        {
+            "name": "t850",
+            "label": "Property",
+            "properties": {
+                "name": "T850"
+            }
+        },
+        {
+            "name": "u10",
+            "label": "Property",
+            "properties": {
+                "name": "U10"
+            }
+        },
+        {
+            "name": "v10",
+            "label": "Property",
+            "properties": {
+                "name": "V10"
+            }
+        },
+        {
+            "name": "z500_hpa",
+            "label": "Property",
+            "properties": {
+                "name": "Z500 hPa"
+            }
+        },
+        {
+            "name": "t500_hpa",
+            "label": "Property",
+            "properties": {
+                "name": "T500 hPa"
+            }
+        },
+        {
+            "name": "u500_hpa",
+            "label": "Property",
+            "properties": {
+                "name": "U500 hPa"
+            }
+        },
+        {
+            "name": "v500_hpa",
+            "label": "Property",
+            "properties": {
+                "name": "V500 hPa"
+            }
+        },
+        {
+            "name": "era5",
+            "label": "Dataset",
+            "properties": {
+                "name": "ERA5 reanalysis dataset"
+            }
+        },
+        {
+            "name": "hres_fc0",
+            "label": "Dataset",
+            "properties": {
+                "name": "HRES-fc0"
+            }
+        },
+        {
+            "name": "ceccr_at_king_abdulaziz_university",
+            "label": "Organization",
+            "properties": {
+                "name": "CECCR at King Abdulaziz University"
+            }
+        },
+        {
+            "name": "figure_3",
+            "label": "Figure",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf_em",
+            "label": "Model",
+            "properties": {
+                "name": "ECMWF EM"
+            }
+        },
+        {
+            "name": "t2mat",
+            "label": "Property",
+            "properties": {
+                "name": "T2Mat"
+            }
+        },
+        {
+            "name": "lead_time",
+            "label": "Property",
+            "properties": {
+                "name": "Lead Time",
+                "unit": "days"
+            }
+        },
+        {
+            "name": "high_latitudes",
+            "label": "Realm",
+            "properties": {
+                "name": "High Latitudes"
+            }
+        },
+        {
+            "name": "middle_latitudes",
+            "label": "Realm",
+            "properties": {
+                "name": "Middle Latitudes"
+            }
+        },
+        {
+            "name": "low_latitudes",
+            "label": "Realm",
+            "properties": {
+                "name": "Low Latitudes"
+            }
+        },
+        {
+            "name": "land",
+            "label": "Realm",
+            "properties": {
+                "name": "Land"
+            }
+        },
+        {
+            "name": "ocean",
+            "label": "Realm",
+            "properties": {
+                "name": "Ocean"
+            }
+        },
+        {
+            "name": "ensemble_forecast",
+            "label": "Technique",
+            "properties": {
+                "name": "Ensemble Forecast"
+            }
+        },
+        {
+            "name": "deterministic_forecast",
+            "label": "Technique",
+            "properties": {
+                "name": "Deterministic Forecast"
+            }
+        },
+        {
+            "name": "crps",
+            "label": "Property",
+            "properties": {
+                "name": "CRPS",
+                "unit": "unknown"
+            }
+        },
+        {
+            "name": "spread",
+            "label": "Property",
+            "properties": {
+                "name": "Spread",
+                "unit": "unknown"
+            }
+        },
+        {
+            "name": "ssr",
+            "label": "Property",
+            "properties": {
+                "name": "SSR",
+                "unit": ""
+            }
+        },
+        {
+            "name": "fig_2",
+            "label": "Figure",
+            "properties": {}
+        },
+        {
+            "name": "acc",
+            "label": "Property",
+            "properties": {
+                "name": "ACC",
+                "unit": "unknown"
+            }
+        },
+        {
+            "name": "era5_reanalysis_dataset",
+            "label": "Dataset",
+            "properties": {
+                "name": "ERA5 Reanalysis Dataset"
+            }
+        },
+        {
+            "name": "ens_fc0",
+            "label": "Dataset",
+            "properties": {
+                "name": "ENS-fc0"
+            }
+        },
+        {
+            "name": "fuxi_ensemble",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "ecmwf_ensemble",
+            "label": "Model",
+            "properties": {
+                "name": "ECMWF Ensemble"
+            }
+        },
+        {
+            "name": "perlin_noise",
+            "label": "Technique",
+            "properties": {
+                "name": "Perlin noise"
+            }
+        },
+        {
+            "name": "u_transformer",
+            "label": "Model",
+            "properties": {
+                "name": "U-Transformer"
+            }
+        },
+        {
+            "name": "fuxi_model",
+            "label": "Model",
+            "properties": {
+                "name": "FuXi model"
+            }
+        },
+        {
+            "name": "ml_based_weather_forecasting_system",
+            "label": "System",
+            "properties": {
+                "name": "ML-Based Weather Forecasting System"
+            }
+        },
+        {
+            "name": "cascade_ml_model_architecture",
+            "label": "Architecture",
+            "properties": {}
+        },
+        {
+            "name": "weather_data",
+            "label": "Dataset",
+            "properties": {}
+        },
+        {
+            "name": "temporal_resolution",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "spatial_resolution",
+            "label": "Property",
+            "properties": {
+                "unit": "degrees"
+            }
+        },
+        {
+            "name": "cascade_ml_model",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "sub_seasonal_forecasting",
+            "label": "Application",
+            "properties": {
+                "name": "Sub-Seasonal Forecasting"
+            }
+        },
+        {
+            "name": "madden_julian_oscillation",
+            "label": "Phenomenon",
+            "properties": {
+                "name": "Madden-Julian Oscillation"
+            }
+        },
+        {
+            "name": "soil_moisture",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "snow_cover",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "stratosphere_troposphere_interaction",
+            "label": "Process",
+            "properties": {}
+        },
+        {
+            "name": "ocean_conditions",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "dataera5",
+            "label": "Dataset",
+            "properties": {
+                "name": "ERA5 Reanalysis Dataset"
+            }
+        },
+        {
+            "name": "ecmwf",
+            "label": "Organization",
+            "properties": {
+                "name": "European Centre for Medium-Range Weather Forecasts"
+            }
+        },
+        {
+            "name": "fig4",
+            "label": "Figure",
+            "properties": {
+                "caption": "Comparison of the CRPS, the globally averaged latitude-weighted Spread and SSR..."
+            }
+        },
+        {
+            "name": "study",
+            "label": "Study",
+            "properties": {
+                "name": "Study on Global Weather Forecast"
+            }
+        },
+        {
+            "name": "era5_reanalysis_data",
+            "label": "Dataset",
+            "properties": {
+                "name": "ERA5 reanalysis data"
+            }
+        },
+        {
+            "name": "em",
+            "label": "Model",
+            "properties": {
+                "name": "EM"
+            }
+        },
+        {
+            "name": "haiden_et_al",
+            "label": "Person",
+            "properties": {
+                "name": "Haiden et al."
+            }
+        },
+        {
+            "name": "weather_parameters",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "xt",
+            "label": "Property",
+            "properties": {}
+        },
+        {
+            "name": "autoregressive_model",
+            "label": "Model",
+            "properties": {
+                "name": "autoregressive model"
+            }
+        },
+        {
+            "name": "physics_based_nwp_models",
+            "label": "Model",
+            "properties": {
+                "name": "physics-based NWP models"
+            }
+        },
+        {
+            "name": "pure_data_driven_ml_models",
+            "label": "Model",
+            "properties": {
+                "name": "pure data-driven ML models"
+            }
+        },
+        {
+            "name": "multi_step_loss",
+            "label": "Technique",
+            "properties": {}
+        },
+        {
+            "name": "fuxi_short",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "fig_5",
+            "label": "Figure",
+            "properties": {}
+        },
+        {
+            "name": "embedded_data",
+            "label": "Data",
+            "properties": {}
+        },
+        {
+            "name": "fc_layer",
+            "label": "Model",
+            "properties": {
+                "name": "FC Layer"
+            }
+        },
+        {
+            "name": "cube_embedding",
+            "label": "Technique",
+            "properties": {
+                "name": "Cube Embedding"
+            }
+        },
+        {
+            "name": "space_time_cube_embedding",
+            "label": "Technique",
+            "properties": {
+                "name": "Space-Time Cube Embedding"
+            }
+        },
+        {
+            "name": "patch_embedding",
+            "label": "Technique",
+            "properties": {
+                "name": "Patch Embedding"
+            }
+        },
+        {
+            "name": "pangu_weather_model",
+            "label": "Model",
+            "properties": {
+                "name": "Pangu-Weather Model"
+            }
+        },
+        {
+            "name": "swin_transformer",
+            "label": "Architecture",
+            "properties": {
+                "name": "Swin Transformer"
+            }
+        },
+        {
+            "name": "shifted_window_mechanism",
+            "label": "Technique",
+            "properties": {
+                "name": "Shifted Window Mechanism"
+            }
+        },
+        {
+            "name": "ml_based_weather_forecasting_models",
+            "label": "Application",
+            "properties": {
+                "name": "ML-Based Weather Forecasting Models"
+            }
+        },
+        {
+            "name": "swin_transformer_v2",
+            "label": "Architecture",
+            "properties": {
+                "name": "Swin Transformer V2"
+            }
+        },
+        {
+            "name": "residual_post_normalization",
+            "label": "Technique",
+            "properties": {
+                "name": "Residual Post Normalization"
+            }
+        },
+        {
+            "name": "ln_layer",
+            "label": "Layer",
+            "properties": {
+                "name": "LN Layer"
+            }
+        },
+        {
+            "name": "ceccr",
+            "label": "Organization",
+            "properties": {
+                "name": "CECCR"
+            }
+        },
+        {
+            "name": "king_abdulaziz_university",
+            "label": "Organization",
+            "properties": {
+                "name": "King Abdulaziz University"
+            }
+        },
+        {
+            "name": "down_block",
+            "label": "Block",
+            "properties": {
+                "name": "Down Block"
+            }
+        },
+        {
+            "name": "up_block",
+            "label": "Block",
+            "properties": {
+                "name": "Up Block"
+            }
+        },
+        {
+            "name": "residual_unit",
+            "label": "Layer",
+            "properties": {}
+        },
+        {
+            "name": "convolution_layer",
+            "label": "Layer",
+            "properties": {
+                "dimension": 2
+            }
+        },
+        {
+            "name": "group_normalization_layer",
+            "label": "Layer",
+            "properties": {}
+        },
+        {
+            "name": "sigmoid_weighted_linear_unit_activation",
+            "label": "ActivationFunction",
+            "properties": {
+                "name": "SiLU activation"
+            }
+        },
+        {
+            "name": "transposed_convolution",
+            "label": "Layer",
+            "properties": {
+                "kernel_size": 2,
+                "stride": 2
+            }
+        },
+        {
+            "name": "fuksi_short_model",
+            "label": "Model",
+            "properties": {
+                "name": "FuXi-Short model"
+            }
+        },
+        {
+            "name": "fuksi_medium_model",
+            "label": "Model",
+            "properties": {
+                "name": "FuXi-Medium model"
+            }
+        },
+        {
+            "name": "fuksi_long_model",
+            "label": "Model",
+            "properties": {
+                "name": "FuXi-Long model"
+            }
+        },
+        {
+            "name": "latitude_weighted_l1_loss",
+            "label": "LossFunction",
+            "properties": {
+                "name": "Latitude-weighted L1 loss"
+            }
+        },
+        {
+            "name": "graphcast17",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "pytorch_framework",
+            "label": "Framework",
+            "properties": {
+                "name": "PyTorch framework"
+            }
+        },
+        {
+            "name": "adamw_optimizer",
+            "label": "Optimizer",
+            "properties": {
+                "name": "AdamW optimizer"
+            }
+        },
+        {
+            "name": "nvidia_a100_gpu",
+            "label": "Resource",
+            "properties": {
+                "name": "Nvidia A100 GPU"
+            }
+        },
+        {
+            "name": "ceccr_organization",
+            "label": "Organization",
+            "properties": {
+                "name": "CECCR at King Abdulaziz University"
+            }
+        },
+        {
+            "name": "l_chen_person",
+            "label": "Person",
+            "properties": {
+                "name": "L. Chen"
+            }
+        },
+        {
+            "name": "npj_climate_and_atmospheric_science_journal",
+            "label": "Journal",
+            "properties": {
+                "name": "npj Climate and Atmospheric Science"
+            }
+        },
+        {
+            "name": "figure_5_figure",
+            "label": "Figure",
+            "properties": {
+                "name": "Figure 5"
+            }
+        },
+        {
+            "name": "fortin_v",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "abaza_m",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "anctil_f",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "turcotte_r",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "chen_l",
+            "label": "Person",
+            "properties": {}
+        },
+        {
+            "name": "hydrometeorol",
+            "label": "Journal",
+            "properties": {
+                "name": "Journal of Hydrometeorology"
+            }
+        },
+        {
+            "name": "ensemble",
+            "label": "Dataset",
+            "properties": {}
+        },
+        {
+            "name": "cascade_machine_learning_forecasting_system",
+            "label": "System",
+            "properties": {
+                "name": "Cascade Machine Learning Forecasting System"
+            }
+        },
+        {
+            "name": "model",
+            "label": "Model",
+            "properties": {}
+        },
+        {
+            "name": "project",
+            "label": "Project",
+            "properties": {}
+        },
+        {
+            "name": "manuscript",
+            "label": "Block",
+            "properties": {}
+        },
+        {
+            "name": "springer_nature",
+            "label": "Organization",
+            "properties": {
+                "name": "Springer Nature"
+            }
+        },
+        {
+            "name": "article",
+            "label": "Data",
+            "properties": {}
+        },
+        {
+            "name": "supplementary_material",
+            "label": "Dataset",
+            "properties": {
+                "url": "https://doi.org/10.1038/s41612-023-00512-1"
+            }
+        },
+        {
+            "name": "creative_commons_attribution_4_international_license",
+            "label": "Resource",
+            "properties": {
+                "url": "http://creativecommons.org/licenses/by/4.0/"
+            }
+        },
+        {
+            "name": "publisher_note",
+            "label": "Block",
+            "properties": {}
+        }
+    ],
+    "relationships": [
+        {
+            "start": "fuxi",
+            "end": "machine_learning",
+            "type": "usesTechnique",
+            "properties": {}
+        },
+        {
+            "start": "weather_forecasting",
+            "end": "fuxi",
+            "type": "hasApplication",
+            "properties": {}
+        },
+        {
+            "start": "european_centre_for_medium_range_weather_forecasts",
+            "end": "high_resolution_forecast",
+            "type": "developed",
+            "properties": {}
+        },
+        {
+            "start": "integrated_forecast_systems",
+            "end": "european_centre_for_medium_range_weather_forecasts",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "lei_chen",
+            "end": "article",
+            "type": "authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "xiaohui_zhong",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "feng_zhang",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "yuan_cheng",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "yinghui_xu",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "yuan_qi",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "hao_li",
+            "end": "article",
+            "type": "co-authored",
+            "properties": {
+                "title": "FuXi: a cascade machine learning forecasting system for 15-day global weather forecast"
+            }
+        },
+        {
+            "start": "fuxi",
+            "end": "lei_chen",
+            "type": "wasDevelopedBy",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_era5_reanalysis_dataset",
+            "end": "fuxi",
+            "type": "usedInDevelopmentOf",
+            "properties": {}
+        },
+        {
+            "start": "article",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "publishedIn",
+            "properties": {
+                "volume": "6",
+                "issue": "190",
+                "year": "2023"
+            }
+        },
+        {
+            "start": "members",
+            "end": "computing_resources",
+            "type": "hasLimited",
+            "properties": {}
+        },
+        {
+            "start": "nwp_models",
+            "end": "machine_learning_models",
+            "type": "isReplacedBy",
+            "properties": {}
+        },
+        {
+            "start": "weather_forecasting",
+            "end": "machine_learning_models",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "weatherbench_benchmark",
+            "end": "erai5_reanalysis_data",
+            "type": "isCreatedBy",
+            "properties": {}
+        },
+        {
+            "start": "resnet_model",
+            "end": "t850",
+            "type": "predicts",
+            "properties": {
+                "variable": "temperature"
+            }
+        },
+        {
+            "start": "resnet_model",
+            "end": "t2m",
+            "type": "predicts",
+            "properties": {
+                "variable": "2-meter temperature"
+            }
+        },
+        {
+            "start": "resnet_model",
+            "end": "tp",
+            "type": "predicts",
+            "properties": {
+                "variable": "total precipitation"
+            }
+        },
+        {
+            "start": "rasp_et_al_study",
+            "end": "weatherbench_benchmark",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "swinvrrn_model",
+            "end": "hu_et_al_study",
+            "type": "isProposedBy",
+            "properties": {}
+        },
+        {
+            "start": "arti\ufb01cial_intelligence_innovation_and_incubation_institute",
+            "end": "fudan_university",
+            "type": "isAffiliatedWith",
+            "properties": {}
+        },
+        {
+            "start": "key_laboratory_of_polar_atmosphere_ocean_ice_system_for_weather_and_climate",
+            "end": "ministry_of_education_fudan_university",
+            "type": "isAffiliatedWith",
+            "properties": {}
+        },
+        {
+            "start": "shanghai_qi_zhi_institute",
+            "end": "shanghai_200232_china",
+            "type": "isLocatedIn",
+            "properties": {}
+        },
+        {
+            "start": "lei_chen",
+            "end": "rasp_et_al_study",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "xiaohui.zhong",
+            "end": "hu_et_al_study",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "ml_models",
+            "end": "weather_forecasting",
+            "type": "hasApplication",
+            "properties": {}
+        },
+        {
+            "start": "fourcastnet",
+            "end": "afno",
+            "type": "integrates",
+            "properties": {}
+        },
+        {
+            "start": "fourcastnet",
+            "end": "vit",
+            "type": "integrates",
+            "properties": {}
+        },
+        {
+            "start": "swinrdm",
+            "end": "hres",
+            "type": "outperforms",
+            "properties": {
+                "lead_time": 5
+            }
+        },
+        {
+            "start": "pangu_weather",
+            "end": "hres",
+            "type": "outperforms",
+            "properties": {
+                "lead_time": 7,
+                "resolution": 0.25
+            }
+        },
+        {
+            "start": "graphcast",
+            "end": "hres",
+            "type": "outperforms",
+            "properties": {
+                "lead_time": 10,
+                "accuracy": 90
+            }
+        },
+        {
+            "start": "weynet_al",
+            "end": "multi_time_step_loss_function",
+            "type": "proposed",
+            "properties": {}
+        },
+        {
+            "start": "rasp_et_al",
+            "end": "iterative_forecasts",
+            "type": "compared",
+            "properties": {}
+        },
+        {
+            "start": "bi_et_al",
+            "end": "hierarchical_temporal_aggregation_strategy",
+            "type": "proposed",
+            "properties": {}
+        },
+        {
+            "start": "lam_et_al",
+            "end": "curriculum_training_schedule",
+            "type": "employed",
+            "properties": {}
+        },
+        {
+            "start": "chen_et_al",
+            "end": "reply_buffer_mechanism",
+            "type": "proposed",
+            "properties": {}
+        },
+        {
+            "start": "ml",
+            "end": "weather_forecasting",
+            "type": "hasApplication",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_hres",
+            "end": "fuxi",
+            "type": "isComparedTo",
+            "properties": {}
+        },
+        {
+            "start": "graphcast",
+            "end": "fuxi",
+            "type": "isComparedTo",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_em",
+            "end": "fuxi",
+            "type": "isComparedTo",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "fuxi_base_model",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_base_model",
+            "end": "autoregressive_model",
+            "type": "usesTechnique",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_era5_reanalysis_data",
+            "end": "fuxi",
+            "type": "isUsedBy",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "cascade_ml_model_architecture",
+            "type": "hasArchitecture",
+            "properties": {}
+        },
+        {
+            "start": "fu_xi_ensemble_forecast",
+            "end": "fuxi",
+            "type": "extendsModel",
+            "properties": {}
+        },
+        {
+            "start": "emperors_of_china",
+            "end": "fuxi",
+            "type": "includesPerson",
+            "properties": {
+                "name": "FuXi"
+            }
+        },
+        {
+            "start": "china",
+            "end": "emperors_of_china",
+            "type": "isAssociatedWith",
+            "properties": {}
+        },
+        {
+            "start": "bagua",
+            "end": "fu_xi",
+            "type": "wasCreatedBy",
+            "properties": {}
+        },
+        {
+            "start": "t2m",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "msl",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "u10",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "v10",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "z500_at_500_hpa_pressure_level",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "t850",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "u500",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "v500",
+            "end": "fuxi",
+            "type": "isForecastedBy",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_cascade_model",
+            "end": "fuxi",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "ecmwf_hres",
+            "type": "hasSuperiorPerformance",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "graphcast",
+            "type": "hasComparablePerformance",
+            "properties": {}
+        },
+        {
+            "start": "l_chen_et_al",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "publishedIn",
+            "properties": {
+                "year": 2023
+            }
+        },
+        {
+            "start": "cejccr_at_king_abdulaziz_university",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "partnerOfPublication",
+            "properties": {}
+        },
+        {
+            "start": "weather_forecast",
+            "end": "rmse",
+            "type": "usesMetric",
+            "properties": {}
+        },
+        {
+            "start": "weather_forecast",
+            "end": "acc",
+            "type": "usesMetric",
+            "properties": {}
+        },
+        {
+            "start": "threshold_0_6",
+            "end": "weather_forecast",
+            "type": "isThresholdFor",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "z500",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "t2m",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_hres",
+            "end": "msl",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "fu_xi_em",
+            "end": "fuxi",
+            "type": "isTypeOf",
+            "properties": {}
+        },
+        {
+            "start": "era5",
+            "end": "fuxi",
+            "type": "isUsedBy",
+            "properties": {}
+        },
+        {
+            "start": "hres_fc0",
+            "end": "ecmwf_hres",
+            "type": "isUsedBy",
+            "properties": {}
+        },
+        {
+            "start": "l_chen",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "isAuthorOf",
+            "properties": {
+                "year": 2023
+            }
+        },
+        {
+            "start": "ceccr_at_king_abdulaziz_university",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "isPublisherOf",
+            "properties": {
+                "year": 2023
+            }
+        },
+        {
+            "start": "figure_3",
+            "end": "fuxi",
+            "type": "illustrates",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "z500",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "t2mat",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_hres",
+            "end": "rmse_difference",
+            "type": "hasProperty",
+            "properties": {
+                "name": "RMSE Difference"
+            }
+        },
+        {
+            "start": "ecmwf_em",
+            "end": "rmse_difference",
+            "type": "hasProperty",
+            "properties": {
+                "name": "RMSE Difference"
+            }
+        },
+        {
+            "start": "lead_time",
+            "end": "5_days",
+            "type": "hasValue",
+            "properties": {}
+        },
+        {
+            "start": "lead_time",
+            "end": "10_days",
+            "type": "hasValue",
+            "properties": {}
+        },
+        {
+            "start": "lead_time",
+            "end": "15_days",
+            "type": "hasValue",
+            "properties": {}
+        },
+        {
+            "start": "high_latitudes",
+            "end": "rmse",
+            "type": "hasHigherValuesOf",
+            "properties": {}
+        },
+        {
+            "start": "land",
+            "end": "rmse",
+            "type": "hasHigherValuesOf",
+            "properties": {}
+        },
+        {
+            "start": "ocean",
+            "end": "rmse",
+            "type": "hasLowerValuesOf",
+            "properties": {}
+        },
+        {
+            "start": "ensemble_forecast",
+            "end": "deterministic_forecast",
+            "type": "hasAdvantage",
+            "properties": {
+                "name": "More Accurate EM and Representation of Forecast Uncertainty"
+            }
+        },
+        {
+            "start": "crps",
+            "end": "fuxi_ensemble",
+            "type": "isCalculatedFrom",
+            "properties": {}
+        },
+        {
+            "start": "spread",
+            "end": "fuxi_ensemble",
+            "type": "isCalculatedFrom",
+            "properties": {}
+        },
+        {
+            "start": "ssr",
+            "end": "fuxi_ensemble",
+            "type": "isCalculatedFrom",
+            "properties": {}
+        },
+        {
+            "start": "fig_2",
+            "end": "acc",
+            "type": "compares",
+            "properties": {}
+        },
+        {
+            "start": "era5_reanalysis_dataset",
+            "end": "fuxi",
+            "type": "isUsedBy",
+            "properties": {}
+        },
+        {
+            "start": "ens_fc0",
+            "end": "ecmwf_ensemble",
+            "type": "isUsedBy",
+            "properties": {}
+        },
+        {
+            "start": "chen_et_al",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "publishedIn",
+            "properties": {}
+        },
+        {
+            "start": "npj_climate_and_atmospheric_science",
+            "end": "ceccr_at_king_abdulaziz_university",
+            "type": "isPublishedBy",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_ensemble",
+            "end": "crps",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_ensemble",
+            "end": "crps",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_ensemble",
+            "end": "z500",
+            "type": "hasVariable",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_ensemble",
+            "end": "t850",
+            "type": "hasVariable",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_ensemble",
+            "end": "msl",
+            "type": "hasVariable",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_ensemble",
+            "end": "t2m",
+            "type": "hasVariable",
+            "properties": {}
+        },
+        {
+            "start": "perlin_noise",
+            "end": "fuxi_model",
+            "type": "isUsedIn",
+            "properties": {}
+        },
+        {
+            "start": "u_transformer",
+            "end": "fuxi_model",
+            "type": "isBaseOf",
+            "properties": {}
+        },
+        {
+            "start": "ml_based_weather_forecasting_system",
+            "end": "fuxi_model",
+            "type": "hasModel",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_hres",
+            "end": "fuxi_model",
+            "type": "isComparedTo",
+            "properties": {}
+        },
+        {
+            "start": "cascade_ml_model_architecture",
+            "end": "fuxi_model",
+            "type": "isUsedIn",
+            "properties": {}
+        },
+        {
+            "start": "weather_data",
+            "end": "fuxi_model",
+            "type": "isUsedIn",
+            "properties": {}
+        },
+        {
+            "start": "temporal_resolution",
+            "end": "hours",
+            "type": "hasUnit",
+            "properties": {}
+        },
+        {
+            "start": "spatial_resolution",
+            "end": "degrees",
+            "type": "hasUnit",
+            "properties": {}
+        },
+        {
+            "start": "sub_seasonal_forecasting",
+            "end": "cascade_ml_model",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "ml_based_weather_forecasting_system",
+            "end": "data_driven_data_assimilation_method",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "data_driven_data_assimilation_method",
+            "end": "observation_data",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "ml_based_weather_forecasting_system",
+            "end": "dataera5",
+            "type": "isTrainedOn",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf",
+            "end": "dataera5",
+            "type": "generates",
+            "properties": {}
+        },
+        {
+            "start": "l_chen",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "authoredIn",
+            "properties": {}
+        },
+        {
+            "start": "ceccr_at_king_abdulaziz_university",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "publishedWith",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_ensemble",
+            "end": "dataera5",
+            "type": "isEvaluatedAgainst",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_ensemble",
+            "end": "ens_fc0l",
+            "type": "isEvaluatedAgainst",
+            "properties": {}
+        },
+        {
+            "start": "fig4",
+            "end": "fuxi_ensemble",
+            "type": "showsComparisonOf",
+            "properties": {}
+        },
+        {
+            "start": "fig4",
+            "end": "ecmwf_ensemble",
+            "type": "showsComparisonOf",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "era5_reanalysis_data",
+            "type": "hasDataset",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "hres_fc0",
+            "type": "hasDataset",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "ens_fc0",
+            "type": "hasDataset",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "autoregressive_model",
+            "type": "isTypeOf",
+            "properties": {}
+        },
+        {
+            "start": "ecmwf_hres",
+            "end": "cascade_model_architecture",
+            "type": "hasModelArchitecture",
+            "properties": {}
+        },
+        {
+            "start": "em",
+            "end": "cascade_model_architecture",
+            "type": "hasModelArchitecture",
+            "properties": {}
+        },
+        {
+            "start": "haiden_et_al",
+            "end": "study",
+            "type": "hasPublishedIn",
+            "properties": {}
+        },
+        {
+            "start": "lam_et_al",
+            "end": "study",
+            "type": "hasPublishedIn",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_short",
+            "end": "cascade_model_architecture",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_medium",
+            "end": "cascade_model_architecture",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_long",
+            "end": "cascade_model_architecture",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fig_2",
+            "end": "study",
+            "type": "isAssociatedWith",
+            "properties": {}
+        },
+        {
+            "start": "fig_5",
+            "end": "study",
+            "type": "isAssociatedWith",
+            "properties": {}
+        },
+        {
+            "start": "embedded_data",
+            "end": "fc_layer",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "cube_embedding",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "cube_embedding",
+            "end": "space_time_cube_embedding",
+            "type": "isTypeOf",
+            "properties": {}
+        },
+        {
+            "start": "patch_embedding",
+            "end": "cube_embedding",
+            "type": "isSimilarTo",
+            "properties": {}
+        },
+        {
+            "start": "pangu_weather_model",
+            "end": "patch_embedding",
+            "type": "uses",
+            "properties": {}
+        },
+        {
+            "start": "vit",
+            "end": "swin_transformer",
+            "type": "isRelatedTo",
+            "properties": {}
+        },
+        {
+            "start": "swin_transformer",
+            "end": "shifted_window_mechanism",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "ml_based_weather_forecasting_models",
+            "end": "swin_transformer",
+            "type": "use",
+            "properties": {}
+        },
+        {
+            "start": "swin_transformer_v2",
+            "end": "swin_transformer",
+            "type": "upgrades",
+            "properties": {}
+        },
+        {
+            "start": "residual_post_normalization",
+            "end": "swin_transformer_v2",
+            "type": "isUsedIn",
+            "properties": {}
+        },
+        {
+            "start": "ln_layer",
+            "end": "swin_transformer_v2",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "chen_et_al",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "publishedIn",
+            "properties": {
+                "year": 2023
+            }
+        },
+        {
+            "start": "ceccr",
+            "end": "king_abdulaziz_university",
+            "type": "partnerWith",
+            "properties": {}
+        },
+        {
+            "start": "swin_transformer_v2",
+            "end": "residual_unit",
+            "type": "hasPart",
+            "properties": {}
+        },
+        {
+            "start": "u_transformer",
+            "end": "down_block",
+            "type": "hasPart",
+            "properties": {}
+        },
+        {
+            "start": "u_transformer",
+            "end": "up_block",
+            "type": "hasPart",
+            "properties": {}
+        },
+        {
+            "start": "down_block",
+            "end": "convolution_layer",
+            "type": "hasLayer",
+            "properties": {}
+        },
+        {
+            "start": "down_block",
+            "end": "group_normalization_layer",
+            "type": "hasLayer",
+            "properties": {}
+        },
+        {
+            "start": "down_block",
+            "end": "sigmoid_weighted_linear_unit_activation",
+            "type": "hasActivationFunction",
+            "properties": {}
+        },
+        {
+            "start": "up_block",
+            "end": "transposed_convolution",
+            "type": "hasLayer",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "u_transformer",
+            "type": "hasPart",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_short_model",
+            "end": "fuxi_model",
+            "type": "isVersionOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_medium_model",
+            "end": "fuxi_model",
+            "type": "isVersionOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_long_model",
+            "end": "fuxi_model",
+            "type": "isVersionOf",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "latitude_weighted_l1_loss",
+            "type": "usesLossFunction",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "pytorch_framework",
+            "type": "usesFramework",
+            "properties": {}
+        },
+        {
+            "start": "fuxi_model",
+            "end": "adamw_optimizer",
+            "type": "usesOptimizer",
+            "properties": {}
+        },
+        {
+            "start": "ceccr_organization",
+            "end": "npj_climate_and_atmospheric_science_journal",
+            "type": "publishedInJournal",
+            "properties": {}
+        },
+        {
+            "start": "l_chen_person",
+            "end": "npj_climate_and_atmospheric_science_journal",
+            "type": "isAuthorOfPaperInJournal",
+            "properties": {}
+        },
+        {
+            "start": "fortin_v",
+            "end": "hydrometeorol",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "abaza_m",
+            "end": "hydrometeorol",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "anctil_f",
+            "end": "hydrometeorol",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "turcotte_r",
+            "end": "hydrometeorol",
+            "type": "isAuthorOf",
+            "properties": {}
+        },
+        {
+            "start": "chen_l",
+            "end": "npj_climate_atmospheric_science",
+            "type": "isAuthorOf",
+            "properties": {
+                "journal": "npj Climate and Atmospheric Science"
+            }
+        },
+        {
+            "start": "ecmwf",
+            "end": "era5_reanalysis_dataset",
+            "type": "providedResource",
+            "properties": {}
+        },
+        {
+            "start": "king_abdulaziz_university",
+            "end": "ceccr",
+            "type": "publishedInPartnershipWith",
+            "properties": {}
+        },
+        {
+            "start": "fuxi",
+            "end": "cascade_machine_learning_forecasting_system",
+            "type": "isFrameworkOf",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "era5_reanalysis_dataset",
+            "type": "usedDataset",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "hres",
+            "type": "usedDataset",
+            "properties": {}
+        },
+        {
+            "start": "study",
+            "end": "ensemble",
+            "type": "usedDataset",
+            "properties": {}
+        },
+        {
+            "start": "chen_l",
+            "end": "project",
+            "type": "designedProject",
+            "properties": {}
+        },
+        {
+            "start": "hl",
+            "end": "project",
+            "type": "managedProject",
+            "properties": {}
+        },
+        {
+            "start": "yq",
+            "end": "project",
+            "type": "managedProject",
+            "properties": {}
+        },
+        {
+            "start": "lc",
+            "end": "model",
+            "type": "performedModelTrainingAndEvaluation",
+            "properties": {}
+        },
+        {
+            "start": "hl",
+            "end": "model",
+            "type": "improvedModelDesign",
+            "properties": {}
+        },
+        {
+            "start": "fz",
+            "end": "model",
+            "type": "establishedModelTrainingEnvironment",
+            "properties": {}
+        },
+        {
+            "start": "yx",
+            "end": "model",
+            "type": "establishedModelTrainingEnvironment",
+            "properties": {}
+        },
+        {
+            "start": "yc",
+            "end": "model",
+            "type": "establishedModelTrainingEnvironment",
+            "properties": {}
+        },
+        {
+            "start": "article",
+            "end": "l_chen",
+            "type": "hasAuthor",
+            "properties": {}
+        },
+        {
+            "start": "article",
+            "end": "yuan_qi",
+            "type": "hasCorrespondenceAddress",
+            "properties": {}
+        },
+        {
+            "start": "article",
+            "end": "hao_li",
+            "type": "hasCorrespondenceAddress",
+            "properties": {}
+        },
+        {
+            "start": "springer_nature",
+            "end": "article",
+            "type": "isPublisherOf",
+            "properties": {}
+        },
+        {
+            "start": "ceccr_at_king_abdulaziz_university",
+            "end": "npj_climate_and_atmospheric_science",
+            "type": "isPartnerOf",
+            "properties": {}
+        },
+        {
+            "start": "supplementary_material",
+            "end": "article",
+            "type": "isSupplementTo",
+            "properties": {}
+        },
+        {
+            "start": "creative_commons_attribution_4_international_license",
+            "end": "article",
+            "type": "licenses",
+            "properties": {}
+        },
+        {
+            "start": "publisher_note",
+            "end": "springer_nature",
+            "type": "isNoteOf",
+            "properties": {}
+        }
+    ]
+}

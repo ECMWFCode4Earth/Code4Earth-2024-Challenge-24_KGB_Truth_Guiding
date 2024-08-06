@@ -4,3 +4,8 @@ PyMuPDF==1.24.0
 PyMuPDFb==1.24.0
 numpy==1.26.4
 langchain==0.1.17
+networkx
+jinja2
+ipython
+jsonpickle
+pyvis
