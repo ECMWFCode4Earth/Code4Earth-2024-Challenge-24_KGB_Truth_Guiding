@@ -1,5 +1,5 @@
 import streamlit as st
-from dotenv import load_dotenv
+
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage
@@ -13,8 +13,6 @@ import streamlit.components.v1 as components
 
 logging.basicConfig(level=logging.INFO)
 
-
-_ = load_dotenv()
 
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 URI = st.secrets["NEO4J_URI"]

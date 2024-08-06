@@ -9,3 +9,10 @@ jinja2
 ipython
 jsonpickle
 pyvis
+streamlit
+langchain_community
+langchain_core
+langchain_openai
+neo4j
+pyvis
+python-dotenv
