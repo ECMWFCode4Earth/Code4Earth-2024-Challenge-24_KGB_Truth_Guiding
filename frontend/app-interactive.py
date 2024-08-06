@@ -16,10 +16,10 @@ logging.basicConfig(level=logging.INFO)
 
 _ = load_dotenv()
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-URI = os.getenv("NEO4J_URI")
-user = os.getenv("NEO4J_USERNAME")
-password = os.getenv("NEO4J_PASSWORD")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+URI = st.secrets["NEO4J_URI"]
+user = st.secrets["NEO4J_USERNAME"]
+password = st.secrets["NEO4J_PASSWORD"]
 
 
 def get_response(user_query, contexts, chat_history):
@@ -146,10 +146,10 @@ def main():
 
     if "count" not in st.session_state:
         st.session_state.count = 0
-    
+
     graph_path = "./graphs"
     if not os.path.exists(graph_path):
-    # Create the directory
+        # Create the directory
         os.makedirs(graph_path)
 
     # Left Column: Chat Window
@@ -214,12 +214,12 @@ def main():
 
         if st.session_state.selected_html:
             file_path = os.path.join(dir, st.session_state.selected_html)
-            
+
             # Top Row: Interactive Graph Visualization
             with st.container():
                 # st.subheader("Interactive Graph")
-                
-                # add JavaScript to index.html for makING the graph interactive 
+
+                # add JavaScript to index.html for makING the graph interactive
                 with open(file_path, "r", encoding="utf-8") as file:
                     graph_content = file.read()
 
@@ -256,7 +256,7 @@ def main():
                         const nodeId = event.nodes[0];
                         if (nodeId) {
                         var clickedNode = allNodes[nodeId]
-                            
+
                             sendDataToPython({
                             value: clickedNode,
                             dataType: "json",
@@ -304,8 +304,8 @@ def main():
                 st.subheader("Node Information")
                 # st.write(node_info)
                 if node_info is not None:
-                    information = eval(node_info['title'])
-                    information.pop('contentEmbedding', None)
+                    information = eval(node_info["title"])
+                    information.pop("contentEmbedding", None)
                     st.write(information)
 
     driver.close()
