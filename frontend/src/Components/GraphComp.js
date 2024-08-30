@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Graph from 'react-graph-vis';
 
-const GraphComponent = ({ selectedGraph, events, selectedNodes}) => {
+const GraphComponent = ({ selectedGraph, events, selectedNodes }) => {
   const [graphHeight, setGraphHeight] = useState(window.innerHeight * 0.6); // 60% of the screen height
+  const fixedWidth = '800px'; // Fixed width for both windows
 
   useEffect(() => {
     const handleResize = () => {
@@ -13,16 +14,17 @@ const GraphComponent = ({ selectedGraph, events, selectedNodes}) => {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: '1200px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', width: fixedWidth }}>
       {/* Graph Window */}
       <div style={{
         height: `${graphHeight}px`, // Dynamically set height based on screen size
+        width: fixedWidth, // Fixed width
         border: '0.8px solid lightgrey',
         marginBottom: '10px',
         padding: '0', // Ensure no extra padding is causing overflow
         boxSizing: 'border-box',
         overflow: 'hidden', // Prevents the graph from exceeding its container
-        
+        flexShrink: 0, // Prevent the graph window from resizing
       }}>
         <h1 style={{ margin: '0', padding: '10px', boxSizing: 'border-box' }}>Graph</h1>
         <Graph
@@ -31,27 +33,28 @@ const GraphComponent = ({ selectedGraph, events, selectedNodes}) => {
           events={events}
         />
       </div>
-
       {/* Side Information Window */}
       <div style={{
-        flex: 1,
+        height: '300px', // Fixed height for the side information window
+        width: fixedWidth, // Fixed width
         border: '0.8px solid lightgrey',
         padding: '10px',
         boxSizing: 'border-box',
-        
+        overflowY: 'auto', // Allow scrolling if content exceeds height
       }}>
-        <h1>Node information</h1>
-            <ul>
-                {selectedNodes.map((node, i) =>{
-                    return (
-                        <li>
-                            {node['id']}
-                            {node['properties']}
-                        </li>
-                    )
-                })}
-            </ul>
-        {/* Add your side information content here */}
+        <h1>Node Information</h1>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
+          {selectedNodes.map((node, i) => (
+            <li key={i} style={{ 
+                wordWrap: 'break-word', 
+                overflow: 'hidden', 
+                textOverflow: 'ellipsis' 
+              }}>
+              <strong>ID:</strong> {node.id}<br />
+              <strong>Properties:</strong> {JSON.stringify(node.properties, null, 2)}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

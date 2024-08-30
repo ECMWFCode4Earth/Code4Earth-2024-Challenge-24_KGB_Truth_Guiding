@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator, Sidebar } from '@chatscope/chat-ui-kit-react';
 import './App.css';
@@ -7,7 +7,7 @@ import GraphComponent from './Components/GraphComp';
 import Graph from 'react-graph-vis'
 // const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
-const backendUrl = "http://localhost:5000"
+const backendUrl = "http://localhost:5001"
 
 console.log("This is backend URL", backendUrl)
 
@@ -16,9 +16,9 @@ function processingSubgraph(subgraphData){
   let nodes_object = {}
   let edges = []
   let edges_object = {}
-  let color_label = {
-    "entity" : "#e04141",
-    "chunk" : "yellow"
+  const color_dictionary = {
+    "__Entity__" : "#e04141",
+    "__Chunk__" : "yellow"
   }
   // alert(Object(subgraphData[0].keys()))
   // alert(subgraphData[0].length)
@@ -36,11 +36,22 @@ function processingSubgraph(subgraphData){
     if (node_id == null){
       alert("node is null");
     }
-    const node_properties = node['properties'];
+    
+    const node_properties = JSON.stringify(node['properties']);
     if( !node_keeper.includes(node_id) ){
-      const node = {id: node_id, label: node_id, color: color_label["entity"], properties: node_properties}
-      nodes.push(node);
-      nodes_object["id"] = node; 
+      let color_label = "red";
+      for (let key in color_dictionary) {
+        if (color_dictionary.hasOwnProperty(key)) {
+            // Check if the key exists in node["labels"]
+            if (node.labels.includes(key)) {
+                color_label = color_dictionary[key];
+                break;  // Exit the loop once a match is found
+            }
+        }
+      }
+      const node_ = {id: node_id, label: node_id, color: color_label, properties: node_properties}
+      nodes.push(node_);
+      nodes_object["id"] = node_; 
       node_keeper.push(node_id);
       count += 1;
     }
@@ -55,15 +66,25 @@ function processingSubgraph(subgraphData){
         if (neighbor_id == null){
           alert("neighbor node is null");
         }
-        let neighbor_properties = neighbor['properties'];  
+        let neighbor_properties = JSON.stringify(neighbor['properties']);  
         if ( !node_keeper.includes(neighbor_id)){
-          const node = {id: neighbor_id, label: neighbor_id, color: color_label["entity"], properties: neighbor_properties}; 
-          nodes.push(node);
-          nodes_object["id"] = node;
+
+          let color_label = "red";
+          for (let key in color_dictionary) {
+            if (color_dictionary.hasOwnProperty(key)) {
+                // Check if the key exists in node["labels"]
+                if (neighbor.labels.includes(key)) {
+                    color_label = color_dictionary[key];
+                    break;  // Exit the loop once a match is found
+                }
+            }
+          }
+          const node_ = {id: neighbor_id, label: neighbor_id, color: color_label, properties: neighbor_properties}; 
+          nodes.push(node_);
+          nodes_object["id"] = node_;
           node_keeper.push(neighbor_id);
           count += 1;
         }
-        
         if (relationship){
           let relationship_label = relationship["label"] ;
           let relationship_property = relationship['properties'];  
@@ -86,6 +107,8 @@ function App() {
     {nodes: {}, edges: {}}
   ])
   
+  const [subGraphNew, setSubGraphNew] = useState({nodes: [], edges: []})
+
   const [selectedGraph, setSelectedGraph] = useState(graphs[graphs.length-1]);
   // const [graph, setGraph] = useState(
   //   {nodes: [], edges: []}
@@ -98,6 +121,12 @@ function App() {
       direction: "incoming"
     }
   ]);
+
+  const color_dictionary = {
+    "__Entity__" : "#e04141",
+    "__Chunk__" : "yellow",
+    "__Community__": "blue"
+  }
 
   const handleSend = async (message) => {
     const newMessage = {
@@ -132,6 +161,53 @@ function App() {
 
     const { contexts, chunkIds, scores } = data;
 
+    // const local_retriever = await fetch(`${backendUrl}/local_retriever`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({ question: userQuery })
+    // });
+
+    // const local_retriever_data = await local_retriever.json();
+
+    // const local_text_chunk_ids = local_retriever_data[0]["text_mapping"]; 
+
+    // setLocalTextChunkIds(local_text_chunk_ids);
+
+    // const local_summary_ids = local_retriever_data[0]["report_mapping"];
+
+    // setLocalSummaryIds(local_summary_ids);
+
+    // const global_retriever = await fetch(`${backendUrl}/global_retriever`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({ question: userQuery })
+    // });
+
+    // const global_retriever_data = await global_retriever.json();
+
+    // setGlobalSummaryIds(global_retriever_data);
+
+
+    // let graph = {nodes: [], edges: []}
+    // if (local_text_chunk_ids.length > 0 || local_summary_ids.length > 0 || global_retriever_data.length > 0){
+    //   const graph_temp = await fetch(`${backendUrl}/get_subgraph`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({ "local_text_chunk_ids": localTextChunkIds, "local_summary_ids": localSummaryIds, "global_summary_ids": globalSummaryIds  })
+    //   });
+    //   const graph_temp_data = await graph_temp.json();
+    //   graph = graph_temp_data;
+    //   alert(graph_temp_data["nodes"]);
+    //   alert(graph_temp_data["edges"]);
+    //   setSelectedGraph(graph);
+    // }
+
     const subgraphResponse = await fetch(`${backendUrl}/query_subgraph`, {
       method: 'POST',
       headers: {
@@ -143,11 +219,38 @@ function App() {
 
     const [nodes, edges, nodes_object, edges_object] = processingSubgraph(subgraphData);
 
-    const graph = {nodes: nodes, edges: edges};
+    const subGrap_new_response = await fetch(`${backendUrl}/get_subgraph`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ question: userQuery })
+    })
+
+    const subGraph_new = await subGrap_new_response.json();
+
+    // Iterate through nodes and assign colors
+    subGraph_new.nodes.forEach(node => {
+      for (const [label, color] of Object.entries(color_dictionary)) {
+          if (node.type.includes(label)) {
+              node.color = color;
+              break;
+          }
+      }
+    });
+    // setSubGraphNew(subGraph_new);
+
+    // const graph = {nodes: nodes, edges: edges};
     // const graphRaw = {nodes: nodes_object, edges: edges_object};
-    setSelectedGraph(graph);
+    setSelectedGraph(subGraph_new);
     // setSelectedGraphRaw(graphRaw);
-    const newGraphs = [...graphs, graph]; 
+    const newGraphs = [...graphs, subGraph_new]; 
+
+    // const graph = {nodes: nodes, edges: edges};
+    // // const graphRaw = {nodes: nodes_object, edges: edges_object};
+    // setSelectedGraph(graph);
+    // // setSelectedGraphRaw(graphRaw);
+    // const newGraphs = [...graphs, graph]; 
     setGraphs(newGraphs);
     // setGraphsRaw()
 
@@ -172,12 +275,27 @@ function App() {
     // const appearedInNodesData = await appearedInNodesResponse.json();
 
     // const responseMessage = `Contexts: ${contexts.join(', ')}\nSubgraph: ${JSON.stringify(subgraphData)}\nSecondary Nodes: ${JSON.stringify(secondaryNodesData)}\nAppeared In Nodes: ${JSON.stringify(appearedInNodesData)}`;
-    const responseMessage = `Contexts: ${contexts.join(', ')}`;
+    const responseMessage = `${contexts.join(', ')}`;
+    let chat_history = messages.map(msg => `${msg.sender}: ${msg.message}`).join("\n");
+    
+    const response_openai = await fetch(`${backendUrl}/get_response`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 
+        user_query: userQuery,  // Fixed to match the Python key
+        contexts: responseMessage, 
+        chat_history: chat_history
+      })
+    });
+
+    const responseData = await response_openai.json();
 
     const newMessages = [
       ...messages,
       {
-        message: responseMessage,
+        message: responseData["answer"],
         sender: "ChatGPT",
         direction: "incoming"
       }
@@ -191,18 +309,18 @@ function App() {
     selectNode: ({nodes}) => {
       
       let nodes_string = JSON.stringify(nodes[0]);
-      alert(nodes_string.slice(1,nodes_string.length-1));
-      alert(typeof nodes_string === 'string');
+      // alert(nodes_string.slice(1,nodes_string.length-1));
+      // alert(typeof nodes_string === 'string');
       for (const node in selectedGraph.nodes){
-        if (node < 1){
-          alert(selectedGraph.nodes[node].id);
-          alert(typeof selectedGraph.nodes[node].id === 'string');
-        }        
+        // if (node < 1){
+        //   alert(selectedGraph.nodes[node].id);
+        //   alert(typeof selectedGraph.nodes[node].id === 'string');
+        // }        
         if (nodes_string.slice(1,nodes_string.length-1) === selectedGraph.nodes[node].id){
           const newSelectedNodes = [...selectedNodes, selectedGraph.nodes[node]];
           setSelectedNodes(newSelectedNodes);
-          alert("Found it!");
-          alert(selectedNodes.length);
+          // alert("Found it!");
+          // alert(selectedNodes.length);
           break;
         }
       }
@@ -234,6 +352,25 @@ function App() {
                   </li> 
                 })}
               </ul>
+
+              <button
+                onClick={() => {
+                  // Clear the selectedNodes array
+                  setSelectedNodes([]);
+                }}
+                style={{
+                  padding: '10px 20px',
+                  backgroundColor: 'pink',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                  alignSelf: 'center',
+                  marginBottom: '20px'
+                }}
+              >
+                Delete Selected Nodes
+              </button>
             </Sidebar>
             <div>
               <h2>Chat Window</h2>
@@ -251,7 +388,10 @@ function App() {
         
         <GraphComponent selectedGraph={selectedGraph} events={events} selectedNodes={selectedNodes}/>      
       </div>
-
+      <div>
+        <h3>New graph</h3>
+        {/* <p>{JSON.stringify(subGraphNew, null, 2)}</p> */}
+      </div>
     </div>
     
   );
