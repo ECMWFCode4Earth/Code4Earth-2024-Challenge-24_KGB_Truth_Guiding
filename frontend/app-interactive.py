@@ -1,19 +1,19 @@
-import streamlit as st
-from dotenv import load_dotenv
+import logging
 import os
-from langchain_openai import ChatOpenAI
+
+import streamlit as st
+import streamlit.components.v1 as components
+from dotenv import load_dotenv
 from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-import logging
+from langchain_openai import ChatOpenAI
 from neo4j import GraphDatabase
 from pyvis.network import Network
-import streamlit.components.v1 as components
-
 
 logging.basicConfig(level=logging.INFO)
 
-
+# Setup environment : OpenAI key, Neo4j authentication, etc...
 _ = load_dotenv()
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
@@ -21,7 +21,7 @@ URI = os.getenv("NEO4J_URI")
 user = os.getenv("NEO4J_USERNAME")
 password = os.getenv("NEO4J_PASSWORD")
 
-
+# Get answser / response from OpenAI for the question entered by user
 def get_response(user_query, contexts, chat_history):
     template = """
     You are a helpful assistant. Answer the following questions considering the history of the conversation:
@@ -47,7 +47,7 @@ def get_response(user_query, contexts, chat_history):
         }
     )
 
-
+# Query the demande for knowledge graph from the user question and get the knowledge graph from Neo4j
 def get_answer_neo4j(driver, question):
     contexts = []
     chunkIds = []
@@ -80,7 +80,7 @@ def get_answer_neo4j(driver, question):
 
     return contexts, chunkIds, score
 
-
+# Query the subgraph of main graph got from the previous function
 def query_subgraph(driver, chunkIds):
     query = """
     WITH $chunkIds AS names
@@ -102,7 +102,7 @@ def query_subgraph(driver, chunkIds):
             records.append(record)
     return records
 
-
+# Visualize knowledge graphs with pyvis
 def process_subgraph_to_pyvis(subgraph):
     net = Network(height="750px", width="100%", notebook=True)
     for record in subgraph:
@@ -172,29 +172,35 @@ def main():
         # User input
         user_query = st.chat_input("Type your message here...")
 
+        # Process user question : 
         if user_query is not None and user_query != "":
             st.session_state.count += 1
+            # Send query to Neo4j and get the infos about knowledge graph
             contexts, chunkIds, score = get_answer_neo4j(driver, user_query)
             contexts_string = "\n".join(contexts)
             print(contexts)
+            # Query subgraphs of the main graph
             subgraph = query_subgraph(driver, chunkIds)
+            # Visualize graphs
             net = process_subgraph_to_pyvis(subgraph)
             html_file_path = f"graphs/graph_{st.session_state.count}.html"
             net.save_graph(html_file_path)
 
+            # Write question to chat history
             st.session_state.chat_history.append(HumanMessage(content=user_query))
 
             with st.chat_message("Human"):
                 st.markdown(user_query)
 
+            # Get the general response from OpenAI for the question
             with st.chat_message("AI"):
                 response = st.write_stream(
                     get_response(
                         user_query, contexts_string, st.session_state.chat_history
                     )
                 )
+            # Write response to chat history
             st.session_state.chat_history.append(AIMessage(content=response))
-            # logging.info(st.session_state.chat_history)
 
     # Middle Column: List of HTML Files
     with col2:
