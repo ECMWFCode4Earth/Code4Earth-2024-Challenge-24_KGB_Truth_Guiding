@@ -1,0 +1,118 @@
+Radiation quantities are frequently required by users of ECMWF data, but there is often confusion about
+the interpretation of the variables available in the ECMWF Meteorological Archiving System (MARS). This
+document describes what is presently archived by the operational model, illustrates the various ﬁelds obtainable
+via a MARS retrieval and explains how they should be interpreted.
+The following conventions are employed in the storage of ﬂuxes by the ECMWF model:
+1. Archived ﬂuxes are either downward or net. Energy entering the Earth’s atmosphere-surface system is taken
+as a positive quantity, and therefore downward ﬂuxes are positive and net ﬂux refers to the downward ﬂux
+minus the upward ﬂux. To obtain the upward ﬂux (Fup) from the downward ﬂux (Fdn) and net ﬂux (Fnet),
+use Fup = Fdn −Fnet.
+2. Physical ﬂuxes archived by the ECMWF model are accumulated since the start of the relevant forecast, and
+therefore in units of J m−2 (or W m−2 s). Thus, a daily mean (in W m−2) is obtained by retrieving the
+accumulated ﬂuxes at t1 = t and t2 = t + 24 hours (where t is the time of the start of the average), taking the
+difference and dividing by 86400, the number of seconds in a day.
+3. Clear-sky quantities are computed for exactly the same atmospheric conditions of temperature, humidity,
+ozone, trace gases and aerosol, but assuming that the clouds are not there.
+4. Solar or short-wave refers to radiation emitted by the Sun, then scattered, absorbed or transmitted by the
+atmosphere and reﬂected or absorbed by the surface. It corresponds roughly to the 0.2–4 µm or 50,000–2600
+cm−1 part of the spectrum. Thermal, terrestrial or long-wave refers to radiation emitted and absorbed by
+the surface or by gases, clouds and particles within the atmosphere. It corresponds roughly to the 4–100 µm
+or 2600–10 cm−1 part of the spectrum. Note that there is some spectral overlap between the two, which is
+fully represented in the model, so the division between solar and thermal radiation should not be thought of
+as simply radiation with a wavelength shorter or longer than 4 µm, but rather as radiation originating from
+the sun versus originating from emission by the Earth or its atmosphere.
+To help explain the surface and top-of-atmosphere (TOA) accumulated ﬂuxes that are archived, Fig. 1 depicts the
+radiative energy ﬂows in the atmosphere. The ﬁelds available at TOA, corresponding to the 0 hPa pressure level,
+are listed in Table 1, with the symbols corresponding to those shown in Fig. 1.
+A frequently required quantity from global models is Outgoing Long-wave Radiation (OLR), represented in
+TOA. The ECMWF model assumes that there is no incoming TOA radiation from any other source than
+TOA = 0 (this neglects the 2.73 K cosmic microwave background, which amounts to only 3 µW m−2).
+Therefore, the net long-wave radiation at TOA (named “TTR” in MARS) is equal to the negative of outgoing
+long-wave radiation, so OLR = −TTR.
+Figure 1: Schematic of the short-wave and long-wave radiative energy ﬂows in the atmosphere. The symbols for upwelling
+and downwelling ﬂuxes at the top-of-atmosphere (TOA) and surface are used in Tables 1 and 2 to explain what is available
+from MARS.
+Table 1: The ﬁelds available from MARS at the top-of-atmosphere (TOA). All are ﬂuxes accumulated since the start of the
+forecast, in J m−2. The symbols/equations are as shown in Fig. 1. Note that since the small downward long-wave (non-solar)
+ﬂux from space is neglected (i.e. Ldn
+TOA = 0), TTR and TTRC represent the negative of the outgoing longwave radiation Lup
+TOA.
+*Denotes a ﬁeld available from the reanalysis but not from the operational system.
+The accumulated ﬂuxes available at the surface are shown in Table 2. There are several points to note:
+• All quantities are at ground level in the model, according to the model’s representation of orography. Some
+users ask if this is somehow corrected to be the value that would be observed at mean sea level if the Earth
+had no orography. The answer is no.
+• To a reasonably good approximation, SSRD can be considered to be what would be measured by a global
+pyranometer at the surface, and SSRD−FDIR can be considered to be what would be measured by a diffuse
+pyranometer. But be aware that the direct (i.e. unscattered) solar radiation in the model actually includes
+radiation that has been scattered by cloud particles by a fraction of a degree, since the scattering pattern of
+cloud particles has a narrow peak in the forward direction and it is most efﬁcient and accurate to treat this
+radiation as if it had not been scattered at all. A further point is that the diffuse downwelling radiation from
+the model includes diffuse radiation in the direction of the sun, which would be excluded from the radiation
+measured by a diffuse pyranometer that uses a shadow band to exclude direct radiation. We assume that users
+who wish to compare direct and diffuse radiation measurements to model output are aware of the correction
+procedures that should be made to diffuse radiation measurements to account for this effect.
+• All ﬂuxes, including direct ﬂuxes, at the surface and top-of-atmosphere represent the energy (in J) that has
+passed through a square-metre of a ﬂat horizontal plane since the start of the forecast. This differs from
+Table 2: The surface ﬂuxes accumulated since the start of the forecast that are available from MARS. All are in J m−2. The
+symbols/equations are as shown in Fig. 1.
+the ﬂux reported by a pyrheliometer pointing directly at the sun, which measures energy into a plane ori-
+ented perpendicular to the incoming unscattered solar radiation. To convert an instantaneous pyrheliometer
+ﬂux to the ﬂux into a ﬂat horizontal plane, multiply it by cos(θ0), where θ0 is the solar zenith angle. Con-
+verting direct ﬂuxes in the model to the pyranometer convention is not straightforward since the ﬂuxes are
+accumulated over a period during which the solar zenith angle changes.
+The albedos available from MARS are listed in Table 3. To interpret them we ﬁrst discuss brieﬂy how albedo is
+calculated in the model (valid since model cycle CY32R2). The basic land albedo is calculated from a monthly
+climatology derived from the MODIS satellite instrument, which has four components: albedos are speciﬁed
+separately for wavelengths shorter than and longer than 0.7 µm, and separately for direct and diffuse radiation.
+The quantities ALUVP, ALUVD, ALNIP and ALNID in Table 3 are the four components of the land-surface
+albedo interpolated to the start time of the forecast from the monthly means bracketing this time in the MODIS
+climatology. They do not include the effects of snow, and are only available at the start of the forecast.
+At each timestep within the model, these four albedos are modiﬁed to add the contribution from lying snow,
+which is a dynamic variable in the model. They are then used by the radiation scheme, and the fact that four
+variables are used means that the total amount of radiation reﬂected from the surface will depend on cloud cover
+(which affects the ratio between direct and diffuse surface radiation), trace gas concentrations (which affects the
+ratio between surface downwelling radiation with wavelengths greater than and less than 0.7 µm) and solar zenith
+angle (which affects both).
+At each timestep an additional instantaneous broadband albedo is computed for diagnostic purposes only,
+and stored in MARS as “FAL”, as indicated in Table 3. This variable includes the contribution from snow and sea-
+ice, but is computed as a weighted average of the diffuse albedos in the UV-visible and the near-infrared, weighted
+according to the ﬁxed top-of-atmosphere spectral distribution of incoming solar radiation rather than the variable
+Table 3: The surface albedo quantities available from MARS. All are non-dimensional and lie in the interval 0–1. The
+components ALUVP, ALUVD, ALNIP and ALNID are deﬁned at land points only, and are only available in MARS at the start
+of the forecast.
+surface spectral distribution. The neglect of the difference between diffuse and direct radiation, and the use of a
+ﬁxed spectral weighting, means that FAL differs somewhat from the true broadband all-sky albedo in the model,
+surf.
+Noticeable differences between FAL and α occur particularly over snow and ice where there is a large difference
+in albedo between the two spectral regions (see Fig. 7).
+Users who wish to know α as deﬁned by Eq. 1 are advised to calculate it directly from the archived surface
+ﬂuxes. From Eq. 1 and the deﬁnitions in Table 2, albedo is given by α = 1 −SSR/SSRD. Since SSR and SSRD
+are accumulated, this will give the effective albedo averaged over the duration of the forecast up to that point in
+time. Of course, it will only produce reliable results over points that have been sunlit at some point during the
+forecast up to that point, i.e. SSRD > 0.
+Users who wish to separate the clear-sky surface net shortwave ﬂux, SSRC, into upwelling and downwelling
+components can do this to a reasonable degree of accuracy using either FAL or α, but should note that neither would
+reproduce perfectly what was in the clear-sky part of the original radiation calculation. This is because the absence
+of clouds would lead to a greater fraction of the downwelling surface radiation being direct rather than diffuse,
+thereby changing the weighting between the direct and diffuse components of albedo.
+Sunshine duration archived from the ECMWF model is deﬁned as the number of seconds since the start of the
+forecast that the direct downwelling solar ﬂux into a horizontal plane at the surface exceeded 120 W m−2. It is
+therefore an accumulated ﬁeld. Unfortunately this differs from the ofﬁcial deﬁnition of sunshine duration, which
+is the same but for direct solar ﬂux into a plane perpendicular to the sun. This ﬂux is larger than the ﬂux into
+a horizontal plane by a factor of 1/ cos(θ0) (where θ0 is the solar zenith angle), so the sunshine duration from
+ECMWF may be underestimated. Therefore it is recommended that this variable is not used.
+In the following pages, all radiation ﬂuxes quantities are presented averaged over the ﬁrst 24-hours of the opera-
+tional forecast started at 20120215 12 UTC, therefore as averages over the period 20120215 12 UTC to 20120216
+12 UTC. The albedo components (Fig. 7) are given at the start of the forecast, 20120215 12 UTC, whereas the
+surface albedo of Fig. 6 is the value 24 hours into the forecast, thus corresponding to 20120216 12 UTC. Please
+also note that all albedo components are archived as non-dimensional within the interval 0–1, but are presented in
+percent in Figures 6 and 7.
+This document was written by Jean-Jacques Morcrette and Robin Hogan with contributions from other members
+of the Physical Aspects and User Support Sections at ECMWF.
+Figure 2: TSR, TSRC, TTR and TTRC averaged over the ﬁrst 24 hours of the forecast started on 20120215 12 UTC (W m−2).
+Figure 3: SSR, SSRC and SSRD averaged over the ﬁrst 24 hours of the forecast started on 20120215 12 UTC (W m−2).
+Figure 4: FDIR and CDIR averaged over the ﬁrst 24 hours of the forecast started on 20120215 12 UTC (W m−2).
+Figure 5: STR, STRC and STRD averaged over the ﬁrst 24 hours of the forecast started on 20120215 12 UTC (W m−2).
+Figure 6: FAL, the forecast albedo, after 24 hours for the forecast started on 20120215 12 UTC (%).
+Figure 7: ALUVP, ALUVD, ALNIP and ALNID as used in the forecast started on 20120

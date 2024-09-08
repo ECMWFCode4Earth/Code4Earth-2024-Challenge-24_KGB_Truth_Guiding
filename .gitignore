@@ -1,2 +1,3 @@
-backend/.env
-frontend/.env
+react_chat_app/backend/.env
+react_chat_app/frontend/.env
+.env
