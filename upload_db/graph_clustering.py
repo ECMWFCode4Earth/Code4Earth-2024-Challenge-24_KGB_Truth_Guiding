@@ -163,7 +163,7 @@ def configure_llm():
     return community_chain
 
 # Process communities with throttling
-def process_communities_with_throttle(community_info, community_chain, max_concurrent_requests=5, delay_between_requests=0.2):
+def process_communities_with_throttle(community_info, community_chain, max_concurrent_requests=3, delay_between_requests=0.5):
     """Process communities to generate summaries with throttling."""
     semaphore = Semaphore(max_concurrent_requests)
     summaries = []

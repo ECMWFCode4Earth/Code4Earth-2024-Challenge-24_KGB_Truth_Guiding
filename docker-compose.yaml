@@ -50,7 +50,7 @@ services:
       - NEO4J_URI=bolt://neo4j:7687  # Environment variable to access Neo4j URL
       - NEO4J_USERNAME=neo4j  # Environment variable for Neo4j username
       - NEO4J_PASSWORD=test@123  # Environment variable for Neo4j password
-    command: /bin/bash -c "sleep 180 && ./wait-for-it.sh neo4j:7687 -- python upload_neo4j_from_json.py && python create_vector_db.py && python graph_clustering.py"
+    command: /bin/bash -c "sleep 120 && ./wait-for-it.sh neo4j:7687 -- python upload_neo4j_from_json.py && python create_vector_db.py && python graph_clustering.py"
 
   flask_backend:
     build:
