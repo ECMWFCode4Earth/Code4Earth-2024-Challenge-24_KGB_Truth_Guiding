@@ -1,0 +1,32 @@
+.container {
+    display: flex;  /* Enables flexbox layout */
+    gap: 20px;      /* Adds space between each div */
+}
+
+/* Define styles for each entity type using ::before pseudo-elements */
+[data-entity="__Entity__"]::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #e04141;
+    margin-right: 10px;
+}
+
+[data-entity="__Chunk__"]::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: yellow;
+    margin-right: 10px;
+}
+
+[data-entity="__Community__"]::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+    margin-right: 10px;
+}

@@ -1,0 +1,29 @@
+/* 
+Copy code
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 30px;
+    color: white;
+}
+
+.Center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.Right {
+    text-align: right;
+}
+
+.Right a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Right a:hover {
+    text-decoration: underline;
+} */
