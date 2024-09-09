@@ -14,16 +14,12 @@
             {
                 "name": "ecmwf_meteorological_archiving_system",
                 "label": "System",
-                "properties": {
-                    "text": "ECMWF Meteorological Archiving System"
-                }
+                "properties": {}
             },
             {
                 "name": "operational_model",
                 "label": "Model",
-                "properties": {
-                    "text": "Operational Model"
-                }
+                "properties": {}
             },
             {
                 "name": "fluxes",
@@ -32,71 +28,63 @@
             },
             {
                 "name": "downward_fluxes",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {
-                    "direction": "downward"
+                    "direction": "downward",
+                    "type": "positive"
                 }
             },
             {
                 "name": "net_flux",
-                "label": "Property",
-                "properties": {}
+                "label": "Flux",
+                "properties": {
+                    "definition": "downward flux minus upward flux"
+                }
             },
             {
                 "name": "upward_flux",
-                "label": "Property",
-                "properties": {
-                    "abbreviation": "Fup"
-                }
-            },
-            {
-                "name": "downward_flux",
-                "label": "Property",
-                "properties": {
-                    "abbreviation": "Fdn"
-                }
-            },
-            {
-                "name": "net_flux_formula",
-                "label": "Formula",
-                "properties": {
-                    "formula": "Fup = Fdn - Fnet"
-                }
-            },
-            {
-                "name": "physical_fluxes",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {}
+            },
+            {
+                "name": "units_j_m2",
+                "label": "Unit",
+                "properties": {
+                    "text": "J m\u22122"
+                }
+            },
+            {
+                "name": "units_w_m2_s",
+                "label": "Unit",
+                "properties": {
+                    "text": "W m\u22122 s"
+                }
             },
             {
                 "name": "daily_mean",
                 "label": "Property",
                 "properties": {
-                    "units": "W m\u22122"
+                    "unit": "W m\u22122"
                 }
             },
             {
                 "name": "accumulated_fluxes",
-                "label": "Dataset",
+                "label": "Flux",
                 "properties": {}
             },
             {
                 "name": "t1",
                 "label": "Time",
-                "properties": {
-                    "value": "t"
-                }
+                "properties": {}
             },
             {
                 "name": "t2",
                 "label": "Time",
-                "properties": {
-                    "value": "t + 24 hours"
-                }
+                "properties": {}
             },
             {
                 "name": "clear_sky_quantities",
-                "label": "Property",
+                "label": "Dataset",
                 "properties": {}
             },
             {
@@ -105,108 +93,163 @@
                 "properties": {}
             },
             {
+                "name": "temperature",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "humidity",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "ozone",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "trace_gases",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "aerosol",
+                "label": "Property",
+                "properties": {}
+            },
+            {
                 "name": "solar_radiation",
                 "label": "Property",
                 "properties": {
-                    "type": "short-wave",
-                    "description": "Radiation originating from the sun"
+                    "text": "Solar Radiation"
                 }
+            },
+            {
+                "name": "short_wave_radiation",
+                "label": "Property",
+                "properties": {}
             },
             {
                 "name": "thermal_radiation",
                 "label": "Property",
                 "properties": {
-                    "type": "long-wave",
-                    "description": "Radiation originating from emission by the Earth or its atmosphere"
+                    "text": "Thermal Radiation"
                 }
             },
             {
-                "name": "spectrum_part",
-                "label": "Model",
-                "properties": {
-                    "range": "0.2\u20134 \u00b5m"
-                }
+                "name": "terrestrial_radiation",
+                "label": "Property",
+                "properties": {}
             },
             {
-                "name": "spectrum_part_thermal",
-                "label": "Model",
-                "properties": {
-                    "range": "4\u2013100 \u00b5m"
-                }
+                "name": "long_wave_radiation",
+                "label": "Property",
+                "properties": {}
             },
             {
                 "name": "spectrum",
                 "label": "Property",
                 "properties": {
-                    "wavelength_range": "4\u2013100 \u00b5m"
+                    "range": "0.2\u2013100 \u00b5m"
                 }
             },
             {
-                "name": "surface_fluxes",
-                "label": "Property",
-                "properties": {
-                    "text": "Archived Surface Fluxes"
-                }
+                "name": "4_100_Um",
+                "label": "Unit",
+                "properties": {}
             },
             {
-                "name": "toa_accumulated_fluxes",
-                "label": "Property",
+                "name": "2600_10_Cm_1",
+                "label": "Unit",
                 "properties": {}
             },
             {
                 "name": "radiative_energy_flows",
-                "label": "Property",
+                "label": "Dataset",
+                "properties": {}
+            },
+            {
+                "name": "toa_accumulated_fluxes",
+                "label": "Dataset",
                 "properties": {}
             },
             {
                 "name": "outgoing_long_wave_radiation",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {
-                    "abbreviation": "OLR"
+                    "text": "Outgoing Long-wave Radiation"
                 }
             },
             {
                 "name": "ecmwf_model",
                 "label": "Model",
                 "properties": {
-                    "description": "European Centre for Medium-Range Weather Forecasts model",
                     "text": "ECMWF Model"
                 }
             },
             {
                 "name": "cosmic_microwave_background",
-                "label": "Property",
-                "properties": {
-                    "temperature": "2.73 K"
-                }
-            },
-            {
-                "name": "toa",
                 "label": "System",
                 "properties": {
-                    "pressure_level": "0 hPa",
-                    "text": "Top of Atmosphere"
+                    "temperature": "2.73 K",
+                    "flux": "3 \u00b5W m\u22122"
                 }
             },
             {
                 "name": "net_long_wave_radiation",
                 "label": "Property",
-                "properties": {
-                    "text": "Net Long-Wave Radiation"
-                }
+                "properties": {}
             },
             {
-                "name": "olr",
-                "label": "Property",
+                "name": "toa",
+                "label": "Realm",
                 "properties": {
-                    "text": "Outgoing Long-Wave Radiation"
+                    "text": "Top of Atmosphere"
                 }
             },
             {
                 "name": "ttr",
                 "label": "Property",
                 "properties": {
-                    "text": "TTR in MARS"
+                    "text": "TTR"
+                }
+            },
+            {
+                "name": "olr",
+                "label": "Property",
+                "properties": {
+                    "text": "Outgoing Longwave Radiation"
+                }
+            },
+            {
+                "name": "short_wave_radiative_energy_flows",
+                "label": "Process",
+                "properties": {}
+            },
+            {
+                "name": "long_wave_radiative_energy_flows",
+                "label": "Process",
+                "properties": {}
+            },
+            {
+                "name": "mars",
+                "label": "Model",
+                "properties": {
+                    "text": "MARS"
+                }
+            },
+            {
+                "name": "downward_long_wave_flux",
+                "label": "Flux",
+                "properties": {
+                    "text": "Downward Long-Wave Flux"
+                }
+            },
+            {
+                "name": "upward_long_wave_flux",
+                "label": "Flux",
+                "properties": {
+                    "text": "Upward Long-Wave Radiation"
                 }
             },
             {
@@ -224,17 +267,10 @@
                 }
             },
             {
-                "name": "short_wave_radiative_energy_flows",
-                "label": "Process",
+                "name": "surface",
+                "label": "Realm",
                 "properties": {
-                    "text": "Short-Wave and Long-Wave Radiative Energy Flows in the Atmosphere"
-                }
-            },
-            {
-                "name": "mars",
-                "label": "Model",
-                "properties": {
-                    "text": "MARS"
+                    "text": "Surface"
                 }
             },
             {
@@ -245,13 +281,6 @@
                 }
             },
             {
-                "name": "orography",
-                "label": "Property",
-                "properties": {
-                    "text": "Orography"
-                }
-            },
-            {
                 "name": "mean_sea_level",
                 "label": "Property",
                 "properties": {
@@ -259,10 +288,17 @@
                 }
             },
             {
+                "name": "orography",
+                "label": "Property",
+                "properties": {
+                    "text": "Orography"
+                }
+            },
+            {
                 "name": "ssrd",
                 "label": "Property",
                 "properties": {
-                    "text": "Surface Solar Radiation Downward"
+                    "text": "SSRD"
                 }
             },
             {
@@ -294,20 +330,13 @@
                 }
             },
             {
-                "name": "scattering_pattern",
-                "label": "Process",
-                "properties": {
-                    "text": "Scattering Pattern"
-                }
-            },
-            {
                 "name": "diffuse_downwelling_radiation",
                 "label": "Property",
                 "properties": {}
             },
             {
                 "name": "model",
-                "label": "System",
+                "label": "Model",
                 "properties": {}
             },
             {
@@ -317,7 +346,7 @@
             },
             {
                 "name": "sun",
-                "label": "Celestial_Body",
+                "label": "Realm",
                 "properties": {
                     "text": "Sun"
                 }
@@ -330,13 +359,21 @@
             {
                 "name": "shadow_band",
                 "label": "System",
-                "properties": {
-                    "text": "Shadow Band"
-                }
+                "properties": {}
+            },
+            {
+                "name": "users",
+                "label": "Entity",
+                "properties": {}
+            },
+            {
+                "name": "correction_procedures",
+                "label": "Process",
+                "properties": {}
             },
             {
                 "name": "direct_fluxes",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {}
             },
             {
@@ -364,24 +401,22 @@
                 "name": "forecast",
                 "label": "Time",
                 "properties": {
-                    "text": "Forecast starting on 20120215 12 UTC"
+                    "text": "Forecast"
                 }
             },
             {
                 "name": "pyrheliometer",
                 "label": "System",
-                "properties": {
-                    "text": "Pyrheliometer"
-                }
+                "properties": {}
             },
             {
-                "name": "incoming_unscattered_solar_radiation",
+                "name": "incoming_undiscattered_solar_radiation",
                 "label": "Property",
                 "properties": {}
             },
             {
                 "name": "instantaneous_pyrheliometer_flux",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {}
             },
             {
@@ -398,17 +433,17 @@
             },
             {
                 "name": "pyranometer_convention",
-                "label": "System",
+                "label": "Entity",
                 "properties": {}
             },
             {
                 "name": "albedos",
-                "label": "Property",
+                "label": "Dataset",
                 "properties": {}
             },
             {
                 "name": "MARS",
-                "label": "Model",
+                "label": "System",
                 "properties": {
                     "text": "MARS"
                 }
@@ -424,19 +459,32 @@
                 "properties": {}
             },
             {
-                "name": "MODIS_satellite_instrument",
-                "label": "Celestial_Body",
-                "properties": {}
+                "name": "MODIS",
+                "label": "Entity",
+                "properties": {
+                    "text": "MODIS Satellite Instrument"
+                }
             },
             {
-                "name": "land_albedo",
+                "name": "wavelengths_shorter_than_0_7_um",
                 "label": "Property",
-                "properties": {}
+                "properties": {
+                    "text": "Wavelengths Shorter Than 0.7 \u00b5m"
+                }
             },
             {
-                "name": "radiation",
+                "name": "wavelengths_longer_than_0_7_um",
                 "label": "Property",
-                "properties": {}
+                "properties": {
+                    "text": "Wavelengths Longer Than 0.7 \u00b5m"
+                }
+            },
+            {
+                "name": "model_cycle_CY32R2",
+                "label": "Model",
+                "properties": {
+                    "text": "Model Cycle CY32R2"
+                }
             },
             {
                 "name": "Aluvp",
@@ -460,31 +508,30 @@
             },
             {
                 "name": "Land_Surface_Albedo",
-                "label": "Property",
+                "label": "Process",
                 "properties": {
                     "text": "Land Surface Albedo"
                 }
             },
             {
-                "name": "Modis_Climatology",
-                "label": "Dataset",
-                "properties": {
-                    "text": "MODIS Climatology"
-                }
+                "name": "Forecast_Start_Time",
+                "label": "Time",
+                "properties": {}
             },
             {
-                "name": "Lying_Snow",
+                "name": "MODIS_Climatology",
+                "label": "Dataset",
+                "properties": {}
+            },
+            {
+                "name": "Dynamic_Snow_Variable",
                 "label": "Variable",
-                "properties": {
-                    "text": "Lying Snow"
-                }
+                "properties": {}
             },
             {
                 "name": "Radiation_Scheme",
-                "label": "Process",
-                "properties": {
-                    "text": "Radiation Scheme"
-                }
+                "label": "System",
+                "properties": {}
             },
             {
                 "name": "Cloud_Cover",
@@ -504,13 +551,11 @@
             {
                 "name": "FAL",
                 "label": "Property",
-                "properties": {
-                    "text": "Instantaneous Broadband Albedo"
-                }
+                "properties": {}
             },
             {
                 "name": "snow_and_sea_ice",
-                "label": "Realm",
+                "label": "Variable",
                 "properties": {}
             },
             {
@@ -524,30 +569,29 @@
                 "properties": {}
             },
             {
+                "name": "uv_visible",
+                "label": "Realm",
+                "properties": {}
+            },
+            {
+                "name": "near_infrared",
+                "label": "Realm",
+                "properties": {}
+            },
+            {
                 "name": "top_of_atmosphere_spectral_distribution",
                 "label": "Property",
-                "properties": {
-                    "text": "Top of Atmosphere Spectral Distribution"
-                }
+                "properties": {}
             },
             {
                 "name": "incoming_solar_radiation",
-                "label": "Property",
+                "label": "Flux",
                 "properties": {}
             },
             {
                 "name": "surface_albedo_quantities",
                 "label": "Dataset",
-                "properties": {
-                    "text": "Surface Albedo Quantities from MARS"
-                }
-            },
-            {
-                "name": "non_dimension",
-                "label": "Property",
-                "properties": {
-                    "text": "Non-dimensional"
-                }
+                "properties": {}
             },
             {
                 "name": "aluvp",
@@ -578,93 +622,119 @@
                 }
             },
             {
-                "name": "fal",
-                "label": "Variable",
-                "properties": {
-                    "text": "Forecast Albedo"
-                }
+                "name": "forecast_start",
+                "label": "Time",
+                "properties": {}
             },
             {
                 "name": "broadband_all_sky_albedo",
                 "label": "Property",
-                "properties": {
-                    "text": "Broadband All-Sky Albedo"
-                }
+                "properties": {}
             },
             {
-                "name": "alpha",
-                "label": "Variable",
-                "properties": {
-                    "text": "\u03b1"
-                }
+                "name": "surf",
+                "label": "Entity",
+                "properties": {}
+            },
+            {
+                "name": "differences_between_fal_and_alpha",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "snow_and_ice",
+                "label": "Realm",
+                "properties": {}
+            },
+            {
+                "name": "albedo_difference",
+                "label": "Property",
+                "properties": {}
+            },
+            {
+                "name": "archived_surface_fluxes",
+                "label": "Dataset",
+                "properties": {}
             },
             {
                 "name": "eq_1",
-                "label": "Formula",
+                "label": "Entity",
                 "properties": {
-                    "text": "Equation 1"
+                    "text": "Eq. 1"
                 }
             },
             {
                 "name": "albedo",
                 "label": "Property",
-                "properties": {}
+                "properties": {
+                    "formula": "\u03b1 = 1 \u2212 SSR/SSRD",
+                    "text": "Albedo"
+                }
             },
             {
                 "name": "ssr",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "SSR"
+                }
             },
             {
-                "name": "ssrc",
-                "label": "Variable",
-                "properties": {}
+                "name": "effective_albedo",
+                "label": "Property",
+                "properties": {
+                    "text": "Effective Albedo"
+                }
             },
             {
                 "name": "clear_sky_surface_net_shortwave_flux",
-                "label": "Process",
-                "properties": {}
-            },
-            {
-                "name": "clouds",
-                "label": "System",
-                "properties": {}
-            },
-            {
-                "name": "radiation_calculation",
-                "label": "Process",
-                "properties": {}
-            },
-            {
-                "name": "sunlit_points",
-                "label": "Realm",
-                "properties": {}
+                "label": "Variable",
+                "properties": {
+                    "text": "Clear-Sky Surface Net Shortwave Flux"
+                }
             },
             {
                 "name": "upwelling_component",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "Upwelling Component"
+                }
             },
             {
                 "name": "downwelling_component",
                 "label": "Variable",
-                "properties": {}
-            },
-            {
-                "name": "factors_of_albedo",
-                "label": "Model",
-                "properties": {}
-            },
-            {
-                "name": "sunshine_duration",
-                "label": "Property",
                 "properties": {
-                    "text": "Sunshine Duration"
+                    "text": "Downwelling Component"
                 }
             },
             {
-                "name": "direct_downwelling_solar_flux",
+                "name": "cloud_absence",
+                "label": "Phenomenon",
+                "properties": {
+                    "text": "Absence of Clouds"
+                }
+            },
+            {
+                "name": "direct_surface_radiation",
+                "label": "Flux",
+                "properties": {
+                    "text": "Direct Surface Radiation"
+                }
+            },
+            {
+                "name": "diffuse_surface_radiation",
+                "label": "Flux",
+                "properties": {
+                    "text": "Diffuse Surface Radiation"
+                }
+            },
+            {
+                "name": "sunshine_duration",
                 "label": "Variable",
+                "properties": {}
+            },
+            {
+                "name": "direct_downwelling_solar_flux",
+                "label": "Flux",
                 "properties": {
                     "text": "Direct Downwelling Solar Flux"
                 }
@@ -677,24 +747,45 @@
                 }
             },
             {
-                "name": "forecast_start_time",
-                "label": "Time",
+                "name": "solar_flux_perpendicular_to_sun",
+                "label": "Flux",
                 "properties": {
-                    "text": "20120215 12 UTC"
+                    "text": "Solar Flux Perpendicular to Sun"
                 }
             },
             {
-                "name": "forecast_end_time",
-                "label": "Time",
+                "name": "factor_of_1_cos_theta0",
+                "label": "Property",
                 "properties": {
-                    "text": "20120216 12 UTC"
+                    "text": "Factor of 1/cos(\u03b80)"
                 }
             },
             {
-                "name": "radiation_fluxes",
+                "name": "accumulated_field",
+                "label": "Property",
+                "properties": {
+                    "text": "Accumulated Field"
+                }
+            },
+            {
+                "name": "radiation_fluxes_quantities",
                 "label": "Variable",
                 "properties": {
-                    "text": "Radiation Fluxes"
+                    "text": "Radiation Fluxes Quantities"
+                }
+            },
+            {
+                "name": "first_24_hours",
+                "label": "Time",
+                "properties": {
+                    "text": "First 24 Hours"
+                }
+            },
+            {
+                "name": "operational_forecast",
+                "label": "Process",
+                "properties": {
+                    "text": "Operational Forecast"
                 }
             },
             {
@@ -705,85 +796,95 @@
                 }
             },
             {
-                "name": "underestimation_warning",
-                "label": "Process",
-                "properties": {
-                    "text": "Underestimation Warning"
-                }
-            },
-            {
-                "name": "forecast_start",
+                "name": "forecast_start_time",
                 "label": "Time",
                 "properties": {
-                    "date_time": "20120215 12 UTC"
+                    "text": "20120215 12 UTC"
                 }
             },
             {
                 "name": "surface_albedo",
-                "label": "Property",
-                "properties": {}
-            },
-            {
-                "name": "forecast_24_hours",
-                "label": "Time",
-                "properties": {
-                    "date_time": "20120216 12 UTC"
-                }
-            },
-            {
-                "name": "interval_0_to_1",
                 "label": "Variable",
                 "properties": {
-                    "range": "0-1"
+                    "text": "Surface Albedo"
                 }
             },
             {
-                "name": "figures_6_and_7",
-                "label": "Dataset",
+                "name": "forecast_time",
+                "label": "Time",
                 "properties": {
-                    "description": "Figures 6 and 7 presenting albedo components in percent"
+                    "text": "20120216 12 UTC"
+                }
+            },
+            {
+                "name": "non_dimension",
+                "label": "Property",
+                "properties": {
+                    "text": "Non-Dimensional"
+                }
+            },
+            {
+                "name": "percent_presentation",
+                "label": "Property",
+                "properties": {
+                    "text": "Presented in Percent"
                 }
             },
             {
                 "name": "jean_jacques_morcrette",
-                "label": "Person",
+                "label": "Entity",
                 "properties": {
-                    "affiliation": "ECMWF"
+                    "text": "Jean-Jacques Morcrette"
                 }
             },
             {
                 "name": "robin_hogan",
-                "label": "Person",
+                "label": "Entity",
                 "properties": {
-                    "affiliation": "ECMWF"
+                    "text": "Robin Hogan"
                 }
             },
             {
-                "name": "physical_aspects_and_user_support_sections",
-                "label": "System",
+                "name": "ecmwf",
+                "label": "Organization",
                 "properties": {
-                    "affiliation": "ECMWF"
+                    "text": "ECMWF"
                 }
             },
             {
                 "name": "tsr",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "TSR"
+                }
             },
             {
                 "name": "tsrc",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "TSRC"
+                }
+            },
+            {
+                "name": "ssrc",
+                "label": "Variable",
+                "properties": {
+                    "text": "SSRC"
+                }
             },
             {
                 "name": "fdir",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "FDIR"
+                }
             },
             {
                 "name": "cdir",
                 "label": "Variable",
-                "properties": {}
+                "properties": {
+                    "text": "CDIR"
+                }
             },
             {
                 "name": "str",
@@ -801,11 +902,16 @@
                 "properties": {}
             },
             {
-                "name": "time_20120215_12_utc",
+                "name": "20120215_12_utc",
                 "label": "Time",
                 "properties": {
                     "text": "2012-02-15 12:00 UTC"
                 }
+            },
+            {
+                "name": "fal",
+                "label": "Variable",
+                "properties": {}
             }
         ],
         "Chunk": [
@@ -904,15 +1010,15 @@
     },
     "relationships": [
         {
-            "start": "radiation_quantities",
-            "end": "ecmwf_data",
-            "type": "hasDataset",
+            "start": "ecmwf_data",
+            "end": "radiation_quantities",
+            "type": "isUsedBy",
             "properties": {}
         },
         {
             "start": "ecmwf_data",
             "end": "ecmwf_meteorological_archiving_system",
-            "type": "hasSystem",
+            "type": "isArchivedBy",
             "properties": {}
         },
         {
@@ -930,43 +1036,31 @@
         {
             "start": "fluxes",
             "end": "downward_fluxes",
-            "type": "hasDirection",
+            "type": "includes",
             "properties": {}
         },
         {
             "start": "fluxes",
             "end": "net_flux",
-            "type": "hasType",
+            "type": "includes",
             "properties": {}
         },
         {
-            "start": "downward_flux",
-            "end": "downward_fluxes",
-            "type": "isRelatedTo",
-            "properties": {}
-        },
-        {
-            "start": "downward_flux",
-            "end": "net_flux",
-            "type": "isRelatedTo",
-            "properties": {}
-        },
-        {
-            "start": "net_flux",
-            "end": "net_flux_formula",
-            "type": "isCalculatedBy",
-            "properties": {}
-        },
-        {
-            "start": "net_flux_formula",
+            "start": "fluxes",
             "end": "upward_flux",
-            "type": "calculates",
+            "type": "includes",
             "properties": {}
         },
         {
-            "start": "physical_fluxes",
-            "end": "operational_model",
-            "type": "isAccumulatedBy",
+            "start": "downward_fluxes",
+            "end": "units_j_m2",
+            "type": "hasUnit",
+            "properties": {}
+        },
+        {
+            "start": "downward_fluxes",
+            "end": "units_w_m2_s",
+            "type": "hasUnit",
             "properties": {}
         },
         {
@@ -1018,19 +1112,13 @@
             "properties": null
         },
         {
-            "start": "downward_flux",
+            "start": "units_j_m2",
             "end": "examples.txt___00",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "net_flux_formula",
-            "end": "examples.txt___00",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "physical_fluxes",
+            "start": "units_w_m2_s",
             "end": "examples.txt___00",
             "type": "APPEARED_IN",
             "properties": null
@@ -1039,12 +1127,20 @@
             "start": "daily_mean",
             "end": "accumulated_fluxes",
             "type": "isCalculatedFrom",
-            "properties": {}
+            "properties": {
+                "operation": "difference divided by 86400"
+            }
         },
         {
             "start": "t1",
-            "end": "t2",
-            "type": "isRelatedTo",
+            "end": "t",
+            "type": "hasValue",
+            "properties": {}
+        },
+        {
+            "start": "t2",
+            "end": "t_plus_24_hours",
+            "type": "hasValue",
             "properties": {}
         },
         {
@@ -1054,27 +1150,45 @@
             "properties": {}
         },
         {
+            "start": "atmospheric_conditions",
+            "end": "temperature",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "atmospheric_conditions",
+            "end": "humidity",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "atmospheric_conditions",
+            "end": "ozone",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "atmospheric_conditions",
+            "end": "trace_gases",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "atmospheric_conditions",
+            "end": "aerosol",
+            "type": "includes",
+            "properties": {}
+        },
+        {
             "start": "solar_radiation",
-            "end": "sun",
-            "type": "isEmittedBy",
+            "end": "short_wave_radiation",
+            "type": "isTypeOf",
             "properties": {}
         },
         {
             "start": "thermal_radiation",
-            "end": "surface",
-            "type": "isEmittedBy",
-            "properties": {}
-        },
-        {
-            "start": "spectrum_part",
-            "end": "solar_radiation",
-            "type": "correspondsTo",
-            "properties": {}
-        },
-        {
-            "start": "spectrum_part_thermal",
-            "end": "thermal_radiation",
-            "type": "correspondsTo",
+            "end": "long_wave_radiation",
+            "type": "isTypeOf",
             "properties": {}
         },
         {
@@ -1114,7 +1228,43 @@
             "properties": null
         },
         {
+            "start": "temperature",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "humidity",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "ozone",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "trace_gases",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "aerosol",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
             "start": "solar_radiation",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "short_wave_radiation",
             "end": "examples.txt___01",
             "type": "APPEARED_IN",
             "properties": null
@@ -1126,61 +1276,61 @@
             "properties": null
         },
         {
-            "start": "spectrum_part",
+            "start": "terrestrial_radiation",
             "end": "examples.txt___01",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "spectrum_part_thermal",
+            "start": "long_wave_radiation",
             "end": "examples.txt___01",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
             "start": "spectrum",
-            "end": "solar_radiation",
-            "type": "hasComponent",
+            "end": "examples.txt___01",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "solar_radiation",
+            "end": "4_100_Um",
+            "type": "hasWavelengthRange",
             "properties": {}
         },
         {
-            "start": "spectrum",
-            "end": "thermal_radiation",
-            "type": "hasComponent",
+            "start": "thermal_radiation",
+            "end": "2600_10_Cm_1",
+            "type": "hasWavelengthRange",
             "properties": {}
         },
         {
-            "start": "surface_fluxes",
+            "start": "radiative_energy_flows",
             "end": "toa_accumulated_fluxes",
-            "type": "isRepresentedBy",
-            "properties": {}
-        },
-        {
-            "start": "toa_accumulated_fluxes",
-            "end": "radiative_energy_flows",
-            "type": "hasFlux",
+            "type": "isRepresentedIn",
             "properties": {}
         },
         {
             "start": "outgoing_long_wave_radiation",
-            "end": "toa",
-            "type": "isMeasuredIn",
+            "end": "toa_accumulated_fluxes",
+            "type": "isArchivedIn",
             "properties": {}
         },
         {
             "start": "ecmwf_model",
-            "end": "toa",
-            "type": "assumes",
+            "end": "cosmic_microwave_background",
+            "type": "assumesNoIncomingRadiationFrom",
             "properties": {}
         },
         {
-            "start": "cosmic_microwave_background",
-            "end": "outgoing_long_wave_radiation",
-            "type": "contributesTo",
-            "properties": {}
+            "start": "4_100_Um",
+            "end": "examples.txt___02",
+            "type": "APPEARED_IN",
+            "properties": null
         },
         {
-            "start": "spectrum",
+            "start": "2600_10_Cm_1",
             "end": "examples.txt___02",
             "type": "APPEARED_IN",
             "properties": null
@@ -1193,18 +1343,6 @@
         },
         {
             "start": "thermal_radiation",
-            "end": "examples.txt___02",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "surface_fluxes",
-            "end": "examples.txt___02",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "toa_accumulated_fluxes",
             "end": "examples.txt___02",
             "type": "APPEARED_IN",
             "properties": null
@@ -1216,6 +1354,12 @@
             "properties": null
         },
         {
+            "start": "toa_accumulated_fluxes",
+            "end": "examples.txt___02",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
             "start": "outgoing_long_wave_radiation",
             "end": "examples.txt___02",
             "type": "APPEARED_IN",
@@ -1234,41 +1378,59 @@
             "properties": null
         },
         {
-            "start": "toa",
-            "end": "examples.txt___02",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
             "start": "net_long_wave_radiation",
-            "end": "olr",
+            "end": "outgoing_long_wave_radiation",
             "type": "isEqualTo",
             "properties": {
                 "equation": "OLR = -TTR"
             }
         },
         {
+            "start": "net_long_wave_radiation",
+            "end": "toa",
+            "type": "isMeasuredAt",
+            "properties": {}
+        },
+        {
+            "start": "outgoing_long_wave_radiation",
+            "end": "ttr",
+            "type": "isNegativeOf",
+            "properties": {}
+        },
+        {
             "start": "ttr",
-            "end": "net_long_wave_radiation",
-            "type": "isEqualTo",
+            "end": "mars",
+            "type": "isRelatedTo",
+            "properties": {}
+        },
+        {
+            "start": "short_wave_radiative_energy_flows",
+            "end": "fluxes",
+            "type": "isSchematicOf",
+            "properties": {}
+        },
+        {
+            "start": "long_wave_radiative_energy_flows",
+            "end": "fluxes",
+            "type": "isSchematicOf",
             "properties": {}
         },
         {
             "start": "ttr",
             "end": "lup_toa",
-            "type": "isEqualTo",
+            "type": "isRepresentedBy",
             "properties": {}
         },
         {
-            "start": "short_wave_radiative_energy_flows",
+            "start": "ttrc",
+            "end": "lup_toa",
+            "type": "isRepresentedBy",
+            "properties": {}
+        },
+        {
+            "start": "downward_long_wave_flux",
             "end": "mars",
-            "type": "hasModel",
-            "properties": {}
-        },
-        {
-            "start": "short_wave_radiative_energy_flows",
-            "end": "toa",
-            "type": "hasLocation",
+            "type": "isNeglectedIn",
             "properties": {}
         },
         {
@@ -1279,6 +1441,18 @@
         },
         {
             "start": "toa",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "outgoing_long_wave_radiation",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "ttr",
             "end": "examples.txt___03",
             "type": "APPEARED_IN",
             "properties": null
@@ -1290,7 +1464,37 @@
             "properties": null
         },
         {
-            "start": "ttr",
+            "start": "short_wave_radiative_energy_flows",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "long_wave_radiative_energy_flows",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "mars",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "fluxes",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "downward_long_wave_flux",
+            "end": "examples.txt___03",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "upward_long_wave_flux",
             "end": "examples.txt___03",
             "type": "APPEARED_IN",
             "properties": null
@@ -1308,32 +1512,20 @@
             "properties": null
         },
         {
-            "start": "short_wave_radiative_energy_flows",
-            "end": "examples.txt___03",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "mars",
-            "end": "examples.txt___03",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
             "start": "accumulated_fluxes",
-            "end": "ground_level",
-            "type": "isMeasuredAt",
+            "end": "surface",
+            "type": "isAvailableAt",
             "properties": {}
         },
         {
-            "start": "ground_level",
-            "end": "orography",
-            "type": "isAffectedBy",
+            "start": "surface",
+            "end": "ground_level",
+            "type": "isAtLevel",
             "properties": {}
         },
         {
             "start": "mean_sea_level",
-            "end": "ground_level",
+            "end": "orography",
             "type": "isComparedTo",
             "properties": {}
         },
@@ -1350,19 +1542,19 @@
             "properties": {}
         },
         {
-            "start": "ssrd",
-            "end": "ssrd_fdir",
-            "type": "includes",
-            "properties": {}
-        },
-        {
-            "start": "cloud_particles",
-            "end": "scattering_pattern",
-            "type": "hasScatteringPattern",
+            "start": "solar_radiation",
+            "end": "cloud_particles",
+            "type": "isAffectedBy",
             "properties": {}
         },
         {
             "start": "accumulated_fluxes",
+            "end": "examples.txt___04",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "surface",
             "end": "examples.txt___04",
             "type": "APPEARED_IN",
             "properties": null
@@ -1374,13 +1566,13 @@
             "properties": null
         },
         {
-            "start": "orography",
+            "start": "mean_sea_level",
             "end": "examples.txt___04",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "mean_sea_level",
+            "start": "orography",
             "end": "examples.txt___04",
             "type": "APPEARED_IN",
             "properties": null
@@ -1416,69 +1608,87 @@
             "properties": null
         },
         {
-            "start": "scattering_pattern",
+            "start": "solar_radiation",
             "end": "examples.txt___04",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "diffuse_downwelling_radiation",
-            "end": "model",
-            "type": "isIncludedIn",
+            "start": "model",
+            "end": "diffuse_downwelling_radiation",
+            "type": "includes",
             "properties": {}
         },
         {
-            "start": "diffuse_radiation",
+            "start": "diffuse_downwelling_radiation",
             "end": "sun",
-            "type": "isInDirectionOf",
+            "type": "hasDirection",
             "properties": {}
         },
         {
             "start": "diffuse_pyranometer",
-            "end": "shadow_band",
-            "type": "uses",
+            "end": "direct_radiation",
+            "type": "excludes",
             "properties": {}
         },
         {
-            "start": "direct_radiation",
-            "end": "diffuse_pyranometer",
-            "type": "isExcludedFrom",
+            "start": "users",
+            "end": "direct_radiation",
+            "type": "compares",
             "properties": {}
         },
         {
-            "start": "direct_fluxes",
-            "end": "surface_fluxes",
-            "type": "isTypeOf",
+            "start": "users",
+            "end": "diffuse_radiation",
+            "type": "compares",
             "properties": {}
         },
         {
-            "start": "surface_fluxes",
+            "start": "diffuse_radiation",
+            "end": "correction_procedures",
+            "type": "requiresCorrection",
+            "properties": {}
+        },
+        {
+            "start": "fluxes",
+            "end": "surface",
+            "type": "isMeasuredAt",
+            "properties": {}
+        },
+        {
+            "start": "fluxes",
+            "end": "top_of_atmosphere",
+            "type": "isMeasuredAt",
+            "properties": {}
+        },
+        {
+            "start": "fluxes",
+            "end": "energy",
+            "type": "represents",
+            "properties": {}
+        },
+        {
+            "start": "fluxes",
             "end": "square_metre",
             "type": "isMeasuredIn",
             "properties": {}
         },
         {
-            "start": "energy",
-            "end": "J",
-            "type": "isMeasuredIn",
-            "properties": {}
-        },
-        {
-            "start": "top_of_atmosphere",
-            "end": "surface_fluxes",
-            "type": "isLocationOf",
-            "properties": {}
-        },
-        {
-            "start": "surface_fluxes",
+            "start": "fluxes",
             "end": "forecast",
-            "type": "hasTimePeriod",
+            "type": "isInitiatedBy",
             "properties": {}
         },
         {
             "start": "pyrheliometer",
-            "end": "incoming_unscattered_solar_radiation",
+            "end": "incoming_undiscattered_solar_radiation",
             "type": "measures",
+            "properties": {}
+        },
+        {
+            "start": "direct_fluxes",
+            "end": "fluxes",
+            "type": "isTypeOf",
             "properties": {}
         },
         {
@@ -1524,13 +1734,31 @@
             "properties": null
         },
         {
+            "start": "users",
+            "end": "examples.txt___05",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "correction_procedures",
+            "end": "examples.txt___05",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "fluxes",
+            "end": "examples.txt___05",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
             "start": "direct_fluxes",
             "end": "examples.txt___05",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "surface_fluxes",
+            "start": "surface",
             "end": "examples.txt___05",
             "type": "APPEARED_IN",
             "properties": null
@@ -1566,7 +1794,7 @@
             "properties": null
         },
         {
-            "start": "incoming_unscattered_solar_radiation",
+            "start": "incoming_undiscattered_solar_radiation",
             "end": "examples.txt___05",
             "type": "APPEARED_IN",
             "properties": null
@@ -1574,7 +1802,7 @@
         {
             "start": "instantaneous_pyrheliometer_flux",
             "end": "flat_horizontal_plane",
-            "type": "hasConversion",
+            "type": "isConvertedTo",
             "properties": {
                 "conversion_factor": "cos(\u03b80)"
             }
@@ -1594,7 +1822,7 @@
         {
             "start": "albedos",
             "end": "MARS",
-            "type": "isObtainedFrom",
+            "type": "isProvidedBy",
             "properties": {}
         },
         {
@@ -1605,20 +1833,38 @@
         },
         {
             "start": "monthly_climatology",
-            "end": "MODIS_satellite_instrument",
+            "end": "MODIS",
             "type": "isDerivedFrom",
             "properties": {}
         },
         {
-            "start": "land_albedo",
-            "end": "albedo_calculation",
-            "type": "isCalculatedBy",
+            "start": "albedo_calculation",
+            "end": "wavelengths_shorter_than_0_7_um",
+            "type": "includes",
             "properties": {}
         },
         {
-            "start": "land_albedo",
-            "end": "radiation",
-            "type": "isRelatedTo",
+            "start": "albedo_calculation",
+            "end": "wavelengths_longer_than_0_7_um",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "albedo_calculation",
+            "end": "direct_radiation",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "albedo_calculation",
+            "end": "diffuse_radiation",
+            "type": "includes",
+            "properties": {}
+        },
+        {
+            "start": "model_cycle_CY32R2",
+            "end": "albedo_calculation",
+            "type": "validates",
             "properties": {}
         },
         {
@@ -1676,19 +1922,37 @@
             "properties": null
         },
         {
-            "start": "MODIS_satellite_instrument",
+            "start": "MODIS",
             "end": "examples.txt___06",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "land_albedo",
+            "start": "wavelengths_shorter_than_0_7_um",
             "end": "examples.txt___06",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "radiation",
+            "start": "wavelengths_longer_than_0_7_um",
+            "end": "examples.txt___06",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "direct_radiation",
+            "end": "examples.txt___06",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "diffuse_radiation",
+            "end": "examples.txt___06",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "model_cycle_CY32R2",
             "end": "examples.txt___06",
             "type": "APPEARED_IN",
             "properties": null
@@ -1719,20 +1983,26 @@
         },
         {
             "start": "Land_Surface_Albedo",
-            "end": "Modis_Climatology",
-            "type": "isInterpolatedIn",
+            "end": "Forecast_Start_Time",
+            "type": "interpolatedTo",
             "properties": {}
         },
         {
-            "start": "Lying_Snow",
-            "end": "Land_Surface_Albedo",
-            "type": "isModifiedBy",
+            "start": "Land_Surface_Albedo",
+            "end": "MODIS_Climatology",
+            "type": "basedOn",
+            "properties": {}
+        },
+        {
+            "start": "Land_Surface_Albedo",
+            "end": "Dynamic_Snow_Variable",
+            "type": "modifiedBy",
             "properties": {}
         },
         {
             "start": "Land_Surface_Albedo",
             "end": "Radiation_Scheme",
-            "type": "isUsedBy",
+            "type": "usedBy",
             "properties": {}
         },
         {
@@ -1756,7 +2026,7 @@
         {
             "start": "FAL",
             "end": "MARS",
-            "type": "isStoredIn",
+            "type": "storedIn",
             "properties": {}
         },
         {
@@ -1790,13 +2060,19 @@
             "properties": null
         },
         {
-            "start": "Modis_Climatology",
+            "start": "Forecast_Start_Time",
             "end": "examples.txt___07",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "Lying_Snow",
+            "start": "MODIS_Climatology",
+            "end": "examples.txt___07",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "Dynamic_Snow_Variable",
             "end": "examples.txt___07",
             "type": "APPEARED_IN",
             "properties": null
@@ -1838,27 +2114,39 @@
             "properties": null
         },
         {
-            "start": "weighted_average",
-            "end": "snow_and_sea_ice",
-            "type": "includes",
+            "start": "snow_and_sea_ice",
+            "end": "weighted_average",
+            "type": "isComputedAs",
             "properties": {}
         },
         {
             "start": "weighted_average",
             "end": "diffuse_albedos",
-            "type": "isBasedOn",
+            "type": "hasComponent",
             "properties": {}
         },
         {
             "start": "weighted_average",
-            "end": "top_of_atmosphere_spectral_distribution",
-            "type": "isWeightedBy",
+            "end": "uv_visible",
+            "type": "hasRealm",
             "properties": {}
         },
         {
-            "start": "top_of_atmosphere_spectral_distribution",
-            "end": "incoming_solar_radiation",
-            "type": "isRelatedTo",
+            "start": "weighted_average",
+            "end": "near_infrared",
+            "type": "hasRealm",
+            "properties": {}
+        },
+        {
+            "start": "incoming_solar_radiation",
+            "end": "top_of_atmosphere_spectral_distribution",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "incoming_solar_radiation",
+            "end": "weighted_average",
+            "type": "isComponentOf",
             "properties": {}
         },
         {
@@ -1868,50 +2156,68 @@
             "properties": {}
         },
         {
-            "start": "surface_albedo_quantities",
-            "end": "non_dimension",
-            "type": "isNonDimensional",
-            "properties": {}
-        },
-        {
-            "start": "surface_albedo_quantities",
+            "start": "mars",
             "end": "aluvp",
-            "type": "includes",
+            "type": "hasVariable",
             "properties": {}
         },
         {
-            "start": "surface_albedo_quantities",
+            "start": "mars",
             "end": "aluvd",
-            "type": "includes",
+            "type": "hasVariable",
             "properties": {}
         },
         {
-            "start": "surface_albedo_quantities",
+            "start": "mars",
             "end": "alnip",
-            "type": "includes",
+            "type": "hasVariable",
             "properties": {}
         },
         {
-            "start": "surface_albedo_quantities",
+            "start": "mars",
             "end": "alnid",
-            "type": "includes",
+            "type": "hasVariable",
             "properties": {}
         },
         {
-            "start": "forecast",
-            "end": "surface_albedo_quantities",
-            "type": "isTimeFor",
+            "start": "aluvp",
+            "end": "forecast_start",
+            "type": "isDefinedAt",
             "properties": {}
         },
         {
-            "start": "fal",
-            "end": "broadband_all_sky_albedo",
-            "type": "differsFrom",
+            "start": "aluvd",
+            "end": "forecast_start",
+            "type": "isDefinedAt",
             "properties": {}
         },
         {
-            "start": "fal",
-            "end": "surface_fluxes",
+            "start": "alnip",
+            "end": "forecast_start",
+            "type": "isDefinedAt",
+            "properties": {}
+        },
+        {
+            "start": "alnid",
+            "end": "forecast_start",
+            "type": "isDefinedAt",
+            "properties": {}
+        },
+        {
+            "start": "differences_between_fal_and_alpha",
+            "end": "snow_and_ice",
+            "type": "occursOver",
+            "properties": {}
+        },
+        {
+            "start": "differences_between_fal_and_alpha",
+            "end": "albedo_difference",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "alpha",
+            "end": "archived_surface_fluxes",
             "type": "isCalculatedFrom",
             "properties": {}
         },
@@ -1940,6 +2246,18 @@
             "properties": null
         },
         {
+            "start": "uv_visible",
+            "end": "examples.txt___08",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "near_infrared",
+            "end": "examples.txt___08",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
             "start": "top_of_atmosphere_spectral_distribution",
             "end": "examples.txt___08",
             "type": "APPEARED_IN",
@@ -1958,7 +2276,7 @@
             "properties": null
         },
         {
-            "start": "non_dimension",
+            "start": "mars",
             "end": "examples.txt___08",
             "type": "APPEARED_IN",
             "properties": null
@@ -1988,13 +2306,7 @@
             "properties": null
         },
         {
-            "start": "forecast",
-            "end": "examples.txt___08",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "fal",
+            "start": "forecast_start",
             "end": "examples.txt___08",
             "type": "APPEARED_IN",
             "properties": null
@@ -2006,13 +2318,31 @@
             "properties": null
         },
         {
-            "start": "alpha",
+            "start": "surf",
             "end": "examples.txt___08",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "surface_fluxes",
+            "start": "differences_between_fal_and_alpha",
+            "end": "examples.txt___08",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "snow_and_ice",
+            "end": "examples.txt___08",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "albedo_difference",
+            "end": "examples.txt___08",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "archived_surface_fluxes",
             "end": "examples.txt___08",
             "type": "APPEARED_IN",
             "properties": null
@@ -2036,45 +2366,39 @@
             "properties": {}
         },
         {
-            "start": "ssrc",
-            "end": "upwelling_component",
-            "type": "isSeparatedInto",
-            "properties": {}
-        },
-        {
-            "start": "ssrc",
-            "end": "downwelling_component",
-            "type": "isSeparatedInto",
+            "start": "effective_albedo",
+            "end": "clear_sky_surface_net_shortwave_flux",
+            "type": "isAveragedOver",
             "properties": {}
         },
         {
             "start": "clear_sky_surface_net_shortwave_flux",
-            "end": "forecast",
-            "type": "isPartOf",
+            "end": "upwelling_component",
+            "type": "hasComponent",
             "properties": {}
         },
         {
-            "start": "sunlit_points",
-            "end": "ssrd",
+            "start": "clear_sky_surface_net_shortwave_flux",
+            "end": "downwelling_component",
+            "type": "hasComponent",
+            "properties": {}
+        },
+        {
+            "start": "downwelling_component",
+            "end": "cloud_absence",
             "type": "isAffectedBy",
             "properties": {}
         },
         {
-            "start": "clouds",
-            "end": "direct_radiation",
-            "type": "affect",
+            "start": "downwelling_component",
+            "end": "direct_surface_radiation",
+            "type": "hasType",
             "properties": {}
         },
         {
-            "start": "clouds",
-            "end": "diffuse_radiation",
-            "type": "affect",
-            "properties": {}
-        },
-        {
-            "start": "factors_of_albedo",
-            "end": "albedo",
-            "type": "models",
+            "start": "downwelling_component",
+            "end": "diffuse_surface_radiation",
+            "type": "hasType",
             "properties": {}
         },
         {
@@ -2096,37 +2420,13 @@
             "properties": null
         },
         {
-            "start": "ssrc",
+            "start": "effective_albedo",
             "end": "examples.txt___09",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
             "start": "clear_sky_surface_net_shortwave_flux",
-            "end": "examples.txt___09",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "forecast",
-            "end": "examples.txt___09",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "clouds",
-            "end": "examples.txt___09",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "radiation_calculation",
-            "end": "examples.txt___09",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "sunlit_points",
             "end": "examples.txt___09",
             "type": "APPEARED_IN",
             "properties": null
@@ -2144,19 +2444,19 @@
             "properties": null
         },
         {
-            "start": "direct_radiation",
+            "start": "cloud_absence",
             "end": "examples.txt___09",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "diffuse_radiation",
+            "start": "direct_surface_radiation",
             "end": "examples.txt___09",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "factors_of_albedo",
+            "start": "diffuse_surface_radiation",
             "end": "examples.txt___09",
             "type": "APPEARED_IN",
             "properties": null
@@ -2170,7 +2470,7 @@
         {
             "start": "sunshine_duration",
             "end": "direct_downwelling_solar_flux",
-            "type": "hasQuantity",
+            "type": "hasFlux",
             "properties": {}
         },
         {
@@ -2180,33 +2480,51 @@
             "properties": {}
         },
         {
-            "start": "forecast_start_time",
-            "end": "radiation_fluxes",
-            "type": "isPartOf",
+            "start": "sunshine_duration",
+            "end": "solar_flux_perpendicular_to_sun",
+            "type": "differsFrom",
             "properties": {}
         },
         {
-            "start": "forecast_end_time",
-            "end": "radiation_fluxes",
-            "type": "isPartOf",
+            "start": "solar_flux_perpendicular_to_sun",
+            "end": "direct_downwelling_solar_flux",
+            "type": "isLargerThan",
+            "properties": {}
+        },
+        {
+            "start": "solar_flux_perpendicular_to_sun",
+            "end": "solar_zenith_angle",
+            "type": "isAffectedBy",
             "properties": {}
         },
         {
             "start": "solar_zenith_angle",
-            "end": "direct_downwelling_solar_flux",
-            "type": "affects",
-            "properties": {}
-        },
-        {
-            "start": "radiation_fluxes",
-            "end": "albedo_components",
-            "type": "isObservedIn",
+            "end": "factor_of_1_cos_theta0",
+            "type": "hasFactor",
             "properties": {}
         },
         {
             "start": "sunshine_duration",
-            "end": "underestimation_warning",
-            "type": "isUnderestimatedBy",
+            "end": "accumulated_field",
+            "type": "isAccumulatedField",
+            "properties": {}
+        },
+        {
+            "start": "radiation_fluxes_quantities",
+            "end": "first_24_hours",
+            "type": "isAveragedOver",
+            "properties": {}
+        },
+        {
+            "start": "first_24_hours",
+            "end": "operational_forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "albedo_components",
+            "end": "radiation_fluxes_quantities",
+            "type": "isRelatedTo",
             "properties": {}
         },
         {
@@ -2234,13 +2552,7 @@
             "properties": null
         },
         {
-            "start": "forecast_start_time",
-            "end": "examples.txt___10",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "forecast_end_time",
+            "start": "solar_flux_perpendicular_to_sun",
             "end": "examples.txt___10",
             "type": "APPEARED_IN",
             "properties": null
@@ -2252,7 +2564,31 @@
             "properties": null
         },
         {
-            "start": "radiation_fluxes",
+            "start": "factor_of_1_cos_theta0",
+            "end": "examples.txt___10",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "accumulated_field",
+            "end": "examples.txt___10",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "radiation_fluxes_quantities",
+            "end": "examples.txt___10",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "first_24_hours",
+            "end": "examples.txt___10",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "operational_forecast",
             "end": "examples.txt___10",
             "type": "APPEARED_IN",
             "properties": null
@@ -2264,105 +2600,93 @@
             "properties": null
         },
         {
-            "start": "underestimation_warning",
-            "end": "examples.txt___10",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
             "start": "albedo_components",
-            "end": "forecast_start",
-            "type": "isRecordedAt",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "surface_albedo",
-            "end": "forecast_24_hours",
-            "type": "isRecordedAt",
+            "end": "forecast_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "albedo_components",
-            "end": "interval_0_to_1",
-            "type": "hasRange",
+            "end": "non_dimension",
+            "type": "hasProperty",
             "properties": {}
         },
         {
-            "start": "figures_6_and_7",
-            "end": "albedo_components",
-            "type": "presents",
+            "start": "albedo_components",
+            "end": "percent_presentation",
+            "type": "hasProperty",
             "properties": {}
         },
         {
             "start": "jean_jacques_morcrette",
-            "end": "figures_6_and_7",
-            "type": "authored",
+            "end": "ecmwf",
+            "type": "contributedTo",
             "properties": {}
         },
         {
             "start": "robin_hogan",
-            "end": "figures_6_and_7",
-            "type": "authored",
-            "properties": {}
-        },
-        {
-            "start": "physical_aspects_and_user_support_sections",
-            "end": "figures_6_and_7",
+            "end": "ecmwf",
             "type": "contributedTo",
             "properties": {}
         },
         {
             "start": "tsr",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "tsrc",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "ttr",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "ttrc",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "ssr",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "ssrc",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "ssrd",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "fdir",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
             "start": "cdir",
-            "end": "forecast_24_hours",
-            "type": "isAveragedOver",
+            "end": "forecast_start_time",
+            "type": "hasTime",
             "properties": {}
         },
         {
@@ -2372,7 +2696,7 @@
             "properties": null
         },
         {
-            "start": "forecast_start",
+            "start": "forecast_start_time",
             "end": "examples.txt___11",
             "type": "APPEARED_IN",
             "properties": null
@@ -2384,19 +2708,19 @@
             "properties": null
         },
         {
-            "start": "forecast_24_hours",
+            "start": "forecast_time",
             "end": "examples.txt___11",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "interval_0_to_1",
+            "start": "non_dimension",
             "end": "examples.txt___11",
             "type": "APPEARED_IN",
             "properties": null
         },
         {
-            "start": "figures_6_and_7",
+            "start": "percent_presentation",
             "end": "examples.txt___11",
             "type": "APPEARED_IN",
             "properties": null
@@ -2414,7 +2738,7 @@
             "properties": null
         },
         {
-            "start": "physical_aspects_and_user_support_sections",
+            "start": "ecmwf",
             "end": "examples.txt___11",
             "type": "APPEARED_IN",
             "properties": null
@@ -2474,56 +2798,62 @@
             "properties": null
         },
         {
-            "start": "forecast",
-            "end": "str",
-            "type": "hasVariable",
+            "start": "str",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "strc",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "strd",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fal",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "fal",
+            "end": "albedo",
+            "type": "hasProperty",
+            "properties": {}
+        },
+        {
+            "start": "aluvp",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "aluvd",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "alnip",
+            "end": "forecast",
+            "type": "isPartOf",
+            "properties": {}
+        },
+        {
+            "start": "alnid",
+            "end": "forecast",
+            "type": "isPartOf",
             "properties": {}
         },
         {
             "start": "forecast",
-            "end": "strc",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "strd",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "fal",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "aluvp",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "aluvd",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "alnip",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "alnid",
-            "type": "hasVariable",
-            "properties": {}
-        },
-        {
-            "start": "forecast",
-            "end": "time_20120215_12_utc",
+            "end": "20120215_12_utc",
             "type": "hasTime",
             "properties": {}
         },
@@ -2552,7 +2882,19 @@
             "properties": null
         },
         {
+            "start": "20120215_12_utc",
+            "end": "examples.txt___12",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
             "start": "fal",
+            "end": "examples.txt___12",
+            "type": "APPEARED_IN",
+            "properties": null
+        },
+        {
+            "start": "albedo",
             "end": "examples.txt___12",
             "type": "APPEARED_IN",
             "properties": null
@@ -2577,12 +2919,6 @@
         },
         {
             "start": "alnid",
-            "end": "examples.txt___12",
-            "type": "APPEARED_IN",
-            "properties": null
-        },
-        {
-            "start": "time_20120215_12_utc",
             "end": "examples.txt___12",
             "type": "APPEARED_IN",
             "properties": null

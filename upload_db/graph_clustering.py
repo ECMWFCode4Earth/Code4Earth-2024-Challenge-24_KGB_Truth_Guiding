@@ -36,7 +36,7 @@ def init_graph(env_vars):
 
 # Create or retrieve graph projection
 def setup_graph_projection(gds, graph_name="communities"):
-        """Create or retrieve graph projection."""
+    # """Create or retrieve graph projection."""
     # graph_exists, _ = gds.graph.exists(graph_name)
     # if graph_exists:
     #     G = gds.graph.get(graph_name)
