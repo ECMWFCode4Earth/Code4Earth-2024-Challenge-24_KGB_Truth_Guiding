@@ -2,7 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
-from neo4j_queries import get_answer_neo4j, query_subgraph, get_response, query_secondary_nodes, query_appeared_in_nodes, local_retriever, global_retriever, get_subgraph
+# from neo4j_queries import get_answer_neo4j, query_subgraph, get_response, query_secondary_nodes, query_appeared_in_nodes, local_retriever, global_retriever, get_subgraph
+from neo4j_queries import get_answer_neo4j, get_response, local_retriever, global_retriever, get_subgraph
 import sys
 app = Flask(__name__)
 CORS(app)
@@ -27,12 +28,12 @@ def get_response_route():
     answer = get_response(user_query, contents,summaries, chat_history)
     return jsonify({"answer": answer})
 
-@app.route('/query_subgraph', methods=['POST'])
-def query_subgraph_route():
-    data = request.json
-    chunkIds = data['chunkIds']
-    records = query_subgraph(chunkIds)
-    return jsonify(records)
+# @app.route('/query_subgraph', methods=['POST'])
+# def query_subgraph_route():
+#     data = request.json
+#     chunkIds = data['chunkIds']
+#     records = query_subgraph(chunkIds)
+#     return jsonify(records)
 
 # Define route for the local retriever
 @app.route('/local_retriever', methods=['POST'])
@@ -80,19 +81,19 @@ def get_subgraph_route():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/query_secondary_nodes', methods=['POST'])
-def query_secondary_nodes_route():
-    data = request.json
-    primaryNodes = data['primaryNodes']
-    secondary_nodes = query_secondary_nodes(primaryNodes)
-    return jsonify(secondary_nodes)
+# @app.route('/query_secondary_nodes', methods=['POST'])
+# def query_secondary_nodes_route():
+#     data = request.json
+#     primaryNodes = data['primaryNodes']
+#     secondary_nodes = query_secondary_nodes(primaryNodes)
+#     return jsonify(secondary_nodes)
 
-@app.route('/query_appeared_in_nodes', methods=['POST'])
-def query_appeared_in_nodes_route():
-    data = request.json
-    secondaryNodes = data['secondaryNodes']
-    appeared_in_nodes = query_appeared_in_nodes(secondaryNodes)
-    return jsonify(appeared_in_nodes)
+# @app.route('/query_appeared_in_nodes', methods=['POST'])
+# def query_appeared_in_nodes_route():
+#     data = request.json
+#     secondaryNodes = data['secondaryNodes']
+#     appeared_in_nodes = query_appeared_in_nodes(secondaryNodes)
+#     return jsonify(appeared_in_nodes)
 
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)

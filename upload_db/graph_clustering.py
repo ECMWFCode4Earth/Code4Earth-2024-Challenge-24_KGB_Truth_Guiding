@@ -105,7 +105,7 @@ def fetch_community_info(graph):
     """Fetch community information for generating summaries."""
     return graph.query("""
     MATCH (c:`__Community__`)<-[:IN_COMMUNITY*]-(e:__Entity__)
-    WHERE c.level IN [0,1,4]
+    WHERE c.level IN [0]
     WITH c, collect(e ) AS nodes
     WHERE size(nodes) > 1
     CALL apoc.path.subgraphAll(nodes[0], {
@@ -163,7 +163,7 @@ def configure_llm():
     return community_chain
 
 # Process communities with throttling
-def process_communities_with_throttle(community_info, community_chain, max_concurrent_requests=3, delay_between_requests=0.5):
+def process_communities_with_throttle(community_info, community_chain, max_concurrent_requests=5, delay_between_requests=0.5):
     """Process communities to generate summaries with throttling."""
     semaphore = Semaphore(max_concurrent_requests)
     summaries = []
