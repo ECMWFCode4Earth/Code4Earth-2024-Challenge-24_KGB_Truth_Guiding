@@ -24,7 +24,20 @@ pip install -r requirements.txt
 
 ## Usage
 
-Explain how to use the Knowledge Graph, including any specific commands, APIs, or interfaces available.
+To use, please create an `.env` file in the outer folder and add the following variables:
+
+- `OPENAI_API_KEY`=<YOUR_OPENAI_API_KEY>
+- `KGGENRATOR`="8080"
+
+Add your documents (type `txt`) in the txt_files
+
+then run: `docker-compose up --build`
+
+To use the interface, wait until the service `neo4j-uploader` exits succesfully.
+
+Then go to `http://localhost:3000`
+
+and type you question.
 
 ## Data Sources
 
