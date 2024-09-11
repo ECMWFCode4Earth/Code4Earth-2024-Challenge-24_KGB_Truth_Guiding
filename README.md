@@ -10,17 +10,14 @@ The aim of the project is to create a knowledge graph for Scientific documents. 
 
 List the main features and functionalities of the Knowledge Graph:
 
-- Feature 1: Description
-- Feature 2: Description
-- ...
+- Feature 0: Extracting information and generating database from this information.
+- Feature 1: Partial implementation of GraphRAG (implemented by Microsoft). For this feature, from the database from feature 0, the system will retrieve both local and global information that is relevant to the query.
+- Feature 2: Visualization of the retrieved information in feature 1.
+  
 
 ## Installation
 
-To install necessary packages run:
-
-```
-pip install -r requirements.txt
-```
+You don't need to install anything. The app will be run in containers.
 
 ## Usage
 
@@ -31,9 +28,16 @@ To use, please create an `.env` file in the outer folder and add the following v
 
 Add your documents (type `txt`) in the txt_files
 
-then run: `docker-compose up --build`
+then run: `docker-compose build` to build images of services
 
-To use the interface, wait until the service `neo4j-uploader` exits succesfully.
+To start container of each service run following commands in the order:
+
+- `docker-compose up kg_generator`. This command start a service that looks for txt files in the `txt_files/` folder and outputs json files in the `assets/` folder. These json files presents `Nodes` and `Edges` generated from txt files.
+- `docker-compose up neo4j`. This command is for starting neo4j databse and setup `URI`, `user`, `password` for the database.
+- `docker-compose up neo4j_uploader`. This command starts a service which looks for json files in the `assets/` folder and push this to the neo4j database. At the same time, it define the structure of the database.
+- `docker-compose up flask_backend`. This command starts backend service for web application.
+- `docker-compose up frontend`. This command starts frontend service which communicate with flask_backend service.
+
 
 Then go to `http://localhost:3000`
 
@@ -43,13 +47,11 @@ and type you question.
 
 List the sources of data used to populate the Knowledge Graph, including any APIs, databases, or external datasets.
 
+
+
 ## Architecture
 
-Describe the architecture of the Knowledge Graph, including the technology stack used, data modeling approach, and any frameworks or libraries employed.
 
-## Examples
-
-Provide examples or use cases demonstrating how the Knowledge Graph can be queried or utilized to extract insights or perform analysis.
 
 ## Contributors
 
@@ -57,8 +59,8 @@ List the contributors to the project, along with their roles or contributions.
 
 ## License
 
-Specify the license under which the project is released. Choose an appropriate open-source license (e.g., MIT, Apache) and include the license text.
+GNU GENERAL PUBLIC LICENSE
 
 ## Acknowledgements
 
-Acknowledge any individuals, organizations, or resources that contributed to the project or provided support and guidance.
+We would like to extend our gratitude to ECMWF organization for organizing `Code for earth challenge 24` and provide us with strong support from their experts.
