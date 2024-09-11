@@ -163,6 +163,10 @@ def get_subgraph(question):
     local_summaries = local_report["summaries"]
     global_summary_ids, global_summaries = global_retriever(question)
     summaries = global_summaries + local_summaries
+    print("In the get_subgraph", file=sys.stdout)
+    print(summaries, file=sys.stdout)
+    print(local_summaries, file=sys.stdout)
+    print(local_contents, file=sys.stdout)
     query_2 = """
         WITH $local_text_chunk_ids AS local_text_chunk_ids, 
              $local_summary_ids AS local_summary_ids, 

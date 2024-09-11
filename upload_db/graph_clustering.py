@@ -12,6 +12,7 @@ from langchain_openai import ChatOpenAI
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Semaphore
 from tqdm import tqdm
+import openai
 
 # Load environment variables
 def load_env():
@@ -95,44 +96,64 @@ def update_community_relationships(graph):
     """)
 
     graph.query("""
-    MATCH (c:__Community__)<-[:IN_COMMUNITY*]-(:__Entity__)-[:APPEARED_IN]->(d:__Chunk__)
+    MATCH (c:`__Community__`)<-[:IN_COMMUNITY*]-(:`__Entity__`)-[:APPEARED_IN]->(d:`__Chunk__`)
     WITH c, count(distinct d) AS rank
     SET c.community_rank = rank;
     """)
+
+    graph.query(
+    """
+    MATCH (c:__Community__)<-[:IN_COMMUNITY*]-(e:__Entity__)
+    WITH c, count(distinct e) AS entities
+    RETURN split(c.id, '-')[0] AS level, entities
+    """
+    )
 
 # Prepare data for generating community summaries
 def fetch_community_info(graph):
     """Fetch community information for generating summaries."""
     return graph.query("""
-    MATCH (c:`__Community__`)<-[:IN_COMMUNITY*]-(e:__Entity__)
-    WHERE c.level IN [0]
-    WITH c, collect(e ) AS nodes
-    WHERE size(nodes) > 1
-    CALL apoc.path.subgraphAll(nodes[0], {
-        whitelistNodes:nodes
-    })
-    YIELD relationships
-    RETURN c.id AS communityId,
-           [n in nodes | {id: n.id, description: n.description, type: [el in labels(n) WHERE el <> '__Entity__'][0]}] AS nodes,
-           [r in relationships | {start: startNode(r).id, type: type(r), end: endNode(r).id, description: r.description}] AS rels
+        MATCH (c:`__Community__`)<-[:IN_COMMUNITY*]-(e:__Entity__)
+        WHERE c.level IN [0,1,4]
+        WITH c, collect(e ) AS nodes
+        WHERE size(nodes) > 1
+        CALL apoc.path.subgraphAll(nodes[0], {
+            whitelistNodes:nodes
+        })
+        YIELD relationships
+        RETURN c.id AS communityId,
+            [n in nodes | {name: n.name, type: [el in labels(n) WHERE el <> '__Entity__'][0], text: n.text}] AS nodes,
+            [r in relationships | {start: startNode(r).name, type: type(r), end: endNode(r).name, description: r.description}] AS rels
     """)
 
 # Prepare a string for OpenAI API
 def prepare_string(data):
     """Prepare string representation of nodes and relationships for input to LLM."""
     nodes_str = "Nodes are:\n"
-    for node in data['nodes']:
-        node_id = node['id']
+    limit = 200
+    for i,node in enumerate(data['nodes']):
+        if i > limit:
+            break
+        node_name = node['name']
         node_type = node['type']
-        node_description = f", description: {node['description']}" if 'description' in node and node['description'] else ""
-        nodes_str += f"id: {node_id}, type: {node_type}{node_description}\n"
+        if 'text' in node and node['text']:
+            node_text = f", text: {node['text']}"
+        else:
+            node_text = ""
+        nodes_str += f"name: {node_name}, type: {node_type}{node_text}\n"
 
     rels_str = "Relationships are:\n"
-    for rel in data['rels']:
+    for i, rel in enumerate(data['rels']):
+        if i > limit:
+            break
+
         start = rel['start']
         end = rel['end']
         rel_type = rel['type']
-        description = f", description: {rel['description']}" if 'description' in rel and rel['description'] else ""
+        if '' in rel and rel['description']:
+            description = f", description: {rel['description']}"
+        else:
+            description = ""
         rels_str += f"({start})-[:{rel_type}]->({end}){description}\n"
 
     return nodes_str + "\n" + rels_str
@@ -169,10 +190,19 @@ def process_communities_with_throttle(community_info, community_chain, max_concu
     summaries = []
 
     def process_community(community):
+        nonlocal delay_between_requests
         with semaphore:
-            result = generate_summary(community, community_chain)
-            time.sleep(delay_between_requests)
-            return result
+
+            while True:
+                try:
+                    result = generate_summary(community, community_chain)
+                    time.sleep(delay_between_requests)
+                    return result
+                except openai.RateLimitError as e:
+                    # Parse the recommended wait time from the error message
+                    wait_time = parse_wait_time_from_error(e)
+                    print(f"Rate limit reached. Waiting for {wait_time + 0.5} seconds before retrying...")
+                    time.sleep(wait_time + 0.5)
 
     with ThreadPoolExecutor(max_workers=max_concurrent_requests) as executor:
         futures = {executor.submit(process_community, community): community for community in community_info}
@@ -180,6 +210,53 @@ def process_communities_with_throttle(community_info, community_chain, max_concu
             summaries.append(future.result())
 
     return summaries
+
+# Process communities with throttling
+def process_communities(community_info, community_chain, delay_between_requests=0.5):
+    """Process communities to generate summaries with throttling."""
+    summaries = []
+    def process_community(community):
+            # print(community)
+            while True:
+                try:
+                    result = generate_summary(community, community_chain)
+                    time.sleep(delay_between_requests)
+                    return result
+                except openai.RateLimitError as e:
+                    # Parse the recommended wait time from the error message
+                    wait_time = parse_wait_time_from_error(e)
+                    print(f"Rate limit reached. Waiting for {wait_time + 0.5} seconds before retrying...")
+                    time.sleep(wait_time + 0.5)
+
+
+
+    for community in tqdm(community_info, desc="community processing sequentially"):
+        summaries.append(process_community(community))
+
+    # with ThreadPoolExecutor(max_workers=max_concurrent_requests) as executor:
+    #     futures = {executor.submit(process_community, community): community for community in community_info}
+    #     for future in tqdm(as_completed(futures), total=len(futures), desc="Processing communities"):
+    #         summaries.append(future.result())
+
+    return summaries
+
+
+
+
+
+
+def parse_wait_time_from_error(error):
+    """Parse the recommended wait time from the RateLimitError."""
+    try:
+        error_message = str(error)
+        # Example: 'Rate limit reached for ... Please try again in 3.762s.'
+        start_index = error_message.find("Please try again in ") + len("Please try again in ")
+        end_index = error_message.find("s.", start_index)
+        wait_time = float(error_message[start_index:end_index])
+        return wait_time
+    except Exception:
+        return 1  # Default to 3 seconds if parsing fails
+
 
 # Update graph with community summaries
 def update_community_summaries(graph, summaries):
@@ -191,7 +268,7 @@ def update_community_summaries(graph, summaries):
     """, params={"data": summaries})
 
 # Main function to execute the entire process
-def main():
+def graph_clustering():
     # Load environment variables and configure
     env_vars = load_env()
 
@@ -212,10 +289,10 @@ def main():
     community_chain = configure_llm()
 
     # Process communities and generate summaries
-    summaries = process_communities_with_throttle(community_info, community_chain)
+    summaries = process_communities(community_info, community_chain)
 
     # Update graph with generated summaries
     update_community_summaries(graph, summaries)
 
 if __name__ == "__main__":
-    main()
+    graph_clustering()

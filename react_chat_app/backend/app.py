@@ -8,7 +8,7 @@ import sys
 app = Flask(__name__)
 CORS(app)
 
-load_dotenv()
+# load_dotenv()
 
 @app.route('/get_answer_neo4j', methods=['POST'])
 def get_answer_neo4j_route():
@@ -72,13 +72,15 @@ def global_retriever_route():
 def get_subgraph_route():
     data = request.json
     question = data["question"]
+    print(f"The question is {question}", file=sys.stdout)
     if not question:
         return jsonify({"error": "Question is required"}), 400
     try:
         graph, contexts = get_subgraph(question)
-        # print(f"Inside get subgraph route {graph['edges']}",file=sys.stdout)
+        print(f"Inside get subgraph route {graph}",file=sys.stdout)
         return jsonify({"subGraph_new": graph, "contexts": contexts})
     except Exception as e:
+        print(e, file=sys.stderr)
         return jsonify({"error": str(e)}), 500
 
 # @app.route('/query_secondary_nodes', methods=['POST'])

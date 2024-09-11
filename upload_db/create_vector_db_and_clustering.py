@@ -4,7 +4,7 @@ from neo4j import GraphDatabase
 import openai
 import os
 # from dotenv import load_dotenv
-
+from graph_clustering import graph_clustering
 
 def encode_text(text):
     response = openai.embeddings.create(
@@ -35,7 +35,7 @@ def create_vector_index_chunk(driver):
 def update_neo4j_with_embeddings_chunk(driver):
     with driver.session() as session:
         try:
-            result = session.run("MATCH (n:__Chunk__) WHERE n.content IS NOT NULL RETURN n.content, ID(n) AS id")
+            result = session.run("MATCH (n:__Chunk__) WHERE n.content IS NOT NULL RETURN n.content, elementId(n) AS id")
             for record in result:
                 content = record["n.content"]
                 node_id = record["id"]
@@ -52,7 +52,7 @@ def update_neo4j_with_embeddings_chunk(driver):
                 
                 if embedding:
                     session.run(
-                        "MATCH (n:__Chunk__) WHERE ID(n) = $id SET n.contentEmbedding = $embedding",
+                        "MATCH (n:__Chunk__) WHERE elementId(n) = $id SET n.contentEmbedding = $embedding",
                         id=node_id, embedding=embedding
                     )
                     print(f"Set embedding for node ID {node_id}")
@@ -105,7 +105,7 @@ def create_vector_index_entity(driver):
 def update_neo4j_with_embeddings_entity(driver):
     with driver.session() as session:
         try:
-            result = session.run("MATCH (n:__Entity__) WHERE n.name IS NOT NULL RETURN n.name, ID(n) AS id, n.text, n.description")
+            result = session.run("MATCH (n:__Entity__) WHERE n.name IS NOT NULL RETURN n.name, elementId(n) AS id, n.text, n.description")
             for record in result:
                 name = record["n.name"]
                 node_id = record["id"]
@@ -127,7 +127,7 @@ def update_neo4j_with_embeddings_entity(driver):
                 
                 if embedding:
                     session.run(
-                        "MATCH (n:__Entity__) WHERE ID(n) = $id SET n.entityEmbedding = $embedding",
+                        "MATCH (n:__Entity__) WHERE elementId(n) = $id SET n.entityEmbedding = $embedding",
                         id=node_id, embedding=embedding
                     )
                     print(f"Set embedding for node ID {node_id}")
@@ -181,7 +181,7 @@ def create_vector_index_community(driver):
 def update_neo4j_with_embeddings_community(driver):
     with driver.session() as session:
         try:
-            result = session.run("MATCH (n:__Community__) WHERE n.summary IS NOT NULL RETURN n.summary, ID(n) AS id")
+            result = session.run("MATCH (n:__Community__) WHERE n.summary IS NOT NULL RETURN n.summary, elementId(n) AS id")
             for record in result:
                 summary = record["n.summary"]
                 node_id = record["id"]
@@ -197,7 +197,7 @@ def update_neo4j_with_embeddings_community(driver):
                 
                 if embedding:
                     session.run(
-                        "MATCH (n:__Community__) WHERE ID(n) = $id SET n.communityEmbedding = $embedding",
+                        "MATCH (n:__Community__) WHERE elementId(n) = $id SET n.communityEmbedding = $embedding",
                         id=node_id, embedding=embedding
                     )
                     print(f"Set embedding for node ID {node_id}")
@@ -250,6 +250,8 @@ def main() :
     create_vector_index_entity(driver)
     update_neo4j_with_embeddings_entity(driver)
     verify_embeddings_entity(driver)
+
+    graph_clustering()
 
     create_vector_index_community(driver)
     update_neo4j_with_embeddings_community(driver)

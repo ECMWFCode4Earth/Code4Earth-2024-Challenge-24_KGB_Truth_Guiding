@@ -73,7 +73,7 @@ class KGGenerator:
                 )
             )
         kg["nodes"]["Chunk"] = [
-            {"name": id, "label": "Chunk", "properties": {"content": text}}
+            {"name": id, "label": "__Chunk__", "properties": {"content": text}}
         ]
         return kg
 

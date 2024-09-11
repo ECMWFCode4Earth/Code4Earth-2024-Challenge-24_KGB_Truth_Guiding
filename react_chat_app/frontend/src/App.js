@@ -5,10 +5,10 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import GraphComponent from './Components/GraphComp';
 import Graph from 'react-graph-vis'
-// const backendUrl = process.env.REACT_APP_BACKEND_URL;
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 // const backendUrl = process.env.REACT_APP_BACKEND_SERVER
-const backendUrl = "http://flask_backend:5001"
+// const backendUrl = "http://flask_backend:5001"
 console.log("This is backend URL", backendUrl)
 
 // function processingSubgraph(subgraphData){
@@ -123,8 +123,8 @@ function App() {
   ]);
 
   const color_dictionary = {
-    "__Entity__" : "#e04141",
     "__Chunk__" : "yellow",
+    "__Entity__" : "#e04141",
     "__Community__": "blue"
   }
 

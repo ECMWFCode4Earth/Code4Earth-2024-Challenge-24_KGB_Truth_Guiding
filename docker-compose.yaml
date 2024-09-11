@@ -5,6 +5,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    env_file:
+      - .env
     volumes:
       - ./assets:/app/assets  # Map the 'assets' folder to the container
       - ./txt_files:/app/txt_files  # Map the 'txt_files' folder to the container
@@ -38,6 +40,8 @@ services:
     build:
       context: ./upload_db  # Build context is set to the upload_db directory
       dockerfile: Dockerfile  # Dockerfile is inside the upload_db directory
+    env_file:
+      - .env
     volumes:
       - ./assets:/app/assets  # Map 'assets' folder to the container
       - ./upload_db:/app/upload_db  # Map 'upload_db' folder to the container
@@ -50,12 +54,14 @@ services:
       - NEO4J_URI=bolt://neo4j:7687  # Environment variable to access Neo4j URL
       - NEO4J_USERNAME=neo4j  # Environment variable for Neo4j username
       - NEO4J_PASSWORD=test@123  # Environment variable for Neo4j password
-    command: /bin/bash -c "sleep 120 && ./wait-for-it.sh neo4j:7687 -- python upload_neo4j_from_json.py && python create_vector_db.py && python graph_clustering.py"
+    command: /bin/bash -c "python upload_neo4j_from_json.py && python create_vector_db_and_clustering.py"
 
   flask_backend:
     build:
       context: ./react_chat_app/backend
       dockerfile: Dockerfile
+    env_file:
+      - .env
     volumes:
       - ./react_chat_app/backend:/app  # Map the 'backend' folder to the container
     ports:
