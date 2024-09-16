@@ -5,10 +5,10 @@ import './App.css';
 import NavBar from './Components/NavBar';
 import GraphComponent from './Components/GraphComp';
 import Graph from 'react-graph-vis'
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+// const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
 // const backendUrl = process.env.REACT_APP_BACKEND_SERVER
-// const backendUrl = "http://flask_backend:5001"
+const backendUrl = "http://localhost:5001"
 console.log("This is backend URL", backendUrl)
 
 // function processingSubgraph(subgraphData){
@@ -36,7 +36,7 @@ console.log("This is backend URL", backendUrl)
 //     if (node_id == null){
 //       alert("node is null");
 //     }
-    
+
 //     const node_properties = JSON.stringify(node['properties']);
 //     if( !node_keeper.includes(node_id) ){
 //       let color_label = "red";
@@ -51,11 +51,11 @@ console.log("This is backend URL", backendUrl)
 //       }
 //       const node_ = {id: node_id, label: node_id, color: color_label, properties: node_properties}
 //       nodes.push(node_);
-//       nodes_object["id"] = node_; 
+//       nodes_object["id"] = node_;
 //       node_keeper.push(node_id);
 //       count += 1;
 //     }
-    
+
 //     for (let j = 0; j < neighbors.length; j++){
 //       let neighbor_info = neighbors[j];
 
@@ -66,7 +66,7 @@ console.log("This is backend URL", backendUrl)
 //         if (neighbor_id == null){
 //           alert("neighbor node is null");
 //         }
-//         let neighbor_properties = JSON.stringify(neighbor['properties']);  
+//         let neighbor_properties = JSON.stringify(neighbor['properties']);
 //         if ( !node_keeper.includes(neighbor_id)){
 
 //           let color_label = "red";
@@ -79,7 +79,7 @@ console.log("This is backend URL", backendUrl)
 //                 }
 //             }
 //           }
-//           const node_ = {id: neighbor_id, label: neighbor_id, color: color_label, properties: neighbor_properties}; 
+//           const node_ = {id: neighbor_id, label: neighbor_id, color: color_label, properties: neighbor_properties};
 //           nodes.push(node_);
 //           nodes_object["id"] = node_;
 //           node_keeper.push(neighbor_id);
@@ -87,8 +87,8 @@ console.log("This is backend URL", backendUrl)
 //         }
 //         if (relationship){
 //           let relationship_label = relationship["label"] ;
-//           let relationship_property = relationship['properties'];  
-//           edges.push({from: node_id, to: neighbor_id}); 
+//           let relationship_property = relationship['properties'];
+//           edges.push({from: node_id, to: neighbor_id});
 //         }
 //       }
 //     }
@@ -106,7 +106,7 @@ function App() {
   const [graphsRaw, setGraphsRaw] = useState([
     {nodes: {}, edges: {}}
   ])
-  
+
   const [subGraphNew, setSubGraphNew] = useState({nodes: [], edges: []})
 
   const [selectedGraph, setSelectedGraph] = useState(graphs[graphs.length-1]);
@@ -136,12 +136,12 @@ function App() {
     };
 
     const newMessages = [...messages, newMessage];
-    
+
     // update our messages state
     setMessages(newMessages);
     // process message to chatGPT (send it over and wait for response)
     setTyping(true);
-  
+
     await processAnswer(newMessages, message);
   };
 
@@ -171,7 +171,7 @@ function App() {
 
     // const local_retriever_data = await local_retriever.json();
 
-    // const local_text_chunk_ids = local_retriever_data[0]["text_mapping"]; 
+    // const local_text_chunk_ids = local_retriever_data[0]["text_mapping"];
 
     // setLocalTextChunkIds(local_text_chunk_ids);
 
@@ -244,13 +244,13 @@ function App() {
     // const graphRaw = {nodes: nodes_object, edges: edges_object};
     setSelectedGraph(subGraph_new);
     // setSelectedGraphRaw(graphRaw);
-    const newGraphs = [...graphs, subGraph_new]; 
+    const newGraphs = [...graphs, subGraph_new];
 
     // const graph = {nodes: nodes, edges: edges};
     // // const graphRaw = {nodes: nodes_object, edges: edges_object};
     // setSelectedGraph(graph);
     // // setSelectedGraphRaw(graphRaw);
-    // const newGraphs = [...graphs, graph]; 
+    // const newGraphs = [...graphs, graph];
     setGraphs(newGraphs);
     // setGraphsRaw()
 
@@ -279,15 +279,15 @@ function App() {
     const responseMessage_summaries = `${contexts['summaries'].join(', ')}`;
 
     let chat_history = messages.map(msg => `${msg.sender}: ${msg.message}`).join("\n");
-    
+
     const response_openai = await fetch(`${backendUrl}/get_response`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         user_query: userQuery,  // Fixed to match the Python key
-        contents: responseMessage_contents, 
+        contents: responseMessage_contents,
         summaries: responseMessage_summaries,
         chat_history: chat_history
       })
@@ -310,7 +310,7 @@ function App() {
 
   const events = {
     selectNode: ({nodes}) => {
-      
+
       let nodes_string = JSON.stringify(nodes[0]);
       // alert(nodes_string.slice(1,nodes_string.length-1));
       // alert(typeof nodes_string === 'string');
@@ -318,7 +318,7 @@ function App() {
         // if (node < 1){
         //   alert(selectedGraph.nodes[node].id);
         //   alert(typeof selectedGraph.nodes[node].id === 'string');
-        // }        
+        // }
         if (nodes_string.slice(1,nodes_string.length-1) === selectedGraph.nodes[node].id){
           const newSelectedNodes = [...selectedNodes, selectedGraph.nodes[node]];
           setSelectedNodes(newSelectedNodes);
@@ -341,7 +341,7 @@ function App() {
               <p>Chat history in graph</p>
               <ul>
                 {graphs.map((graph, i) => {
-                  return <li 
+                  return <li
                     key={i}
                     onClick={() => handleGraphClick(graph)}
                     style={{
@@ -352,7 +352,7 @@ function App() {
                     }}
                     >
                       Graph {i}
-                  </li> 
+                  </li>
                 })}
               </ul>
 
@@ -388,11 +388,11 @@ function App() {
             </div>
           </MainContainer>
         </div>
-        
-        <GraphComponent selectedGraph={selectedGraph} events={events} selectedNodes={selectedNodes}/>      
+
+        <GraphComponent selectedGraph={selectedGraph} events={events} selectedNodes={selectedNodes}/>
       </div>
     </div>
-    
+
   );
 }
 

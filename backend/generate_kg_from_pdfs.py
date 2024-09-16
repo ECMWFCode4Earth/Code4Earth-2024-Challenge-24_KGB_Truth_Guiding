@@ -1,7 +1,8 @@
 from pathlib import Path
 
-from kg_generation.generator import KGGenerator
 from langchain_community.document_loaders import PyPDFLoader
+
+from .kg_generation.generator import KGGenerator
 
 data_dir = Path("/home/user/large-disk/ddwf_papers/")
 kg_generator = KGGenerator("llama3:70b-instruct-q3_K_L")

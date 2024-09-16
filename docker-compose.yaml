@@ -35,6 +35,12 @@ services:
       - ./neo4j_db/logs:/logs
       - ./neo4j_db/import:/var/lib/neo4j/import
       - ./neo4j_db/plugins:/plugins
+    healthcheck:
+      test: wget http://localhost:7474 || exit 1
+      interval: 1s
+      timeout: 10s
+      retries: 20
+      start_period: 15s
 
   neo4j_uploader:
     build:
@@ -47,8 +53,10 @@ services:
       - ./upload_db:/app/upload_db  # Map 'upload_db' folder to the container
     working_dir: /app/upload_db  # Set working directory to /app/upload_db
     depends_on:
-      - kg_generator  # Ensure this service waits for kg_generator to finish
-      - neo4j  # Ensure neo4j service is started
+      kg_generator:
+        condition: service_started  # Ensure this service waits for kg_generator to finish
+      neo4j:
+        condition: service_healthy  # Ensure neo4j service is started
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - NEO4J_URI=bolt://neo4j:7687  # Environment variable to access Neo4j URL
@@ -84,7 +92,7 @@ services:
     volumes:
       - ./react_chat_app/frontend:/app  # Map the 'frontend' folder to the container
     environment:
-      - REACT_APP_BACKEND_SERVER=http://flask_backend:5001
+      - REACT_APP_BACKEND_SERVER=http://localhost:5001
     ports:
       - "3000:80"
     depends_on:
@@ -92,4 +100,3 @@ services:
 
 volumes:
   neo4j_data:
-
