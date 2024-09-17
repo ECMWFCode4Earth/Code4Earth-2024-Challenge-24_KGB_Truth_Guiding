@@ -37,11 +37,11 @@ def init_graph(env_vars):
 
 # Create or retrieve graph projection
 def setup_graph_projection(gds, graph_name="communities"):
-    # """Create or retrieve graph projection."""
-    # graph_exists, _ = gds.graph.exists(graph_name)
-    # if graph_exists:
-    #     G = gds.graph.get(graph_name)
-    # else:
+    """Create or retrieve graph projection."""
+    graph_exists = gds.graph.exists(graph_name)
+    if graph_exists["exists"]:
+        G = gds.graph.get(graph_name)
+    else:
         G, _ = gds.graph.project(
             graph_name,
             "__Entity__",
@@ -53,7 +53,7 @@ def setup_graph_projection(gds, graph_name="communities"):
                 }
             },
         )
-        return G
+    return G
 
 # Perform community detection and write results to the graph
 def detect_communities(gds, G):
@@ -239,11 +239,6 @@ def process_communities(community_info, community_chain, delay_between_requests=
     #         summaries.append(future.result())
 
     return summaries
-
-
-
-
-
 
 def parse_wait_time_from_error(error):
     """Parse the recommended wait time from the RateLimitError."""

@@ -186,7 +186,7 @@ def get_subgraph(question):
         WITH collect(DISTINCT {id: elementId(n), type: labels(n), properties: properties(n)}) AS nodes,  
             collect(DISTINCT {from: elementId(startNode(r)), 
                             to: elementId(endNode(r)), 
-                            type: type(r)}) AS edges
+                            label: type(r)}) AS edges
 
         RETURN nodes, edges;
         
@@ -241,71 +241,3 @@ def get_answer_neo4j(question):
 
     return contexts, chunkIds, scores
 
-# def query_subgraph(chunkIds):
-#     query = """
-#     WITH $chunkIds AS names
-#     MATCH (n)
-#     WHERE n.name IN names
-#     OPTIONAL MATCH (n)-[r]-(neighbor)
-#     RETURN 
-#     {name: n.name, labels: labels(n), properties: apoc.map.fromLists(keys(n), [p in keys(n) | n[p]])} AS node,
-#     collect({
-#           neighbor: {name: neighbor.name, labels: labels(neighbor), properties: apoc.map.fromLists(keys(neighbor), [p in keys(neighbor) | neighbor[p]])},
-#           relationship: {label: type(r), properties: apoc.map.fromLists(keys(r), [p in keys(r) | r[p]])}
-#     }) AS neighbors
-#     """
-
-#     records = []
-#     with driver.session() as session:
-#         for record in session.run(query, {"chunkIds": chunkIds}):
-#             records.append(record)
-
-#     return records
-
-# def query_secondary_nodes(primaryNodes):
-#     query = """
-#     UNWIND $primaryNodes AS primaryNode
-#     MATCH (n)
-#     WHERE n.name = primaryNode
-#     OPTIONAL MATCH (n)-[r]-(neighbor)
-#     WHERE NOT neighbor:__Chunk__
-#     WITH neighbor, neighbor.name AS secondaryNode, count(DISTINCT n.name) AS primaryCount
-#     WHERE primaryCount >= 2
-#     RETURN
-#     secondaryNode AS name, apoc.map.fromLists(keys(neighbor), [p in keys(neighbor) | neighbor[p]]) AS properties
-#     """
-
-#     secondary_nodes = []
-#     with driver.session() as session:
-#         for record in session.run(query, {"primaryNodes": primaryNodes}):
-#             secondary_nodes.append(record["name"])
-#     return secondary_nodes
-
-# def query_appeared_in_nodes(secondaryNodes):
-#     query = """
-#     UNWIND $secondaryNodes AS secondaryNode
-#     MATCH (s {name: secondaryNode})
-#     OPTIONAL MATCH (s)-[r:APPEARED_IN]->(appearedInNode)
-#     RETURN
-#     s.name AS secondaryNodeName,
-#     collect({
-#         name: appearedInNode.name,
-#         properties: apoc.map.fromLists(keys(appearedInNode), [p in keys(appearedInNode) | appearedInNode[p]])
-#     }) AS appearedInNodes
-#     """
-
-#     appeared_in_nodes = {}
-#     with driver.session() as session:
-#         for record in session.run(query, {"secondaryNodes": secondaryNodes}):
-#             appeared_in_nodes.update({
-#                 record["secondaryNodeName"]: record["appearedInNodes"]
-#             })
-#     return appeared_in_nodes
-
-
-            # WITH genai.vector.encode(
-            #     $question, 
-            #     "OpenAI", 
-            #     {
-            #     token: $openAiApiKey
-            #     }) AS question_embedding

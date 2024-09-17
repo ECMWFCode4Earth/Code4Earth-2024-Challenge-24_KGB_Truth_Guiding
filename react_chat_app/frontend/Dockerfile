@@ -16,6 +16,10 @@ COPY . .
 # Build the React app for production
 RUN npm run build
 
+ARG REACT_APP_BACKEND_SERVER
+
+ENV REACT_APP_BACKEND_SERVER=$REACT_APP_BACKEND_SERVER
+
 # Use an official Nginx image as a parent image
 FROM nginx:alpine
 

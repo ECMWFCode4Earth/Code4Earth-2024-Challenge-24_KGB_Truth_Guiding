@@ -89,6 +89,8 @@ services:
     build:
       context: ./react_chat_app/frontend
       dockerfile: Dockerfile
+      args:
+        - REACT_APP_BACKEND_SERVER=http://flask_backend:5001
     volumes:
       - ./react_chat_app/frontend:/app  # Map the 'frontend' folder to the container
     environment:

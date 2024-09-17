@@ -72,15 +72,15 @@ const GraphComponent = ({ selectedGraph, events, selectedNodes }) => {
             // Determine the type and content of the node based on its properties
             let type, content;
 
-            if (node.properties.level) {
-              type = "Community";
-              content = node.properties.summary ? node.properties.summary : "";
-            } else if (node.properties.content) {
+            if (node.type.includes("__Chunk__")){
               type = "Chunk";
               content = node.properties.content;
-            } else if (node.properties.name) {
+            } else if (node.type.includes("__Entity__")){
               type = "Entity";
               content = node.properties.name;
+            } else if (node.type.includes("__Community__")){
+              type = "Community";
+              content = node.properties.summary;
             } else {
               // Fallback for nodes without the specific properties
               type = "Unknown";

@@ -11,6 +11,7 @@
     "react-dom": "^18.3.1",
     "react-graph-vis": "^1.0.7",
     "react-scripts": "5.0.1",
+    "reactjs-popup": "^2.0.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
