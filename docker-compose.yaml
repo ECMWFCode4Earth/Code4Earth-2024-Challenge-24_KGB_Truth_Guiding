@@ -40,7 +40,7 @@ services:
       interval: 1s
       timeout: 10s
       retries: 20
-      start_period: 15s
+      start_period: 120s
 
   neo4j_uploader:
     build:
@@ -54,7 +54,7 @@ services:
     working_dir: /app/upload_db  # Set working directory to /app/upload_db
     depends_on:
       kg_generator:
-        condition: service_started  # Ensure this service waits for kg_generator to finish
+        condition: service_completed_successfully  # Ensure this service waits for kg_generator to finish
       neo4j:
         condition: service_healthy  # Ensure neo4j service is started
     environment:
