@@ -63,7 +63,19 @@ For more information, consult the `.pptx` file
 
 ## Contributors
 
+[NGUYEN Quoc Viet](https://github.com/Viet1004) 
+[DAO Nhat Minh](https://github.com/nhatminh-96) 
+[NGO Duc Thinh](https://github.com/thinhngo-x)
+[PHAM Vu Hoang Anh](https://github.com/HoangAnhP)
+[VU Thi Hai Yen](https://github.com/haiyenvu96)
 
+With the guidance from our mentors:
+
+[Ana Prieto Nemesio](https://github.com/anaprietonem)
+[Florian Pinault](https://github.com/floriankrb)
+Baudouin Raoult
+
+From ECMWF.
 ## License
 
 GNU GENERAL PUBLIC LICENSE
