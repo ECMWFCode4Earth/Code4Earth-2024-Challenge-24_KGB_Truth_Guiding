@@ -71,3 +71,10 @@ GNU GENERAL PUBLIC LICENSE
 ## Acknowledgements
 
 We would like to extend our gratitude to ECMWF organization for organizing `Code for earth challenge 24` and provide us with strong support from their experts.
+
+Our work is greatly inspired by the paper: "From Local to Global: A Graph RAG Approach to Query-Focused Summarization".
+
+The query to generate data structure (in `upload_db/graph_clustering.py`) is inspired by one series in [neo4j developer blog](https://neo4j.com/developer-blog/global-graphrag-neo4j-langchain/). 
+
+
+
